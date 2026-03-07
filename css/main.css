@@ -12898,7 +12898,7 @@ video {
   padding: 0px;
 }
 .text-highlight{
-  font-size: clamp(1.2rem, calc(1.2rem + (1.2 - 1.2) * ((100vw - 320px) / (1440 - 320))), 1.2rem);
+  font-size: clamp(1rem, calc(1rem + (3 - 1) * ((100vw - 320px) / (1440 - 320))), 3rem);
 }
 @media (min-width: 768px){
   .md\:mx-auto{
