@@ -1,0 +1,48 @@
+@use "variables" as *;
+@use "mixins" as *;
+// ICONS 
+.instagram-icon {
+  cursor: pointer;
+  svg {
+    width: rem(60);
+    height: rem(60);
+    path{
+        stroke: color($primary-color-1,1.0);
+        fill: none;
+        &:nth-child(1){
+            stroke-width:3.6; 
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            
+        }
+        &:nth-child(2){
+            stroke-width:3.6; 
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            
+        }
+         &:nth-child(4){
+            stroke-width:2.4; 
+            stroke-linecap: round;
+            
+        }
+       
+    }
+
+  }
+}
+.hamburger{
+    cursor: pointer;
+    display: flex;
+    svg{
+        width: rem(80);
+        height: rem(80);
+        fill: none;
+        path{
+            stroke: color($primary-color-1,1.0);
+            stroke-width:2.5;
+            stroke-linecap:round;
+            stroke-linejoin:round;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+@use "variables" as *;
+@use "mixins" as *;
+/* FOOTER */
+
+.footer{
+    border-top: rem(1) solid color($primary-color-5,0.1);
+    padding: rem(30) 0;
+    i{
+        color: color($primary-color-1,1.0);
+    }
+}

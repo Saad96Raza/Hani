@@ -1,0 +1,20 @@
+@use "variables";
+@use "mixins";
+@use "normalize";
+@use "resets";
+@use "fonts";
+@use "fonts-face";
+@use "general";
+@use "blocks/blocks";
+@use "components/components";
+@use "pages/pages";
+
+// Tailwind 
+@import "../../node_modules/@fortawesome/fontawesome-free/css/all.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+

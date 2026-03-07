@@ -1,0 +1,49 @@
+/* FONTS */
+@use "mixins" as *;
+@use "variables" as *;
+
+.text-xxl{
+    @apply 
+    leading-none
+    h-auto
+    uppercase;
+}
+
+.text-xl{
+   @apply leading-none uppercase tracking-tighter;
+   font-family: $primary-font-regular;
+   font-weight: 'normal';
+}
+
+.text-lg {
+   @apply leading-none;  
+}
+
+.text-md{
+   @apply leading-none uppercase; 
+   font-family: $primary-font-thin;
+}
+
+.text-sm {
+    @apply leading-none; 
+}
+
+.text-body {
+    @apply leading-none;   
+}
+.text-input {
+   @apply leading-none; 
+}
+
+.text-highlight {
+   @apply leading-none uppercase font-normal; 
+   font-family: $primary-font-thin;
+}
+
+.text-link {
+ @apply leading-none;  
+}
+
+.text-direction {
+   @apply leading-none; 
+}

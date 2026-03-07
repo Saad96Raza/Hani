@@ -1,0 +1,27 @@
+/* HEADER */
+@use "variables" as *;
+@use "mixins" as *;
+
+
+:where(:root:has(
+  .modal-open,
+  .modal[open],
+  .modal:target,
+  .modal-toggle:checked,
+  .drawer:not(.drawer-open) > .drawer-toggle:checked
+)) {
+   scrollbar-gutter: auto!important; 
+}
+
+
+
+header{
+    border-bottom: rem(1) solid color($primary-color-5,0.1);
+    .drawer-side > *:not(.drawer-overlay){
+        transition: translate 0.5s ease-in-out;
+        
+    }
+    
+}
+
+
