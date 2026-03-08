@@ -11692,7 +11692,7 @@ header .drawer-side > *:not(.drawer-overlay) {
 /* ABOUT */ /* SERVICES */ /* BLOG */ /* CONTACT */
 /* FOOTER */
 .footer {
-  background: rgba(255, 255, 255, 0.1);
+  background: white;
   border-top: 0.0625rem solid rgba(18, 18, 18, 0.1);
   padding: 1.875rem 0;
 }
@@ -13089,9 +13089,6 @@ video {
 }
 .bg-base-200{
   background-color: var(--color-base-200);
-}
-.p-0{
-  padding: 0px;
 }
 .py-\[5rem\]{
   padding-top: 5rem;
