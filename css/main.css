@@ -11478,8 +11478,8 @@ body {
 }
 
 html,
-main body {
-  background-color: white;
+body {
+  background: white;
 }
 
 ol,
@@ -11524,7 +11524,7 @@ footer{
 header,
 section,
 footer {
-  background-color: white;
+  background: white;
 }
 
 /* FONTS */
@@ -11692,6 +11692,7 @@ header .drawer-side > *:not(.drawer-overlay) {
 /* ABOUT */ /* SERVICES */ /* BLOG */ /* CONTACT */
 /* FOOTER */
 .footer {
+  background: rgba(255, 255, 255, 0.1);
   border-top: 0.0625rem solid rgba(18, 18, 18, 0.1);
   padding: 1.875rem 0;
 }
