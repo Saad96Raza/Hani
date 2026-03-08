@@ -1,3 +1,148 @@
+@keyframes splide-loading {
+  0% {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+.splide__track--draggable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.splide__track--fade > .splide__list > .splide__slide {
+  margin: 0 !important;
+  opacity: 0;
+  z-index: 0;
+}
+
+.splide__track--fade > .splide__list > .splide__slide.is-active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.splide--rtl {
+  direction: rtl;
+}
+
+.splide__track--ttb > .splide__list {
+  display: block;
+}
+
+.splide__container {
+  box-sizing: border-box;
+  position: relative;
+}
+
+.splide__list {
+  backface-visibility: hidden;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.splide.is-initialized:not(.is-active) .splide__list {
+  display: block;
+}
+
+.splide__pagination {
+  -ms-flex-align: center;
+  align-items: center;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0;
+  pointer-events: none;
+}
+
+.splide__pagination li {
+  display: inline-block;
+  line-height: 1;
+  list-style-type: none;
+  margin: 0;
+  pointer-events: auto;
+}
+
+.splide:not(.is-overflow) .splide__pagination {
+  display: none;
+}
+
+.splide__progress__bar {
+  width: 0;
+}
+
+.splide {
+  position: relative;
+  visibility: hidden;
+}
+
+.splide.is-initialized, .splide.is-rendered {
+  visibility: visible;
+}
+
+.splide__slide {
+  backface-visibility: hidden;
+  box-sizing: border-box;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  list-style-type: none !important;
+  margin: 0;
+  position: relative;
+}
+
+.splide__slide img {
+  vertical-align: bottom;
+}
+
+.splide__spinner {
+  animation: splide-loading 1s linear infinite;
+  border: 2px solid #999;
+  border-left-color: transparent;
+  border-radius: 50%;
+  bottom: 0;
+  contain: strict;
+  display: inline-block;
+  height: 20px;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 20px;
+}
+
+.splide__sr {
+  clip: rect(0 0 0 0);
+  border: 0;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.splide__toggle.is-active .splide__toggle__play, .splide__toggle__pause {
+  display: none;
+}
+
+.splide__toggle.is-active .splide__toggle__pause {
+  display: inline;
+}
+
+.splide__track {
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+}
 /*!
  * Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
@@ -11356,6 +11501,7 @@ table {
 }
 
 header,
+section,
 footer{
   padding-left: 1rem;
   padding-right: 1rem;
@@ -11363,9 +11509,10 @@ footer{
 
 @media (min-width: 768px){
   header,
+section,
 footer{
-    padding-left: 6rem;
-    padding-right: 6rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
 
@@ -11380,7 +11527,7 @@ footer{
   text-transform: uppercase;
   line-height: 1;
   letter-spacing: -0.05em;
-  font-family: "NON-regular";
+  font-family: "GTAmerica-Light";
   font-weight: "normal";
 }
 
@@ -11391,7 +11538,7 @@ footer{
 .text-md{
   text-transform: uppercase;
   line-height: 1;
-  font-family: "NON-thin";
+  font-family: "GTAmerica-Light";
 }
 
 .text-sm{
@@ -11410,7 +11557,7 @@ footer{
   font-weight: 400;
   text-transform: uppercase;
   line-height: 1;
-  font-family: "NON-thin";
+  font-family: "GTAmerica-Regular";
 }
 
 .text-link{
@@ -11423,17 +11570,17 @@ footer{
 
 /* GENERAL */
 @font-face {
-  font-family: "NON-thin";
+  font-family: "GTAmerica-Regular";
   font-style: normal;
   font-weight: 400;
-  src: url(../fonts/GTAmerica-Light.woff2) format("woff2"), local("NON-thin");
+  src: url(../fonts/GTAmerica-Light.woff2) format("woff2"), local("GTAmerica-Regular");
   font-display: swap;
 }
 @font-face {
-  font-family: "NON-regular";
+  font-family: "GTAmerica-Light";
   font-style: normal;
   font-weight: 400;
-  src: url(../fonts/GTAmerica-Regular.woff2) format("woff2"), local("NON-regular");
+  src: url(../fonts/GTAmerica-Regular.woff2) format("woff2"), local("GTAmerica-Light");
   font-display: swap;
 }
 @font-face {
@@ -11520,7 +11667,7 @@ header .drawer-side > *:not(.drawer-overlay) {
 
 /* HERO */
 .pry-btn {
-  padding: 1.5625rem 3.125rem;
+  padding: 1.5625rem 2.5rem;
   background: #111111;
   color: white;
   transition: all ease 0.4s;
@@ -11583,6 +11730,27 @@ header .drawer-side > *:not(.drawer-overlay) {
   stroke-width: 2.5;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+.my-slider-progress {
+  background: rgba(18, 18, 18, 0.1);
+  height: 0.1875rem;
+  width: 100%;
+}
+
+.my-slider-progress-bar {
+  background: #111111;
+  height: 100%;
+  transition: width 400ms ease;
+  width: 0;
+}
+
+section.home-section-1 .splide .splide__slide img {
+  height: 40.625rem;
+  width: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  filter: grayscale(1);
 }
 
 *, ::before, ::after{
@@ -12870,6 +13038,9 @@ video {
 .grid-cols-1{
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
+.flex-col{
+  flex-direction: column;
+}
 .items-center{
   align-items: center;
 }
@@ -12897,8 +13068,15 @@ video {
 .p-0{
   padding: 0px;
 }
+.py-\[5rem\]{
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
 .text-highlight{
   font-size: clamp(1rem, calc(1rem + (3 - 1) * ((100vw - 320px) / (1440 - 320))), 3rem);
+}
+.text-md{
+  font-size: clamp(1.2rem, calc(1.2rem + (6 - 1.2) * ((100vw - 320px) / (1440 - 320))), 6rem);
 }
 @media (min-width: 768px){
   .md\:mx-auto{
