@@ -11697,6 +11697,7 @@ header .drawer-side > *:not(.drawer-overlay) {
 }
 .footer .text-highlight {
   color: #111111;
+  display: inline-block;
 }
 .footer i {
   color: #111111;
