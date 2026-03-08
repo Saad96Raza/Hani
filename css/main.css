@@ -11691,6 +11691,9 @@ header .drawer-side > *:not(.drawer-overlay) {
   border-top: 0.0625rem solid rgba(18, 18, 18, 0.1);
   padding: 1.875rem 0;
 }
+.footer .text-highlight {
+  color: #111111;
+}
 .footer i {
   color: #111111;
 }
@@ -11751,16 +11754,17 @@ header .drawer-side > *:not(.drawer-overlay) {
   width: 0;
 }
 
+section.home-section-1 .splide .splide__slide .text-md {
+  color: #111111;
+}
 section.home-section-1 .splide .splide__slide img{
   height: 30rem;
 }
-
 @media (min-width: 768px){
   section.home-section-1 .splide .splide__slide img{
     height: 40rem;
   }
 }
-
 section.home-section-1 .splide .splide__slide img {
   width: auto;
   -o-object-fit: cover;
