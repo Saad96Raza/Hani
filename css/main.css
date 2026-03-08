@@ -11475,6 +11475,10 @@ section {
 
 body {
   line-height: 1;
+}
+
+html,
+body {
   background-color: white;
 }
 
