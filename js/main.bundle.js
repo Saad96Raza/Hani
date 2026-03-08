@@ -10132,7 +10132,7 @@ var Home = /*#__PURE__*/ function() {
                     type: 'loop',
                     drag: 'free',
                     perPage: 5,
-                    autoplay: true,
+                    autoplay: false,
                     speed: 1000,
                     arrows: false,
                     focus: 'start',

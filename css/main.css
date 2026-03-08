@@ -11763,19 +11763,68 @@ header .drawer-side > *:not(.drawer-overlay) {
 section.home-section-1 .splide .splide__slide .text-md {
   color: #111111;
 }
-section.home-section-1 .splide .splide__slide img{
+section.home-section-1 .splide .splide__slide .img-overlay {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
   height: 30rem;
 }
 @media (min-width: 768px){
-  section.home-section-1 .splide .splide__slide img{
+  section.home-section-1 .splide .splide__slide .img-overlay{
     height: 40rem;
   }
 }
-section.home-section-1 .splide .splide__slide img {
+section.home-section-1 .splide .splide__slide .img-overlay .body-measurment {
+  position: relative;
+  z-index: 20;
+  padding: 2.5rem;
+}
+section.home-section-1 .splide .splide__slide .img-overlay .body-measurment .text-highlight {
+  color: white;
+}
+section.home-section-1 .splide .splide__slide .img-overlay .body-measurment i {
+  color: white;
+  opacity: 0;
+  transition: opacity 0.4s ease-out;
+}
+section.home-section-1 .splide .splide__slide .img-overlay .body-measurment .figure {
+  transform: translateY(0.625rem);
+  opacity: 0;
+  transition: opacity 0.4s ease-in, transform 0.4s ease-in;
+}
+section.home-section-1 .splide .splide__slide .img-overlay img {
   width: auto;
   -o-object-fit: cover;
      object-fit: cover;
+  height: 100%;
   filter: grayscale(1);
+  transition: filter 0.4s ease;
+  position: absolute;
+  inset: 0;
+}
+section.home-section-1 .splide .splide__slide .img-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(17, 17, 17, 0.6);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+section.home-section-1 .splide .splide__slide .img-overlay:hover .body-measurment i {
+  opacity: 1;
+}
+section.home-section-1 .splide .splide__slide .img-overlay:hover .body-measurment .figure {
+  transform: translateY(0);
+  opacity: 1;
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+section.home-section-1 .splide .splide__slide .img-overlay:hover img {
+  filter: grayscale(0);
+}
+section.home-section-1 .splide .splide__slide .img-overlay:hover::after {
+  opacity: 1;
 }
 
 *, ::before, ::after{
@@ -13039,6 +13088,9 @@ video {
 .relative{
   position: relative;
 }
+.mt-auto{
+  margin-top: auto;
+}
 .block{
   display: block;
 }
@@ -13051,6 +13103,9 @@ video {
 .hidden{
   display: none;
 }
+.h-full{
+  height: 100%;
+}
 .min-h-full{
   min-height: 100%;
 }
@@ -13062,6 +13117,9 @@ video {
 }
 .grid-cols-1{
   grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.grid-cols-2{
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 .flex-col{
   flex-direction: column;
@@ -13087,6 +13145,14 @@ video {
 .gap-6{
   gap: 1.5rem;
 }
+.gap-8{
+  gap: 2rem;
+}
+.space-y-8 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2rem * var(--tw-space-y-reverse));
+}
 .bg-base-200{
   background-color: var(--color-base-200);
 }
@@ -13094,11 +13160,14 @@ video {
   padding-top: 5rem;
   padding-bottom: 5rem;
 }
+.text-right{
+  text-align: right;
+}
 .text-highlight{
-  font-size: clamp(1.2rem, calc(1.2rem + (1.2 - 1.2) * ((100vw - 320px) / (1440 - 320))), 1.2rem);
+  font-size: clamp(0.6rem, calc(0.6rem + (7 - 0.6) * ((100vw - 320px) / (1440 - 320))), 7rem);
 }
 .text-md{
-  font-size: clamp(1.2rem, calc(1.2rem + (3 - 1.2) * ((100vw - 320px) / (1440 - 320))), 3rem);
+  font-size: clamp(1rem, calc(1rem + (8 - 1) * ((100vw - 320px) / (1440 - 320))), 8rem);
 }
 @media (min-width: 768px){
   .md\:mx-auto{
@@ -13116,5 +13185,8 @@ video {
   }
   .md\:grid-cols-3{
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .md\:gap-16{
+    gap: 4rem;
   }
 }
