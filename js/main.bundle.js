@@ -10133,6 +10133,7 @@ var Home = /*#__PURE__*/ function() {
                     drag: 'free',
                     perPage: 5,
                     autoplay: true,
+                    speed: 1000,
                     arrows: false,
                     focus: 'start',
                     gap: '1.5rem'
