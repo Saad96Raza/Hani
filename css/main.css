@@ -11602,6 +11602,7 @@ footer{
 html {
   height: 100%;
   scroll-behavior: smooth;
+  background-color: white;
 }
 
 body {
@@ -11609,7 +11610,6 @@ body {
   flex-direction: column;
   height: 100%;
   overflow-x: hidden;
-  background-color: #fff;
 }
 
 img {
@@ -11745,8 +11745,17 @@ header .drawer-side > *:not(.drawer-overlay) {
   width: 0;
 }
 
+section.home-section-1 .splide .splide__slide img{
+  height: 30rem;
+}
+
+@media (min-width: 768px){
+  section.home-section-1 .splide .splide__slide img{
+    height: 40rem;
+  }
+}
+
 section.home-section-1 .splide .splide__slide img {
-  height: 40.625rem;
   width: auto;
   -o-object-fit: cover;
      object-fit: cover;
