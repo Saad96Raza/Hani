@@ -3796,6 +3796,71 @@ var SplideRenderer = /*#__PURE__*/function () {
 
 
 }),
+"./node_modules/country-list/country-list.js": 
+/*!***************************************************!*\
+  !*** ./node_modules/country-list/country-list.js ***!
+  \***************************************************/
+(function (__unused_webpack_module, exports, __webpack_require__) {
+"use strict";
+
+
+var data = __webpack_require__(/*! ./data.json */ "./node_modules/country-list/data.json")
+
+/** Precompute name and code lookups. */
+var nameMap = {}
+var codeMap = {}
+data.forEach(mapCodeAndName)
+
+function mapCodeAndName (country) {
+  nameMap[country.name.toLowerCase()] = country.code
+  codeMap[country.code.toLowerCase()] = country.name
+}
+
+exports.overwrite = function overwrite (countries) {
+  if (!countries || !countries.length) return
+  countries.forEach(function (country) {
+    var foundIndex = data.findIndex(function (item) {
+      return item.code === country.code
+    })
+    data[foundIndex] = country
+    mapCodeAndName(country)
+  })
+}
+
+exports.getCode = function getCode (name) {
+  return nameMap[name.toLowerCase()]
+}
+
+exports.getName = function getName (code) {
+  return codeMap[code.toLowerCase()]
+}
+
+exports.getNames = function getNames () {
+  return data.map(function (country) {
+    return country.name
+  })
+}
+
+exports.getCodes = function getCodes () {
+  return data.map(function (country) {
+    return country.code
+  })
+}
+
+exports.getCodeList = function getCodeList () {
+  return codeMap
+}
+
+exports.getNameList = function getNameList () {
+  return nameMap
+}
+
+exports.getData = function getData () {
+  return data
+}
+
+
+}),
 "./node_modules/gsap/CSSPlugin.js": 
 /*!****************************************!*\
   !*** ./node_modules/gsap/CSSPlugin.js ***!
@@ -27241,6 +27306,87 @@ TweenMaxWithCSS = gsapWithCSS.core.Tween;
 
 
 }),
+"./src/apps/become-a-model/index.js": 
+/*!******************************************!*\
+  !*** ./src/apps/become-a-model/index.js ***!
+  \******************************************/
+(function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+__webpack_require__.d(__webpack_exports__, {
+  "default": () => (BecomeAModel)
+});
+/* ESM import */var country_list__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! country-list */ "./node_modules/country-list/country-list.js");
+/* ESM import */var lodash__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* ESM import */var lodash__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_1__);
+/* ESM import */var _extra_model_height_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../extra/model-height-data */ "./src/apps/extra/model-height-data.js");
+function _class_call_check(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+        throw new TypeError("Cannot call a class as a function");
+    }
+}
+function _defineProperties(target, props) {
+    for(var i = 0; i < props.length; i++){
+        var descriptor = props[i];
+        descriptor.enumerable = descriptor.enumerable || false;
+        descriptor.configurable = true;
+        if ("value" in descriptor) descriptor.writable = true;
+        Object.defineProperty(target, descriptor.key, descriptor);
+    }
+}
+function _create_class(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    return Constructor;
+}
+
+
+
+var BecomeAModel = /*#__PURE__*/ function() {
+    "use strict";
+    function BecomeAModel() {
+        _class_call_check(this, BecomeAModel);
+        this.createReRender();
+    }
+    _create_class(BecomeAModel, [
+        {
+            key: "createReRender",
+            value: function createReRender() {
+                this.createCountries();
+                this.createModelHeight();
+            }
+        },
+        {
+            key: "createCountries",
+            value: function createCountries() {
+                var _this = this;
+                this.countries = document.querySelector('.countries');
+                if (this.countries) {
+                    lodash__WEBPACK_IMPORTED_MODULE_1___default().map((0,country_list__WEBPACK_IMPORTED_MODULE_0__.getData)(), function(element) {
+                        _this.countries.innerHTML += '<option value="'.concat(element.name, '">').concat(element.code, " - ").concat(element.name, "</option>");
+                    });
+                }
+            }
+        },
+        {
+            key: "createModelHeight",
+            value: function createModelHeight() {
+                var _this = this;
+                this.heights = document.querySelector('.heights');
+                if (this.heights) {
+                    lodash__WEBPACK_IMPORTED_MODULE_1___default().map(_extra_model_height_data__WEBPACK_IMPORTED_MODULE_2__.modelHeights, function(element) {
+                        _this.heights.innerHTML += '<option value="'.concat(element.cm, '">').concat(element.cm, " cm - ").concat(element.label, "</option>");
+                    });
+                }
+            }
+        }
+    ]);
+    return BecomeAModel;
+}();
+
+
+
+}),
 "./src/apps/contact/index.js": 
 /*!***********************************!*\
   !*** ./src/apps/contact/index.js ***!
@@ -27285,6 +27431,225 @@ var Contact = /*#__PURE__*/ function() {
     return Contact;
 }();
 
+
+
+}),
+"./src/apps/extra/model-height-data.js": 
+/*!*********************************************!*\
+  !*** ./src/apps/extra/model-height-data.js ***!
+  \*********************************************/
+(function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+__webpack_require__.d(__webpack_exports__, {
+  modelHeights: () => (modelHeights)
+});
+var modelHeights = [
+    {
+        cm: 150,
+        label: "4'11''"
+    },
+    {
+        cm: 151,
+        label: "4'11'' 1/2"
+    },
+    {
+        cm: 152,
+        label: "4'12''"
+    },
+    {
+        cm: 153,
+        label: "5'"
+    },
+    {
+        cm: 154,
+        label: "5' 1/2"
+    },
+    {
+        cm: 155,
+        label: "5'1''"
+    },
+    {
+        cm: 156,
+        label: "5'1'' 1/2"
+    },
+    {
+        cm: 157,
+        label: "5'2''"
+    },
+    {
+        cm: 158,
+        label: "5'2''"
+    },
+    {
+        cm: 159,
+        label: "5'2'' 1/2"
+    },
+    {
+        cm: 160,
+        label: "5'3''"
+    },
+    {
+        cm: 161,
+        label: "5'3'' 1/2"
+    },
+    {
+        cm: 162,
+        label: "5'4''"
+    },
+    {
+        cm: 163,
+        label: "5'4''"
+    },
+    {
+        cm: 164,
+        label: "5'4'' 1/2"
+    },
+    {
+        cm: 165,
+        label: "5'5''"
+    },
+    {
+        cm: 166,
+        label: "5'5'' 1/2"
+    },
+    {
+        cm: 167,
+        label: "5'5'' 1/2"
+    },
+    {
+        cm: 168,
+        label: "5'6''"
+    },
+    {
+        cm: 169,
+        label: "5'6'' 1/2"
+    },
+    {
+        cm: 170,
+        label: "5'7''"
+    },
+    {
+        cm: 171,
+        label: "5'7'' 1/2"
+    },
+    {
+        cm: 172,
+        label: "5'7'' 1/2"
+    },
+    {
+        cm: 173,
+        label: "5'8''"
+    },
+    {
+        cm: 174,
+        label: "5'8'' 1/2"
+    },
+    {
+        cm: 175,
+        label: "5'9''"
+    },
+    {
+        cm: 176,
+        label: "5'9'' 1/2"
+    },
+    {
+        cm: 177,
+        label: "5'9'' 1/2"
+    },
+    {
+        cm: 178,
+        label: "5'10''"
+    },
+    {
+        cm: 179,
+        label: "5'10'' 1/2"
+    },
+    {
+        cm: 180,
+        label: "5'11''"
+    },
+    {
+        cm: 181,
+        label: "5'11'' 1/2"
+    },
+    {
+        cm: 182,
+        label: "5'11'' 1/2"
+    },
+    {
+        cm: 183,
+        label: "6'"
+    },
+    {
+        cm: 184,
+        label: "6' 1/2"
+    },
+    {
+        cm: 185,
+        label: "6'1''"
+    },
+    {
+        cm: 186,
+        label: "6'1''"
+    },
+    {
+        cm: 187,
+        label: "6'1'' 1/2"
+    },
+    {
+        cm: 188,
+        label: "6'2''"
+    },
+    {
+        cm: 189,
+        label: "6'2'' 1/2"
+    },
+    {
+        cm: 190,
+        label: "6'3''"
+    },
+    {
+        cm: 191,
+        label: "6'3''"
+    },
+    {
+        cm: 192,
+        label: "6'3'' 1/2"
+    },
+    {
+        cm: 193,
+        label: "6'4''"
+    },
+    {
+        cm: 194,
+        label: "6'4'' 1/2"
+    },
+    {
+        cm: 195,
+        label: "6'5''"
+    },
+    {
+        cm: 196,
+        label: "6'5''"
+    },
+    {
+        cm: 197,
+        label: "6'5'' 1/2"
+    },
+    {
+        cm: 198,
+        label: "6'6''"
+    },
+    {
+        cm: 199,
+        label: "6'6'' 1/2"
+    },
+    {
+        cm: 200,
+        label: "6'6'' 1/2"
+    }
+];
 
 
 }),
@@ -27344,6 +27709,12 @@ var Home = /*#__PURE__*/ function() {
         {
             key: "createReRender",
             value: function createReRender() {
+                this.createModelsSlider();
+            }
+        },
+        {
+            key: "createModelsSlider",
+            value: function createModelsSlider() {
                 var _this = this;
                 this.splideHome = document.querySelector(".splide");
                 if (this.splideHome) {
@@ -27386,6 +27757,15 @@ var Home = /*#__PURE__*/ function() {
 }();
 
 
+
+}),
+"./node_modules/country-list/data.json": 
+/*!*********************************************!*\
+  !*** ./node_modules/country-list/data.json ***!
+  \*********************************************/
+(function (module) {
+"use strict";
+module.exports = JSON.parse('[{"code":"AD","name":"Andorra"},{"code":"AE","name":"United Arab Emirates (the)"},{"code":"AF","name":"Afghanistan"},{"code":"AG","name":"Antigua and Barbuda"},{"code":"AI","name":"Anguilla"},{"code":"AL","name":"Albania"},{"code":"AM","name":"Armenia"},{"code":"AO","name":"Angola"},{"code":"AQ","name":"Antarctica"},{"code":"AR","name":"Argentina"},{"code":"AS","name":"American Samoa"},{"code":"AT","name":"Austria"},{"code":"AU","name":"Australia"},{"code":"AW","name":"Aruba"},{"code":"AX","name":"Åland Islands"},{"code":"AZ","name":"Azerbaijan"},{"code":"BA","name":"Bosnia and Herzegovina"},{"code":"BB","name":"Barbados"},{"code":"BD","name":"Bangladesh"},{"code":"BE","name":"Belgium"},{"code":"BF","name":"Burkina Faso"},{"code":"BG","name":"Bulgaria"},{"code":"BH","name":"Bahrain"},{"code":"BI","name":"Burundi"},{"code":"BJ","name":"Benin"},{"code":"BL","name":"Saint Barthélemy"},{"code":"BM","name":"Bermuda"},{"code":"BN","name":"Brunei Darussalam"},{"code":"BO","name":"Bolivia (Plurinational State of)"},{"code":"BQ","name":"Bonaire, Sint Eustatius and Saba"},{"code":"BR","name":"Brazil"},{"code":"BS","name":"Bahamas (The)"},{"code":"BT","name":"Bhutan"},{"code":"BV","name":"Bouvet Island"},{"code":"BW","name":"Botswana"},{"code":"BY","name":"Belarus"},{"code":"BZ","name":"Belize"},{"code":"CA","name":"Canada"},{"code":"CC","name":"Cocos (Keeling) Islands (the)"},{"code":"CD","name":"Congo (the Democratic Republic of the)"},{"code":"CF","name":"Central African Republic (the)"},{"code":"CG","name":"Congo (the)"},{"code":"CH","name":"Switzerland"},{"code":"CI","name":"Côte d\'Ivoire"},{"code":"CK","name":"Cook Islands (the)"},{"code":"CL","name":"Chile"},{"code":"CM","name":"Cameroon"},{"code":"CN","name":"China"},{"code":"CO","name":"Colombia"},{"code":"CR","name":"Costa Rica"},{"code":"CU","name":"Cuba"},{"code":"CV","name":"Cabo Verde"},{"code":"CW","name":"Curaçao"},{"code":"CX","name":"Christmas Island"},{"code":"CY","name":"Cyprus"},{"code":"CZ","name":"Czechia"},{"code":"DE","name":"Germany"},{"code":"DJ","name":"Djibouti"},{"code":"DK","name":"Denmark"},{"code":"DM","name":"Dominica"},{"code":"DO","name":"Dominican Republic (the)"},{"code":"DZ","name":"Algeria"},{"code":"EC","name":"Ecuador"},{"code":"EE","name":"Estonia"},{"code":"EG","name":"Egypt"},{"code":"EH","name":"Western Sahara*"},{"code":"ER","name":"Eritrea"},{"code":"ES","name":"Spain"},{"code":"ET","name":"Ethiopia"},{"code":"FI","name":"Finland"},{"code":"FJ","name":"Fiji"},{"code":"FK","name":"Falkland Islands (the) [Malvinas]"},{"code":"FM","name":"Micronesia (Federated States of)"},{"code":"FO","name":"Faroe Islands (the)"},{"code":"FR","name":"France"},{"code":"GA","name":"Gabon"},{"code":"GB","name":"United Kingdom of Great Britain and Northern Ireland (the)"},{"code":"GD","name":"Grenada"},{"code":"GE","name":"Georgia"},{"code":"GF","name":"French Guiana"},{"code":"GG","name":"Guernsey"},{"code":"GH","name":"Ghana"},{"code":"GI","name":"Gibraltar"},{"code":"GL","name":"Greenland"},{"code":"GM","name":"Gambia (the)"},{"code":"GN","name":"Guinea"},{"code":"GP","name":"Guadeloupe"},{"code":"GQ","name":"Equatorial Guinea"},{"code":"GR","name":"Greece"},{"code":"GS","name":"South Georgia and the South Sandwich Islands"},{"code":"GT","name":"Guatemala"},{"code":"GU","name":"Guam"},{"code":"GW","name":"Guinea-Bissau"},{"code":"GY","name":"Guyana"},{"code":"HK","name":"Hong Kong"},{"code":"HM","name":"Heard Island and McDonald Islands"},{"code":"HN","name":"Honduras"},{"code":"HR","name":"Croatia"},{"code":"HT","name":"Haiti"},{"code":"HU","name":"Hungary"},{"code":"ID","name":"Indonesia"},{"code":"IE","name":"Ireland"},{"code":"IL","name":"Israel"},{"code":"IM","name":"Isle of Man"},{"code":"IN","name":"India"},{"code":"IO","name":"British Indian Ocean Territory (the)"},{"code":"IQ","name":"Iraq"},{"code":"IR","name":"Iran (Islamic Republic of)"},{"code":"IS","name":"Iceland"},{"code":"IT","name":"Italy"},{"code":"JE","name":"Jersey"},{"code":"JM","name":"Jamaica"},{"code":"JO","name":"Jordan"},{"code":"JP","name":"Japan"},{"code":"KE","name":"Kenya"},{"code":"KG","name":"Kyrgyzstan"},{"code":"KH","name":"Cambodia"},{"code":"KI","name":"Kiribati"},{"code":"KM","name":"Comoros (the)"},{"code":"KN","name":"Saint Kitts and Nevis"},{"code":"KP","name":"Korea (the Democratic People\'s Republic of)"},{"code":"KR","name":"Korea (the Republic of)"},{"code":"KW","name":"Kuwait"},{"code":"KY","name":"Cayman Islands (the)"},{"code":"KZ","name":"Kazakhstan"},{"code":"LA","name":"Lao People\'s Democratic Republic (the)"},{"code":"LB","name":"Lebanon"},{"code":"LC","name":"Saint Lucia"},{"code":"LI","name":"Liechtenstein"},{"code":"LK","name":"Sri Lanka"},{"code":"LR","name":"Liberia"},{"code":"LS","name":"Lesotho"},{"code":"LT","name":"Lithuania"},{"code":"LU","name":"Luxembourg"},{"code":"LV","name":"Latvia"},{"code":"LY","name":"Libya"},{"code":"MA","name":"Morocco"},{"code":"MC","name":"Monaco"},{"code":"MD","name":"Moldova (the Republic of)"},{"code":"ME","name":"Montenegro"},{"code":"MF","name":"Saint Martin (French part)"},{"code":"MG","name":"Madagascar"},{"code":"MH","name":"Marshall Islands (the)"},{"code":"MK","name":"North Macedonia"},{"code":"ML","name":"Mali"},{"code":"MM","name":"Myanmar"},{"code":"MN","name":"Mongolia"},{"code":"MO","name":"Macao"},{"code":"MP","name":"Northern Mariana Islands (the)"},{"code":"MQ","name":"Martinique"},{"code":"MR","name":"Mauritania"},{"code":"MS","name":"Montserrat"},{"code":"MT","name":"Malta"},{"code":"MU","name":"Mauritius"},{"code":"MV","name":"Maldives"},{"code":"MW","name":"Malawi"},{"code":"MX","name":"Mexico"},{"code":"MY","name":"Malaysia"},{"code":"MZ","name":"Mozambique"},{"code":"NA","name":"Namibia"},{"code":"NC","name":"New Caledonia"},{"code":"NE","name":"Niger (the)"},{"code":"NF","name":"Norfolk Island"},{"code":"NG","name":"Nigeria"},{"code":"NI","name":"Nicaragua"},{"code":"NL","name":"Netherlands (Kingdom of the)"},{"code":"NO","name":"Norway"},{"code":"NP","name":"Nepal"},{"code":"NR","name":"Nauru"},{"code":"NU","name":"Niue"},{"code":"NZ","name":"New Zealand"},{"code":"OM","name":"Oman"},{"code":"PA","name":"Panama"},{"code":"PE","name":"Peru"},{"code":"PF","name":"French Polynesia"},{"code":"PG","name":"Papua New Guinea"},{"code":"PH","name":"Philippines (the)"},{"code":"PK","name":"Pakistan"},{"code":"PL","name":"Poland"},{"code":"PM","name":"Saint Pierre and Miquelon"},{"code":"PN","name":"Pitcairn"},{"code":"PR","name":"Puerto Rico"},{"code":"PS","name":"Palestine, State of"},{"code":"PT","name":"Portugal"},{"code":"PW","name":"Palau"},{"code":"PY","name":"Paraguay"},{"code":"QA","name":"Qatar"},{"code":"RE","name":"Réunion"},{"code":"RO","name":"Romania"},{"code":"RS","name":"Serbia"},{"code":"RU","name":"Russian Federation (the)"},{"code":"RW","name":"Rwanda"},{"code":"SA","name":"Saudi Arabia"},{"code":"SB","name":"Solomon Islands"},{"code":"SC","name":"Seychelles"},{"code":"SD","name":"Sudan (the)"},{"code":"SE","name":"Sweden"},{"code":"SG","name":"Singapore"},{"code":"SH","name":"Saint Helena, Ascension and Tristan da Cunha"},{"code":"SI","name":"Slovenia"},{"code":"SJ","name":"Svalbard and Jan Mayen"},{"code":"SK","name":"Slovakia"},{"code":"SL","name":"Sierra Leone"},{"code":"SM","name":"San Marino"},{"code":"SN","name":"Senegal"},{"code":"SO","name":"Somalia"},{"code":"SR","name":"Suriname"},{"code":"SS","name":"South Sudan"},{"code":"ST","name":"Sao Tome and Principe"},{"code":"SV","name":"El Salvador"},{"code":"SX","name":"Sint Maarten (Dutch part)"},{"code":"SY","name":"Syrian Arab Republic (the)"},{"code":"SZ","name":"Eswatini"},{"code":"TC","name":"Turks and Caicos Islands (the)"},{"code":"TD","name":"Chad"},{"code":"TF","name":"French Southern Territories (the)"},{"code":"TG","name":"Togo"},{"code":"TH","name":"Thailand"},{"code":"TJ","name":"Tajikistan"},{"code":"TK","name":"Tokelau"},{"code":"TL","name":"Timor-Leste"},{"code":"TM","name":"Turkmenistan"},{"code":"TN","name":"Tunisia"},{"code":"TO","name":"Tonga"},{"code":"TR","name":"Türkiye"},{"code":"TT","name":"Trinidad and Tobago"},{"code":"TV","name":"Tuvalu"},{"code":"TW","name":"Taiwan (Province of China)"},{"code":"TZ","name":"Tanzania, the United Republic of"},{"code":"UA","name":"Ukraine"},{"code":"UG","name":"Uganda"},{"code":"UM","name":"United States Minor Outlying Islands (the)"},{"code":"US","name":"United States of America (the)"},{"code":"UY","name":"Uruguay"},{"code":"UZ","name":"Uzbekistan"},{"code":"VA","name":"Holy See (the)"},{"code":"VC","name":"Saint Vincent and the Grenadines"},{"code":"VE","name":"Venezuela (Bolivarian Republic of)"},{"code":"VG","name":"Virgin Islands (British)"},{"code":"VI","name":"Virgin Islands (U.S.)"},{"code":"VN","name":"Viet Nam"},{"code":"VU","name":"Vanuatu"},{"code":"WF","name":"Wallis and Futuna"},{"code":"WS","name":"Samoa"},{"code":"YE","name":"Yemen"},{"code":"YT","name":"Mayotte"},{"code":"ZA","name":"South Africa"},{"code":"ZM","name":"Zambia"},{"code":"ZW","name":"Zimbabwe"}]')
 
 }),
 
@@ -27495,12 +27875,13 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* ESM import */var _home__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./home */ "./src/apps/home/index.js");
 /* ESM import */var _contact__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./contact */ "./src/apps/contact/index.js");
-/* ESM import */var _barba_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @barba/core */ "./node_modules/@barba/core/dist/barba.umd.js");
-/* ESM import */var _barba_core__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_barba_core__WEBPACK_IMPORTED_MODULE_2__);
-/* ESM import */var gsap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
-/* ESM import */var lodash__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
-/* ESM import */var lodash__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_3__);
-/* ESM import */var _scss_main_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../scss/main.scss */ "./src/scss/main.scss");
+/* ESM import */var _become_a_model__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./become-a-model */ "./src/apps/become-a-model/index.js");
+/* ESM import */var _barba_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @barba/core */ "./node_modules/@barba/core/dist/barba.umd.js");
+/* ESM import */var _barba_core__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_barba_core__WEBPACK_IMPORTED_MODULE_3__);
+/* ESM import */var gsap__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* ESM import */var lodash__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* ESM import */var lodash__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_4__);
+/* ESM import */var _scss_main_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../scss/main.scss */ "./src/scss/main.scss");
 function _class_call_check(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
         throw new TypeError("Cannot call a class as a function");
@@ -27526,13 +27907,15 @@ function _create_class(Constructor, protoProps, staticProps) {
 
 
 
+
 var App = /*#__PURE__*/ function() {
     "use strict";
     function App() {
         _class_call_check(this, App);
         this.pages = {
             home: new _home__WEBPACK_IMPORTED_MODULE_0__["default"](),
-            contact: new _contact__WEBPACK_IMPORTED_MODULE_1__["default"]()
+            contact: new _contact__WEBPACK_IMPORTED_MODULE_1__["default"](),
+            become_a_model: new _become_a_model__WEBPACK_IMPORTED_MODULE_2__["default"]()
         };
         this.offCanvas = document.querySelector('#offcanvas');
         this.links = document.querySelectorAll('.menu li a');
@@ -27545,13 +27928,13 @@ var App = /*#__PURE__*/ function() {
             key: "createAjaxNavigation",
             value: function createAjaxNavigation() {
                 var _this = this;
-                lodash__WEBPACK_IMPORTED_MODULE_3___default().forEach(this.links, function(element) {
+                lodash__WEBPACK_IMPORTED_MODULE_4___default().forEach(this.links, function(element) {
                     element.addEventListener('click', function() {
                         return _this.offCanvas.checked = false;
                     });
                 });
                 var easeIn = function(container, done) {
-                    return gsap__WEBPACK_IMPORTED_MODULE_5__["default"].to(container, {
+                    return gsap__WEBPACK_IMPORTED_MODULE_6__["default"].to(container, {
                         autoAlpha: 0,
                         duration: 1,
                         ease: 'none',
@@ -27561,13 +27944,13 @@ var App = /*#__PURE__*/ function() {
                     });
                 };
                 var easeOut = function(container) {
-                    return gsap__WEBPACK_IMPORTED_MODULE_5__["default"].from(container, {
+                    return gsap__WEBPACK_IMPORTED_MODULE_6__["default"].from(container, {
                         autoAlpha: 0,
                         duration: 1,
                         ease: 'none'
                     });
                 };
-                _barba_core__WEBPACK_IMPORTED_MODULE_2___default().init({
+                _barba_core__WEBPACK_IMPORTED_MODULE_3___default().init({
                     preventRunning: true,
                     transitions: [
                         {
@@ -27593,9 +27976,10 @@ var App = /*#__PURE__*/ function() {
             key: "createReRender",
             value: function createReRender() {
                 var _this = this;
-                _barba_core__WEBPACK_IMPORTED_MODULE_2___default().hooks.before(function() {});
-                _barba_core__WEBPACK_IMPORTED_MODULE_2___default().hooks.after(function() {
+                _barba_core__WEBPACK_IMPORTED_MODULE_3___default().hooks.before(function() {});
+                _barba_core__WEBPACK_IMPORTED_MODULE_3___default().hooks.after(function() {
                     _this.pages.home.createReRender();
+                    _this.pages.become_a_model.createReRender();
                 });
             }
         },
