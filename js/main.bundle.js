@@ -27368,7 +27368,14 @@ var BecomeAModel = /*#__PURE__*/ function() {
         _class_call_check(this, BecomeAModel);
         var picker = new (litepicker__rspack_import_2_default())({
             element: document.getElementById("datePicker"),
-            format: "YYYY-MM-DD"
+            format: "YYYY-MM-DD",
+            allowInput: true,
+            dropdowns: {
+                minYear: 1970,
+                maxYear: 2026,
+                months: true,
+                years: true // show year dropdown
+            }
         });
         this.createReRender();
     }
