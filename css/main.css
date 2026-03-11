@@ -11325,6 +11325,9 @@ ul {
 header.header {
   border-bottom: 0.0625rem solid rgba(18, 18, 18, 0.1);
 }
+header.header .instagram-icon i {
+  color: #111111;
+}
 header.header .menu {
   background: white;
   width: 66.666667%;
@@ -11457,6 +11460,7 @@ section.become-a-model-section-1 .form select:focus {
   border-bottom: 0.125rem solid #121212;
   transition: all 0.2s ease;
   color: #111111;
+  color-scheme: white;
 }
 section.become-a-model-section-1 .form input::-moz-placeholder, section.become-a-model-section-1 .form select::-moz-placeholder {
   color: #9ca3af;
@@ -11470,6 +11474,9 @@ section.become-a-model-section-1 .form select {
 }
 section.become-a-model-section-1 .form .date {
   color: #9ca3af;
+}
+section.become-a-model-section-1 .form .date ::-webkit-calendar-picker-indicator {
+  filter: invert(1) brightness(50%) sepia(100%) saturate(10000%) hue-rotate(180deg);
 }
 section.become-a-model-section-1 .form input[type=file] {
   color: #9ca3af;
@@ -11506,6 +11513,9 @@ section.become-a-model-section-1 .terms .checkbox ~ .terms-text .text-highlight 
 }
 section.become-a-model-section-1 .terms .checkbox:checked ~ .terms-text .text-highlight {
   color: rgb(17, 17, 17);
+}
+section.become-a-model-section-1 .terms .checkbox:checked{
+  background-image: none;
 }
 
 /* ABOUT */ /* SERVICES */ /* BLOG */ /* CONTACT */
@@ -11771,7 +11781,7 @@ section.become-a-model-section-1 .text-highlight {
   --tw-contain-style:  ;
 }
 
-/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */
+/* ! tailwindcss v3.4.19 | MIT License | https://tailwindcss.com */
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -13105,9 +13115,6 @@ video {
 .text-right{
   text-align: right;
 }
-.text-\[0\.5rem\]{
-  font-size: 0.5rem;
-}
 .text-body{
   font-size: clamp(1rem, calc(1rem + (6 - 1) * ((100vw - 320px) / (1440 - 320))), 6rem);
 }
@@ -13128,6 +13135,9 @@ video {
 }
 .leading-\[1\.5\]{
   line-height: 1.5;
+}
+.checked\:bg-transparent:checked{
+  background-color: transparent;
 }
 @media (min-width: 768px){
   .md\:static{
@@ -13180,5 +13190,10 @@ video {
   }
   .md\:pt-\[5rem\]{
     padding-top: 5rem;
+  }
+}
+@media (prefers-color-scheme: dark){
+  .dark\:\[color-scheme\:white\]{
+    color-scheme: white;
   }
 }

@@ -1,42 +1,26 @@
-(() => { // webpackBootstrap
+(() => {
 var __webpack_modules__ = ({
-"./node_modules/@barba/core/dist/barba.umd.js": 
-/*!****************************************************!*\
-  !*** ./node_modules/@barba/core/dist/barba.umd.js ***!
-  \****************************************************/
-(function (module) {
+"./node_modules/@barba/core/dist/barba.umd.js"(module) {
 !function(t,n){ true?module.exports=n():0}(this,function(){function t(t,n){for(var r=0;r<n.length;r++){var i=n[r];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(t,"symbol"==typeof(e=function(t,n){if("object"!=typeof t||null===t)return t;var r=t[Symbol.toPrimitive];if(void 0!==r){var i=r.call(t,"string");if("object"!=typeof i)return i;throw new TypeError("@@toPrimitive must return a primitive value.")}return String(t)}(i.key))?e:String(e),i)}var e}function n(n,r,i){return r&&t(n.prototype,r),i&&t(n,i),Object.defineProperty(n,"prototype",{writable:!1}),n}function r(){return r=Object.assign?Object.assign.bind():function(t){for(var n=1;n<arguments.length;n++){var r=arguments[n];for(var i in r)Object.prototype.hasOwnProperty.call(r,i)&&(t[i]=r[i])}return t},r.apply(this,arguments)}function i(t,n){t.prototype=Object.create(n.prototype),t.prototype.constructor=t,o(t,n)}function e(t){return e=Object.setPrototypeOf?Object.getPrototypeOf.bind():function(t){return t.__proto__||Object.getPrototypeOf(t)},e(t)}function o(t,n){return o=Object.setPrototypeOf?Object.setPrototypeOf.bind():function(t,n){return t.__proto__=n,t},o(t,n)}function u(){if("undefined"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if("function"==typeof Proxy)return!0;try{return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],function(){})),!0}catch(t){return!1}}function s(t,n,r){return s=u()?Reflect.construct.bind():function(t,n,r){var i=[null];i.push.apply(i,n);var e=new(Function.bind.apply(t,i));return r&&o(e,r.prototype),e},s.apply(null,arguments)}function f(t){var n="function"==typeof Map?new Map:void 0;return f=function(t){if(null===t||-1===Function.toString.call(t).indexOf("[native code]"))return t;if("function"!=typeof t)throw new TypeError("Super expression must either be null or a function");if(void 0!==n){if(n.has(t))return n.get(t);n.set(t,r)}function r(){return s(t,arguments,e(this).constructor)}return r.prototype=Object.create(t.prototype,{constructor:{value:r,enumerable:!1,writable:!0,configurable:!0}}),o(r,t)},f(t)}function c(t){if(void 0===t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return t}var a,h=function(){this.before=void 0,this.beforeLeave=void 0,this.leave=void 0,this.afterLeave=void 0,this.beforeEnter=void 0,this.enter=void 0,this.afterEnter=void 0,this.after=void 0};!function(t){t[t.off=0]="off",t[t.error=1]="error",t[t.warning=2]="warning",t[t.info=3]="info",t[t.debug=4]="debug"}(a||(a={}));var v=a.off,d=/*#__PURE__*/function(){function t(t){this.t=void 0,this.t=t}t.getLevel=function(){return v},t.setLevel=function(t){return v=a[t]};var n=t.prototype;return n.error=function(){this.i(console.error,a.error,[].slice.call(arguments))},n.warn=function(){this.i(console.warn,a.warning,[].slice.call(arguments))},n.info=function(){this.i(console.info,a.info,[].slice.call(arguments))},n.debug=function(){this.i(console.log,a.debug,[].slice.call(arguments))},n.i=function(n,r,i){r<=t.getLevel()&&n.apply(console,["["+this.t+"] "].concat(i))},t}();function l(t){return t.replace(/([.+*?=^!:${}()[\]|/\\])/g,"\\$1")}function p(t){return t&&t.sensitive?"":"i"}var m={container:"container",history:"history",namespace:"namespace",prefix:"data-barba",prevent:"prevent",wrapper:"wrapper"},w=/*#__PURE__*/function(){function t(){this.o=m,this.u=void 0,this.h={after:null,before:null,parent:null}}var n=t.prototype;return n.toString=function(t){return t.outerHTML},n.toDocument=function(t){return this.u||(this.u=new DOMParser),this.u.parseFromString(t,"text/html")},n.toElement=function(t){var n=document.createElement("div");return n.innerHTML=t,n},n.getHtml=function(t){return void 0===t&&(t=document),this.toString(t.documentElement)},n.getWrapper=function(t){return void 0===t&&(t=document),t.querySelector("["+this.o.prefix+'="'+this.o.wrapper+'"]')},n.getContainer=function(t){return void 0===t&&(t=document),t.querySelector("["+this.o.prefix+'="'+this.o.container+'"]')},n.removeContainer=function(t){document.body.contains(t)&&(this.v(t),t.parentNode.removeChild(t))},n.addContainer=function(t,n){var r=this.getContainer()||this.h.before;r?this.l(t,r):this.h.after?this.h.after.parentNode.insertBefore(t,this.h.after):this.h.parent?this.h.parent.appendChild(t):n.appendChild(t)},n.getSibling=function(){return this.h},n.getNamespace=function(t){void 0===t&&(t=document);var n=t.querySelector("["+this.o.prefix+"-"+this.o.namespace+"]");return n?n.getAttribute(this.o.prefix+"-"+this.o.namespace):null},n.getHref=function(t){if(t.tagName&&"a"===t.tagName.toLowerCase()){if("string"==typeof t.href)return t.href;var n=t.getAttribute("href")||t.getAttribute("xlink:href");if(n)return this.resolveUrl(n.baseVal||n)}return null},n.resolveUrl=function(){var t=[].slice.call(arguments).length;if(0===t)throw new Error("resolveUrl requires at least one argument; got none.");var n=document.createElement("base");if(n.href=arguments[0],1===t)return n.href;var r=document.getElementsByTagName("head")[0];r.insertBefore(n,r.firstChild);for(var i,e=document.createElement("a"),o=1;o<t;o++)e.href=arguments[o],n.href=i=e.href;return r.removeChild(n),i},n.l=function(t,n){n.parentNode.insertBefore(t,n.nextSibling)},n.v=function(t){return this.h={after:t.nextElementSibling,before:t.previousElementSibling,parent:t.parentElement},this.h},t}(),b=new w,y=/*#__PURE__*/function(){function t(){this.p=void 0,this.m=[],this.P=-1}var i=t.prototype;return i.init=function(t,n){this.p="barba";var r={data:{},ns:n,scroll:{x:window.scrollX,y:window.scrollY},url:t};this.P=0,this.m.push(r);var i={from:this.p,index:this.P,states:[].concat(this.m)};window.history&&window.history.replaceState(i,"",t)},i.change=function(t,n,r){if(r&&r.state){var i=r.state,e=i.index;n=this.g(this.P-e),this.replace(i.states),this.P=e}else this.add(t,n);return n},i.add=function(t,n,r,i){var e=null!=r?r:this.R(n),o={data:null!=i?i:{},ns:"tmp",scroll:{x:window.scrollX,y:window.scrollY},url:t};switch(e){case"push":this.P=this.size,this.m.push(o);break;case"replace":this.set(this.P,o)}var u={from:this.p,index:this.P,states:[].concat(this.m)};switch(e){case"push":window.history&&window.history.pushState(u,"",t);break;case"replace":window.history&&window.history.replaceState(u,"",t)}},i.store=function(t,n){var i=n||this.P,e=this.get(i);e.data=r({},e.data,t),this.set(i,e);var o={from:this.p,index:this.P,states:[].concat(this.m)};window.history.replaceState(o,"")},i.update=function(t,n){var i=n||this.P,e=r({},this.get(i),t);this.set(i,e)},i.remove=function(t){t?this.m.splice(t,1):this.m.pop(),this.P--},i.clear=function(){this.m=[],this.P=-1},i.replace=function(t){this.m=t},i.get=function(t){return this.m[t]},i.set=function(t,n){return this.m[t]=n},i.R=function(t){var n="push",r=t,i=m.prefix+"-"+m.history;return r.hasAttribute&&r.hasAttribute(i)&&(n=r.getAttribute(i)),n},i.g=function(t){return Math.abs(t)>1?t>0?"forward":"back":0===t?"popstate":t>0?"back":"forward"},n(t,[{key:"current",get:function(){return this.m[this.P]}},{key:"previous",get:function(){return this.P<1?null:this.m[this.P-1]}},{key:"size",get:function(){return this.m.length}}]),t}(),P=new y,g=function(t,n){try{var r=function(){if(!n.next.html)return Promise.resolve(t).then(function(t){var r=n.next;if(t){var i=b.toElement(t.html);r.namespace=b.getNamespace(i),r.container=b.getContainer(i),r.url=t.url,r.html=t.html,P.update({ns:r.namespace});var e=b.toDocument(t.html);document.title=e.title}})}();return Promise.resolve(r&&r.then?r.then(function(){}):void 0)}catch(t){return Promise.reject(t)}},E=function t(n,r,i){return n instanceof RegExp?function(t,n){if(!n)return t;for(var r=/\((?:\?<(.*?)>)?(?!\?)/g,i=0,e=r.exec(t.source);e;)n.push({name:e[1]||i++,prefix:"",suffix:"",modifier:"",pattern:""}),e=r.exec(t.source);return t}(n,r):Array.isArray(n)?function(n,r,i){var e=n.map(function(n){return t(n,r,i).source});return new RegExp("(?:".concat(e.join("|"),")"),p(i))}(n,r,i):function(t,n,r){return function(t,n,r){void 0===r&&(r={});for(var i=r.strict,e=void 0!==i&&i,o=r.start,u=void 0===o||o,s=r.end,f=void 0===s||s,c=r.encode,a=void 0===c?function(t){return t}:c,h=r.delimiter,v=void 0===h?"/#?":h,d=r.endsWith,m="[".concat(l(void 0===d?"":d),"]|$"),w="[".concat(l(v),"]"),b=u?"^":"",y=0,P=t;y<P.length;y++){var g=P[y];if("string"==typeof g)b+=l(a(g));else{var E=l(a(g.prefix)),x=l(a(g.suffix));if(g.pattern)if(n&&n.push(g),E||x)if("+"===g.modifier||"*"===g.modifier){var R="*"===g.modifier?"?":"";b+="(?:".concat(E,"((?:").concat(g.pattern,")(?:").concat(x).concat(E,"(?:").concat(g.pattern,"))*)").concat(x,")").concat(R)}else b+="(?:".concat(E,"(").concat(g.pattern,")").concat(x,")").concat(g.modifier);else b+="+"===g.modifier||"*"===g.modifier?"((?:".concat(g.pattern,")").concat(g.modifier,")"):"(".concat(g.pattern,")").concat(g.modifier);else b+="(?:".concat(E).concat(x,")").concat(g.modifier)}}if(f)e||(b+="".concat(w,"?")),b+=r.endsWith?"(?=".concat(m,")"):"$";else{var k=t[t.length-1],O="string"==typeof k?w.indexOf(k[k.length-1])>-1:void 0===k;e||(b+="(?:".concat(w,"(?=").concat(m,"))?")),O||(b+="(?=".concat(w,"|").concat(m,")"))}return new RegExp(b,p(r))}(function(t,n){void 0===n&&(n={});for(var r=function(t){for(var n=[],r=0;r<t.length;){var i=t[r];if("*"!==i&&"+"!==i&&"?"!==i)if("\\"!==i)if("{"!==i)if("}"!==i)if(":"!==i)if("("!==i)n.push({type:"CHAR",index:r,value:t[r++]});else{var e=1,o="";if("?"===t[s=r+1])throw new TypeError('Pattern cannot start with "?" at '.concat(s));for(;s<t.length;)if("\\"!==t[s]){if(")"===t[s]){if(0==--e){s++;break}}else if("("===t[s]&&(e++,"?"!==t[s+1]))throw new TypeError("Capturing groups are not allowed at ".concat(s));o+=t[s++]}else o+=t[s++]+t[s++];if(e)throw new TypeError("Unbalanced pattern at ".concat(r));if(!o)throw new TypeError("Missing pattern at ".concat(r));n.push({type:"PATTERN",index:r,value:o}),r=s}else{for(var u="",s=r+1;s<t.length;){var f=t.charCodeAt(s);if(!(f>=48&&f<=57||f>=65&&f<=90||f>=97&&f<=122||95===f))break;u+=t[s++]}if(!u)throw new TypeError("Missing parameter name at ".concat(r));n.push({type:"NAME",index:r,value:u}),r=s}else n.push({type:"CLOSE",index:r,value:t[r++]});else n.push({type:"OPEN",index:r,value:t[r++]});else n.push({type:"ESCAPED_CHAR",index:r++,value:t[r++]});else n.push({type:"MODIFIER",index:r,value:t[r++]})}return n.push({type:"END",index:r,value:""}),n}(t),i=n.prefixes,e=void 0===i?"./":i,o="[^".concat(l(n.delimiter||"/#?"),"]+?"),u=[],s=0,f=0,c="",a=function(t){if(f<r.length&&r[f].type===t)return r[f++].value},h=function(t){var n=a(t);if(void 0!==n)return n;var i=r[f],e=i.index;throw new TypeError("Unexpected ".concat(i.type," at ").concat(e,", expected ").concat(t))},v=function(){for(var t,n="";t=a("CHAR")||a("ESCAPED_CHAR");)n+=t;return n};f<r.length;){var d=a("CHAR"),p=a("NAME"),m=a("PATTERN");if(p||m)-1===e.indexOf(b=d||"")&&(c+=b,b=""),c&&(u.push(c),c=""),u.push({name:p||s++,prefix:b,suffix:"",pattern:m||o,modifier:a("MODIFIER")||""});else{var w=d||a("ESCAPED_CHAR");if(w)c+=w;else if(c&&(u.push(c),c=""),a("OPEN")){var b=v(),y=a("NAME")||"",P=a("PATTERN")||"",g=v();h("CLOSE"),u.push({name:y||(P?s++:""),pattern:y&&!P?o:P,prefix:b,suffix:g,modifier:a("MODIFIER")||""})}else h("END")}}return u}(t,r),n,r)}(n,r,i)},x={__proto__:null,update:g,nextTick:function(){return new Promise(function(t){window.requestAnimationFrame(t)})},pathToRegexp:E},R=function(){return window.location.origin},k=function(t){return void 0===t&&(t=window.location.href),O(t).port},O=function(t){var n,r=t.match(/:\d+/);if(null===r)/^http/.test(t)&&(n=80),/^https/.test(t)&&(n=443);else{var i=r[0].substring(1);n=parseInt(i,10)}var e,o=t.replace(R(),""),u={},s=o.indexOf("#");s>=0&&(e=o.slice(s+1),o=o.slice(0,s));var f=o.indexOf("?");return f>=0&&(u=T(o.slice(f+1)),o=o.slice(0,f)),{hash:e,path:o,port:n,query:u}},T=function(t){return t.split("&").reduce(function(t,n){var r=n.split("=");return t[r[0]]=r[1],t},{})},A=function(t){return void 0===t&&(t=window.location.href),t.replace(/(\/#.*|\/|#.*)$/,"")},j={__proto__:null,getHref:function(){return window.location.href},getAbsoluteHref:function(t,n){return void 0===n&&(n=document.baseURI),new URL(t,n).href},getOrigin:R,getPort:k,getPath:function(t){return void 0===t&&(t=window.location.href),O(t).path},getQuery:function(t,n){return void 0===n&&(n=!1),n?JSON.stringify(O(t).query):O(t).query},getHash:function(t){return O(t).hash},parse:O,parseQuery:T,clean:A};function M(t,n,i,e,o){return void 0===n&&(n=2e3),new Promise(function(u,s){var f=new XMLHttpRequest;f.onreadystatechange=function(){if(f.readyState===XMLHttpRequest.DONE)if(200===f.status){var n=""!==f.responseURL&&f.responseURL!==t?f.responseURL:t;u({html:f.responseText,url:r({href:n},O(n))}),e.update(t,{status:"fulfilled",target:n})}else if(f.status){var o={status:f.status,statusText:f.statusText};i(t,o),s(o),e.update(t,{status:"rejected"})}},f.ontimeout=function(){var r=new Error("Timeout error ["+n+"]");i(t,r),s(r),e.update(t,{status:"rejected"})},f.onerror=function(){var n=new Error("Fetch error");i(t,n),s(n),e.update(t,{status:"rejected"})},f.open("GET",t),f.timeout=n,f.setRequestHeader("Accept","text/html,application/xhtml+xml,application/xml"),f.setRequestHeader("x-barba","yes"),o.all().forEach(function(t,n){f.setRequestHeader(n,t)}),f.send()})}function N(t){return!!t&&("object"==typeof t||"function"==typeof t)&&"function"==typeof t.then}function S(t,n){return void 0===n&&(n={}),function(){var r=arguments,i=!1,e=new Promise(function(e,o){n.async=function(){return i=!0,function(t,n){t?o(t):e(n)}};var u=t.apply(n,[].slice.call(r));i||(N(u)?u.then(e,o):e(u))});return e}}var C=/*#__PURE__*/function(t){function n(){var n;return(n=t.call(this)||this).logger=new d("@barba/core"),n.all=["ready","page","reset","currentAdded","currentRemoved","nextAdded","nextRemoved","beforeOnce","once","afterOnce","before","beforeLeave","leave","afterLeave","beforeEnter","enter","afterEnter","after"],n.registered=new Map,n.init(),n}i(n,t);var r=n.prototype;return r.init=function(){var t=this;this.registered.clear(),this.all.forEach(function(n){t[n]||(t[n]=function(r,i){t.registered.has(n)||t.registered.set(n,new Set),t.registered.get(n).add({ctx:i||{},fn:r})})})},r.do=function(t){var n=arguments,r=this;if(this.registered.has(t)){var i=Promise.resolve();return this.registered.get(t).forEach(function(t){i=i.then(function(){return S(t.fn,t.ctx).apply(void 0,[].slice.call(n,1))})}),i.catch(function(n){r.logger.debug("Hook error ["+t+"]"),r.logger.error(n)})}return Promise.resolve()},r.clear=function(){var t=this;this.all.forEach(function(n){delete t[n]}),this.init()},r.help=function(){this.logger.info("Available hooks: "+this.all.join(","));var t=[];this.registered.forEach(function(n,r){return t.push(r)}),this.logger.info("Registered hooks: "+t.join(","))},n}(h),L=new C,H=/*#__PURE__*/function(){function t(t){if(this.k=void 0,this.O=[],"boolean"==typeof t)this.k=t;else{var n=Array.isArray(t)?t:[t];this.O=n.map(function(t){return E(t)})}}return t.prototype.checkHref=function(t){if("boolean"==typeof this.k)return this.k;var n=O(t).path;return this.O.some(function(t){return null!==t.exec(n)})},t}(),_=/*#__PURE__*/function(t){function n(n){var r;return(r=t.call(this,n)||this).T=new Map,r}i(n,t);var e=n.prototype;return e.set=function(t,n,r,i,e){return this.T.set(t,{action:r,request:n,status:i,target:null!=e?e:t}),{action:r,request:n,status:i,target:e}},e.get=function(t){return this.T.get(t)},e.getRequest=function(t){return this.T.get(t).request},e.getAction=function(t){return this.T.get(t).action},e.getStatus=function(t){return this.T.get(t).status},e.getTarget=function(t){return this.T.get(t).target},e.has=function(t){return!this.checkHref(t)&&this.T.has(t)},e.delete=function(t){return this.T.delete(t)},e.update=function(t,n){var i=r({},this.T.get(t),n);return this.T.set(t,i),i},n}(H),D=/*#__PURE__*/function(){function t(){this.A=new Map}var n=t.prototype;return n.set=function(t,n){return this.A.set(t,n),{name:n}},n.get=function(t){return this.A.get(t)},n.all=function(){return this.A},n.has=function(t){return this.A.has(t)},n.delete=function(t){return this.A.delete(t)},n.clear=function(){return this.A.clear()},t}(),B=function(){return!window.history.pushState},q=function(t){return!t.el||!t.href},F=function(t){var n=t.event;return n.which>1||n.metaKey||n.ctrlKey||n.shiftKey||n.altKey},I=function(t){var n=t.el;return n.hasAttribute("target")&&"_blank"===n.target},U=function(t){var n=t.el;return void 0!==n.protocol&&window.location.protocol!==n.protocol||void 0!==n.hostname&&window.location.hostname!==n.hostname},$=function(t){var n=t.el;return void 0!==n.port&&k()!==k(n.href)},Q=function(t){var n=t.el;return n.getAttribute&&"string"==typeof n.getAttribute("download")},X=function(t){return t.el.hasAttribute(m.prefix+"-"+m.prevent)},z=function(t){return Boolean(t.el.closest("["+m.prefix+"-"+m.prevent+'="all"]'))},G=function(t){var n=t.href;return A(n)===A()&&k(n)===k()},J=/*#__PURE__*/function(t){function n(n){var r;return(r=t.call(this,n)||this).suite=[],r.tests=new Map,r.init(),r}i(n,t);var r=n.prototype;return r.init=function(){this.add("pushState",B),this.add("exists",q),this.add("newTab",F),this.add("blank",I),this.add("corsDomain",U),this.add("corsPort",$),this.add("download",Q),this.add("preventSelf",X),this.add("preventAll",z),this.add("sameUrl",G,!1)},r.add=function(t,n,r){void 0===r&&(r=!0),this.tests.set(t,n),r&&this.suite.push(t)},r.run=function(t,n,r,i){return this.tests.get(t)({el:n,event:r,href:i})},r.checkLink=function(t,n,r){var i=this;return this.suite.some(function(e){return i.run(e,t,n,r)})},n}(H),W=/*#__PURE__*/function(t){function n(r,i){var e;return void 0===i&&(i="Barba error"),(e=t.call.apply(t,[this].concat([].slice.call(arguments,2)))||this).error=void 0,e.label=void 0,e.error=r,e.label=i,Error.captureStackTrace&&Error.captureStackTrace(c(e),n),e.name="BarbaError",e}return i(n,t),n}(/*#__PURE__*/f(Error)),K=/*#__PURE__*/function(){function t(t){void 0===t&&(t=[]),this.logger=new d("@barba/core"),this.all=[],this.page=[],this.once=[],this.j=[{name:"namespace",type:"strings"},{name:"custom",type:"function"}],t&&(this.all=this.all.concat(t)),this.update()}var n=t.prototype;return n.add=function(t,n){"rule"===t?this.j.splice(n.position||0,0,n.value):this.all.push(n),this.update()},n.resolve=function(t,n){var r=this;void 0===n&&(n={});var i=n.once?this.once:this.page;i=i.filter(n.self?function(t){return t.name&&"self"===t.name}:function(t){return!t.name||"self"!==t.name});var e=new Map,o=i.find(function(i){var o=!0,u={};return n.self&&"self"===i.name?(e.set(i,u),!0):(r.j.reverse().forEach(function(n){o&&(o=r.M(i,n,t,u),i.from&&i.to&&(o=r.M(i,n,t,u,"from")&&r.M(i,n,t,u,"to")),i.from&&!i.to&&(o=r.M(i,n,t,u,"from")),!i.from&&i.to&&(o=r.M(i,n,t,u,"to")))}),e.set(i,u),o)}),u=e.get(o),s=[];if(s.push(n.once?"once":"page"),n.self&&s.push("self"),u){var f,c=[o];Object.keys(u).length>0&&c.push(u),(f=this.logger).info.apply(f,["Transition found ["+s.join(",")+"]"].concat(c))}else this.logger.info("No transition found ["+s.join(",")+"]");return o},n.update=function(){var t=this;this.all=this.all.map(function(n){return t.N(n)}).sort(function(t,n){return t.priority-n.priority}).reverse().map(function(t){return delete t.priority,t}),this.page=this.all.filter(function(t){return void 0!==t.leave||void 0!==t.enter}),this.once=this.all.filter(function(t){return void 0!==t.once})},n.M=function(t,n,r,i,e){var o=!0,u=!1,s=t,f=n.name,c=f,a=f,h=f,v=e?s[e]:s,d="to"===e?r.next:r.current;if(e?v&&v[f]:v[f]){switch(n.type){case"strings":default:var l=Array.isArray(v[c])?v[c]:[v[c]];d[c]&&-1!==l.indexOf(d[c])&&(u=!0),-1===l.indexOf(d[c])&&(o=!1);break;case"object":var p=Array.isArray(v[a])?v[a]:[v[a]];d[a]?(d[a].name&&-1!==p.indexOf(d[a].name)&&(u=!0),-1===p.indexOf(d[a].name)&&(o=!1)):o=!1;break;case"function":v[h](r)?u=!0:o=!1}u&&(e?(i[e]=i[e]||{},i[e][f]=s[e][f]):i[f]=s[f])}return o},n.S=function(t,n,r){var i=0;return(t[n]||t.from&&t.from[n]||t.to&&t.to[n])&&(i+=Math.pow(10,r),t.from&&t.from[n]&&(i+=1),t.to&&t.to[n]&&(i+=2)),i},n.N=function(t){var n=this;t.priority=0;var r=0;return this.j.forEach(function(i,e){r+=n.S(t,i.name,e+1)}),t.priority=r,t},t}();function V(t,n){try{var r=t()}catch(t){return n(t)}return r&&r.then?r.then(void 0,n):r}var Y=/*#__PURE__*/function(){function t(t){void 0===t&&(t=[]),this.logger=new d("@barba/core"),this.store=void 0,this.C=!1,this.store=new K(t)}var r=t.prototype;return r.get=function(t,n){return this.store.resolve(t,n)},r.doOnce=function(t){var n=t.data,r=t.transition;try{var i=function(){e.C=!1},e=this,o=r||{};e.C=!0;var u=V(function(){return Promise.resolve(e.L("beforeOnce",n,o)).then(function(){return Promise.resolve(e.once(n,o)).then(function(){return Promise.resolve(e.L("afterOnce",n,o)).then(function(){})})})},function(t){e.C=!1,e.logger.debug("Transition error [before/after/once]"),e.logger.error(t)});return Promise.resolve(u&&u.then?u.then(i):i())}catch(t){return Promise.reject(t)}},r.doPage=function(t){var n=t.data,r=t.transition,i=t.page,e=t.wrapper;try{var o=function(t){u.C=!1},u=this,s=r||{},f=!0===s.sync||!1;u.C=!0;var c=V(function(){function t(){return Promise.resolve(u.L("before",n,s)).then(function(){function t(t){return Promise.resolve(u.remove(n)).then(function(){return Promise.resolve(u.L("after",n,s)).then(function(){})})}var r=function(){if(f)return V(function(){return Promise.resolve(u.add(n,e)).then(function(){return Promise.resolve(u.L("beforeLeave",n,s)).then(function(){return Promise.resolve(u.L("beforeEnter",n,s)).then(function(){return Promise.resolve(Promise.all([u.leave(n,s),u.enter(n,s)])).then(function(){return Promise.resolve(u.L("afterLeave",n,s)).then(function(){return Promise.resolve(u.L("afterEnter",n,s)).then(function(){})})})})})})},function(t){if(u.H(t))throw new W(t,"Transition error [sync]")});var t=function(t){return V(function(){var t=function(){if(!1!==r)return Promise.resolve(u.add(n,e)).then(function(){return Promise.resolve(u.L("beforeEnter",n,s)).then(function(){return Promise.resolve(u.enter(n,s,r)).then(function(){return Promise.resolve(u.L("afterEnter",n,s)).then(function(){})})})})}();if(t&&t.then)return t.then(function(){})},function(t){if(u.H(t))throw new W(t,"Transition error [before/after/enter]")})},r=!1,o=V(function(){return Promise.resolve(u.L("beforeLeave",n,s)).then(function(){return Promise.resolve(Promise.all([u.leave(n,s),g(i,n)]).then(function(t){return t[0]})).then(function(t){return r=t,Promise.resolve(u.L("afterLeave",n,s)).then(function(){})})})},function(t){if(u.H(t))throw new W(t,"Transition error [before/after/leave]")});return o&&o.then?o.then(t):t()}();return r&&r.then?r.then(t):t()})}var r=function(){if(f)return Promise.resolve(g(i,n)).then(function(){})}();return r&&r.then?r.then(t):t()},function(t){if(u.C=!1,t.name&&"BarbaError"===t.name)throw u.logger.debug(t.label),u.logger.error(t.error),t;throw u.logger.debug("Transition error [page]"),u.logger.error(t),t});return Promise.resolve(c&&c.then?c.then(o):o())}catch(t){return Promise.reject(t)}},r.once=function(t,n){try{return Promise.resolve(L.do("once",t,n)).then(function(){return n.once?S(n.once,n)(t):Promise.resolve()})}catch(t){return Promise.reject(t)}},r.leave=function(t,n){try{return Promise.resolve(L.do("leave",t,n)).then(function(){return n.leave?S(n.leave,n)(t):Promise.resolve()})}catch(t){return Promise.reject(t)}},r.enter=function(t,n,r){try{return Promise.resolve(L.do("enter",t,n)).then(function(){return n.enter?S(n.enter,n)(t,r):Promise.resolve()})}catch(t){return Promise.reject(t)}},r.add=function(t,n){try{return b.addContainer(t.next.container,n),L.do("nextAdded",t),Promise.resolve()}catch(t){return Promise.reject(t)}},r.remove=function(t){try{return b.removeContainer(t.current.container),L.do("currentRemoved",t),Promise.resolve()}catch(t){return Promise.reject(t)}},r.H=function(t){return t.message?!/Timeout error|Fetch error/.test(t.message):!t.status},r.L=function(t,n,r){try{return Promise.resolve(L.do(t,n,r)).then(function(){return r[t]?S(r[t],r)(n):Promise.resolve()})}catch(t){return Promise.reject(t)}},n(t,[{key:"isRunning",get:function(){return this.C},set:function(t){this.C=t}},{key:"hasOnce",get:function(){return this.store.once.length>0}},{key:"hasSelf",get:function(){return this.store.all.some(function(t){return"self"===t.name})}},{key:"shouldWait",get:function(){return this.store.all.some(function(t){return t.to&&!t.to.route||t.sync})}}]),t}(),Z=/*#__PURE__*/function(){function t(t){var n=this;this.names=["beforeLeave","afterLeave","beforeEnter","afterEnter"],this.byNamespace=new Map,0!==t.length&&(t.forEach(function(t){n.byNamespace.set(t.namespace,t)}),this.names.forEach(function(t){L[t](n._(t))}))}return t.prototype._=function(t){var n=this;return function(r){var i=t.match(/enter/i)?r.next:r.current,e=n.byNamespace.get(i.namespace);return e&&e[t]?S(e[t],e)(r):Promise.resolve()}},t}();Element.prototype.matches||(Element.prototype.matches=Element.prototype.msMatchesSelector||Element.prototype.webkitMatchesSelector),Element.prototype.closest||(Element.prototype.closest=function(t){var n=this;do{if(n.matches(t))return n;n=n.parentElement||n.parentNode}while(null!==n&&1===n.nodeType);return null});var tt={container:null,html:"",namespace:"",url:{hash:"",href:"",path:"",port:null,query:{}}},nt=/*#__PURE__*/function(){function t(){this.version="2.10.3",this.schemaPage=tt,this.Logger=d,this.logger=new d("@barba/core"),this.plugins=[],this.timeout=void 0,this.cacheIgnore=void 0,this.cacheFirstPage=void 0,this.prefetchIgnore=void 0,this.preventRunning=void 0,this.hooks=L,this.cache=void 0,this.headers=void 0,this.prevent=void 0,this.transitions=void 0,this.views=void 0,this.dom=b,this.helpers=x,this.history=P,this.request=M,this.url=j,this.D=void 0,this.B=void 0,this.q=void 0,this.F=void 0}var i=t.prototype;return i.use=function(t,n){var r=this.plugins;r.indexOf(t)>-1?this.logger.warn("Plugin ["+t.name+"] already installed."):"function"==typeof t.install?(t.install(this,n),r.push(t)):this.logger.warn("Plugin ["+t.name+'] has no "install" method.')},i.init=function(t){var n=void 0===t?{}:t,i=n.transitions,e=void 0===i?[]:i,o=n.views,u=void 0===o?[]:o,s=n.schema,f=void 0===s?m:s,c=n.requestError,a=n.timeout,h=void 0===a?2e3:a,v=n.cacheIgnore,l=void 0!==v&&v,p=n.cacheFirstPage,w=void 0!==p&&p,b=n.prefetchIgnore,y=void 0!==b&&b,P=n.preventRunning,g=void 0!==P&&P,E=n.prevent,x=void 0===E?null:E,R=n.debug,k=n.logLevel;if(d.setLevel(!0===(void 0!==R&&R)?"debug":void 0===k?"off":k),this.logger.info(this.version),Object.keys(f).forEach(function(t){m[t]&&(m[t]=f[t])}),this.B=c,this.timeout=h,this.cacheIgnore=l,this.cacheFirstPage=w,this.prefetchIgnore=y,this.preventRunning=g,this.q=this.dom.getWrapper(),!this.q)throw new Error("[@barba/core] No Barba wrapper found");this.I();var O=this.data.current;if(!O.container)throw new Error("[@barba/core] No Barba container found");if(this.cache=new _(l),this.headers=new D,this.prevent=new J(y),this.transitions=new Y(e),this.views=new Z(u),null!==x){if("function"!=typeof x)throw new Error("[@barba/core] Prevent should be a function");this.prevent.add("preventCustom",x)}this.history.init(O.url.href,O.namespace),w&&this.cache.set(O.url.href,Promise.resolve({html:O.html,url:O.url}),"init","fulfilled"),this.U=this.U.bind(this),this.$=this.$.bind(this),this.X=this.X.bind(this),this.G(),this.plugins.forEach(function(t){return t.init()});var T=this.data;T.trigger="barba",T.next=T.current,T.current=r({},this.schemaPage),this.hooks.do("ready",T),this.once(T),this.I()},i.destroy=function(){this.I(),this.J(),this.history.clear(),this.hooks.clear(),this.plugins=[]},i.force=function(t){window.location.assign(t)},i.go=function(t,n,r){var i;if(void 0===n&&(n="barba"),this.F=null,this.transitions.isRunning)this.force(t);else if(!(i="popstate"===n?this.history.current&&this.url.getPath(this.history.current.url)===this.url.getPath(t)&&this.url.getQuery(this.history.current.url,!0)===this.url.getQuery(t,!0):this.prevent.run("sameUrl",null,null,t))||this.transitions.hasSelf)return n=this.history.change(this.cache.has(t)?this.cache.get(t).target:t,n,r),r&&(r.stopPropagation(),r.preventDefault()),this.page(t,n,null!=r?r:void 0,i)},i.once=function(t){try{var n=this;return Promise.resolve(n.hooks.do("beforeEnter",t)).then(function(){function r(){return Promise.resolve(n.hooks.do("afterEnter",t)).then(function(){})}var i=function(){if(n.transitions.hasOnce){var r=n.transitions.get(t,{once:!0});return Promise.resolve(n.transitions.doOnce({transition:r,data:t})).then(function(){})}}();return i&&i.then?i.then(r):r()})}catch(t){return Promise.reject(t)}},i.page=function(t,n,i,e){try{var o,u=function(){var t=s.data;return Promise.resolve(s.hooks.do("page",t)).then(function(){var n=function(n,r){try{var i=(u=s.transitions.get(t,{once:!1,self:e}),Promise.resolve(s.transitions.doPage({data:t,page:o,transition:u,wrapper:s.q})).then(function(){s.I()}))}catch(t){return r()}var u;return i&&i.then?i.then(void 0,r):i}(0,function(){0===d.getLevel()&&s.force(t.next.url.href)});if(n&&n.then)return n.then(function(){})})},s=this;if(s.data.next.url=r({href:t},s.url.parse(t)),s.data.trigger=n,s.data.event=i,s.cache.has(t))o=s.cache.update(t,{action:"click"}).request;else{var f=s.request(t,s.timeout,s.onRequestError.bind(s,n),s.cache,s.headers);f.then(function(r){r.url.href!==t&&s.history.add(r.url.href,n,"replace")}),o=s.cache.set(t,f,"click","pending").request}var c=function(){if(s.transitions.shouldWait)return Promise.resolve(g(o,s.data)).then(function(){})}();return Promise.resolve(c&&c.then?c.then(u):u())}catch(t){return Promise.reject(t)}},i.onRequestError=function(t){this.transitions.isRunning=!1;var n=[].slice.call(arguments,1),r=n[0],i=n[1],e=this.cache.getAction(r);return this.cache.delete(r),this.B&&!1===this.B(t,e,r,i)||"click"===e&&this.force(r),!1},i.prefetch=function(t){var n=this;t=this.url.getAbsoluteHref(t),this.cache.has(t)||this.cache.set(t,this.request(t,this.timeout,this.onRequestError.bind(this,"barba"),this.cache,this.headers).catch(function(t){n.logger.error(t)}),"prefetch","pending")},i.G=function(){!0!==this.prefetchIgnore&&(document.addEventListener("mouseover",this.U),document.addEventListener("touchstart",this.U)),document.addEventListener("click",this.$),window.addEventListener("popstate",this.X)},i.J=function(){!0!==this.prefetchIgnore&&(document.removeEventListener("mouseover",this.U),document.removeEventListener("touchstart",this.U)),document.removeEventListener("click",this.$),window.removeEventListener("popstate",this.X)},i.U=function(t){var n=this,r=this.W(t);if(r){var i=this.url.getAbsoluteHref(this.dom.getHref(r));this.prevent.checkHref(i)||this.cache.has(i)||this.cache.set(i,this.request(i,this.timeout,this.onRequestError.bind(this,r),this.cache,this.headers).catch(function(t){n.logger.error(t)}),"enter","pending")}},i.$=function(t){var n=this.W(t);if(n){if(this.transitions.isRunning&&this.preventRunning)return t.preventDefault(),void t.stopPropagation();this.F=t,this.go(this.dom.getHref(n),n,t)}},i.X=function(t){this.go(this.url.getHref(),"popstate",t)},i.W=function(t){for(var n=t.target;n&&!this.dom.getHref(n);)n=n.parentNode;if(n&&!this.prevent.checkLink(n,t,this.dom.getHref(n)))return n},i.I=function(){var t=this.url.getHref(),n={container:this.dom.getContainer(),html:this.dom.getHtml(),namespace:this.dom.getNamespace(),url:r({href:t},this.url.parse(t))};this.D={current:n,event:void 0,next:r({},this.schemaPage),trigger:void 0},this.hooks.do("reset",this.data)},n(t,[{key:"data",get:function(){return this.D}},{key:"wrapper",get:function(){return this.q}}]),t}();return new nt});
 //# sourceMappingURL=barba.umd.js.map
 
 
-}),
-"./node_modules/@splidejs/splide/dist/css/splide-core.min.css": 
-/*!********************************************************************!*\
-  !*** ./node_modules/@splidejs/splide/dist/css/splide-core.min.css ***!
-  \********************************************************************/
-(function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+},
+"./node_modules/@splidejs/splide/dist/css/splide-core.min.css"(__unused_rspack_module, __webpack_exports__, __webpack_require__) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by css-extract-rspack-plugin
 
 
-}),
-"./src/scss/main.scss": 
-/*!****************************!*\
-  !*** ./src/scss/main.scss ***!
-  \****************************/
-(function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+},
+"./src/scss/main.scss"(__unused_rspack_module, __webpack_exports__, __webpack_require__) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by css-extract-rspack-plugin
 
 
-}),
-"./node_modules/@splidejs/splide/dist/js/splide.esm.js": 
-/*!*************************************************************!*\
-  !*** ./node_modules/@splidejs/splide/dist/js/splide.esm.js ***!
-  \*************************************************************/
-(function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+},
+"./node_modules/@splidejs/splide/dist/js/splide.esm.js"(__unused_rspack_module, __webpack_exports__, __webpack_require__) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 __webpack_require__.d(__webpack_exports__, {
@@ -3795,16 +3779,12 @@ var SplideRenderer = /*#__PURE__*/function () {
 
 
 
-}),
-"./node_modules/country-list/country-list.js": 
-/*!***************************************************!*\
-  !*** ./node_modules/country-list/country-list.js ***!
-  \***************************************************/
-(function (__unused_webpack_module, exports, __webpack_require__) {
+},
+"./node_modules/country-list/country-list.js"(__unused_rspack_module, exports, __webpack_require__) {
 "use strict";
 
 
-var data = __webpack_require__(/*! ./data.json */ "./node_modules/country-list/data.json")
+var data = __webpack_require__("./node_modules/country-list/data.json")
 
 /** Precompute name and code lookups. */
 var nameMap = {}
@@ -3860,12 +3840,8 @@ exports.getData = function getData () {
 }
 
 
-}),
-"./node_modules/gsap/CSSPlugin.js": 
-/*!****************************************!*\
-  !*** ./node_modules/gsap/CSSPlugin.js ***!
-  \****************************************/
-(function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+},
+"./node_modules/gsap/CSSPlugin.js"(__unused_rspack_module, __webpack_exports__, __webpack_require__) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 __webpack_require__.d(__webpack_exports__, {
@@ -3875,9 +3851,9 @@ __webpack_require__.d(__webpack_exports__, {
   checkPrefix: () => (_checkPropPrefix),
   "default": () => (CSSPlugin)
 });
-/* ESM import */var _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./gsap-core.js */ "./node_modules/gsap/gsap-core.js");
+/* import */ var _gsap_core_js__rspack_import_0 = __webpack_require__("./node_modules/gsap/gsap-core.js");
 /*!
- * CSSPlugin 3.13.0
+ * CSSPlugin 3.14.2
  * https://gsap.com
  *
  * Copyright 2008-2025, GreenSock. All rights reserved.
@@ -3920,6 +3896,10 @@ var _win,
 },
     _renderCSSPropWithBeginning = function _renderCSSPropWithBeginning(ratio, data) {
   return data.set(data.t, data.p, ratio ? Math.round((data.s + data.c * ratio) * 10000) / 10000 + data.u : data.b, data);
+},
+    //if units change, we need a way to render the original unit/value when the tween goes all the way back to the beginning (ratio:0)
+_renderCSSPropWithBeginningAndEnd = function _renderCSSPropWithBeginningAndEnd(ratio, data) {
+  return data.set(data.t, data.p, ratio === 1 ? data.e : ratio ? Math.round((data.s + data.c * ratio) * 10000) / 10000 + data.u : data.b, data);
 },
     //if units change, we need a way to render the original unit/value when the tween goes all the way back to the beginning (ratio:0)
 _renderRoundedCSSProp = function _renderRoundedCSSProp(ratio, data) {
@@ -4054,7 +4034,7 @@ _renderRoundedCSSProp = function _renderRoundedCSSProp(ratio, data) {
     revert: _revertStyle,
     save: _saveStyle
   };
-  target._gsap || _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.gsap.core.getCache(target); // just make sure there's a _gsap cache defined because we read from it in _saveStyle() and it's more efficient to just check it here once.
+  target._gsap || _gsap_core_js__rspack_import_0.gsap.core.getCache(target); // just make sure there's a _gsap cache defined because we read from it in _saveStyle() and it's more efficient to just check it here once.
 
   properties && target.style && target.nodeType && properties.split(",").forEach(function (p) {
     return saver.save(p);
@@ -4102,7 +4082,7 @@ _renderRoundedCSSProp = function _renderRoundedCSSProp(ratio, data) {
     _tempDiv.style.cssText = "border-width:0;line-height:0;position:absolute;padding:0"; //make sure to override certain properties that may contaminate measurements, in case the user has overreaching style sheets.
 
     _supports3D = !!_checkPropPrefix("perspective");
-    _reverting = _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.gsap.core.reverting;
+    _reverting = _gsap_core_js__rspack_import_0.gsap.core.reverting;
     _pluginInitted = 1;
   }
 },
@@ -4185,7 +4165,7 @@ _removeProperty = function _removeProperty(target, property) {
   }
 },
     _addNonTweeningPT = function _addNonTweeningPT(plugin, target, property, beginning, end, onlySetAtEnd) {
-  var pt = new _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.PropTween(plugin._pt, target, property, 0, 1, onlySetAtEnd ? _renderNonTweeningValueOnlyAtEnd : _renderNonTweeningValue);
+  var pt = new _gsap_core_js__rspack_import_0.PropTween(plugin._pt, target, property, 0, 1, onlySetAtEnd ? _renderNonTweeningValueOnlyAtEnd : _renderNonTweeningValue);
   plugin._pt = pt;
   pt.b = beginning;
   pt.e = end;
@@ -4229,7 +4209,7 @@ _convertToUnit = function _convertToUnit(target, property, value, unit) {
 
   if ((toPercent || curUnit === "%") && (_transformProps[property] || ~property.indexOf("adius"))) {
     px = isSVG ? target.getBBox()[horizontal ? "width" : "height"] : target[measureProperty];
-    return (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._round)(toPercent ? curValue / px * amount : curValue / 100 * px);
+    return (0,_gsap_core_js__rspack_import_0._round)(toPercent ? curValue / px * amount : curValue / 100 * px);
   }
 
   style[horizontal ? "width" : "height"] = amount + (toPixels ? curUnit : unit);
@@ -4245,8 +4225,8 @@ _convertToUnit = function _convertToUnit(target, property, value, unit) {
 
   cache = parent._gsap;
 
-  if (cache && toPercent && cache.width && horizontal && cache.time === _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._ticker.time && !cache.uncache) {
-    return (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._round)(curValue / cache.width * amount);
+  if (cache && toPercent && cache.width && horizontal && cache.time === _gsap_core_js__rspack_import_0._ticker.time && !cache.uncache) {
+    return (0,_gsap_core_js__rspack_import_0._round)(curValue / cache.width * amount);
   } else {
     if (toPercent && (property === "height" || property === "width")) {
       // if we're dealing with width/height that's inside a container with padding and/or it's a flexbox/grid container, we must apply it to the target itself rather than the _tempDiv in order to ensure complete accuracy, factoring in the parent's padding.
@@ -4265,13 +4245,13 @@ _convertToUnit = function _convertToUnit(target, property, value, unit) {
     }
 
     if (horizontal && toPercent) {
-      cache = (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._getCache)(parent);
-      cache.time = _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._ticker.time;
+      cache = (0,_gsap_core_js__rspack_import_0._getCache)(parent);
+      cache.time = _gsap_core_js__rspack_import_0._ticker.time;
       cache.width = parent[measureProperty];
     }
   }
 
-  return (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._round)(toPixels ? px * curValue / amount : px && curValue ? amount / px * curValue : 0);
+  return (0,_gsap_core_js__rspack_import_0._round)(toPixels ? px * curValue / amount : px && curValue ? amount / px * curValue : 0);
 },
     _get = function _get(target, property, unit, uncache) {
   var value;
@@ -4292,7 +4272,7 @@ _convertToUnit = function _convertToUnit(target, property, value, unit) {
     value = target.style[property];
 
     if (!value || value === "auto" || uncache || ~(value + "").indexOf("calc(")) {
-      value = _specialProps[property] && _specialProps[property](target, property, unit) || _getComputedProperty(target, property) || (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._getProperty)(target, property) || (property === "opacity" ? 1 : 0); // note: some browsers, like Firefox, don't report borderRadius correctly! Instead, it only reports every corner like  borderTopLeftRadius
+      value = _specialProps[property] && _specialProps[property](target, property, unit) || _getComputedProperty(target, property) || (0,_gsap_core_js__rspack_import_0._getProperty)(target, property) || (property === "opacity" ? 1 : 0); // note: some browsers, like Firefox, don't report borderRadius correctly! Instead, it only reports every corner like  borderTopLeftRadius
     }
   }
 
@@ -4313,7 +4293,7 @@ _convertToUnit = function _convertToUnit(target, property, value, unit) {
     }
   }
 
-  var pt = new _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.PropTween(this._pt, target.style, prop, 0, 1, _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._renderComplexString),
+  var pt = new _gsap_core_js__rspack_import_0.PropTween(this._pt, target.style, prop, 0, 1, _gsap_core_js__rspack_import_0._renderComplexString),
       index = 0,
       matchIndex = 0,
       a,
@@ -4347,16 +4327,16 @@ _convertToUnit = function _convertToUnit(target, property, value, unit) {
 
   a = [start, end];
 
-  (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._colorStringFilter)(a); // pass an array with the starting and ending values and let the filter do whatever it needs to the values. If colors are found, it returns true and then we must match where the color shows up order-wise because for things like boxShadow, sometimes the browser provides the computed values with the color FIRST, but the user provides it with the color LAST, so flip them if necessary. Same for drop-shadow().
+  (0,_gsap_core_js__rspack_import_0._colorStringFilter)(a); // pass an array with the starting and ending values and let the filter do whatever it needs to the values. If colors are found, it returns true and then we must match where the color shows up order-wise because for things like boxShadow, sometimes the browser provides the computed values with the color FIRST, but the user provides it with the color LAST, so flip them if necessary. Same for drop-shadow().
 
 
   start = a[0];
   end = a[1];
-  startValues = start.match(_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._numWithUnitExp) || [];
-  endValues = end.match(_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._numWithUnitExp) || [];
+  startValues = start.match(_gsap_core_js__rspack_import_0._numWithUnitExp) || [];
+  endValues = end.match(_gsap_core_js__rspack_import_0._numWithUnitExp) || [];
 
   if (endValues.length) {
-    while (result = _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._numWithUnitExp.exec(end)) {
+    while (result = _gsap_core_js__rspack_import_0._numWithUnitExp.exec(end)) {
       endValue = result[0];
       chunk = end.substring(index, result.index);
 
@@ -4369,14 +4349,14 @@ _convertToUnit = function _convertToUnit(target, property, value, unit) {
       if (endValue !== (startValue = startValues[matchIndex++] || "")) {
         startNum = parseFloat(startValue) || 0;
         startUnit = startValue.substr((startNum + "").length);
-        endValue.charAt(1) === "=" && (endValue = (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._parseRelative)(startNum, endValue) + startUnit);
+        endValue.charAt(1) === "=" && (endValue = (0,_gsap_core_js__rspack_import_0._parseRelative)(startNum, endValue) + startUnit);
         endNum = parseFloat(endValue);
         endUnit = endValue.substr((endNum + "").length);
-        index = _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._numWithUnitExp.lastIndex - endUnit.length;
+        index = _gsap_core_js__rspack_import_0._numWithUnitExp.lastIndex - endUnit.length;
 
         if (!endUnit) {
           //if something like "perspective:300" is passed in and we must add a unit to the end
-          endUnit = endUnit || _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._config.units[prop] || startUnit;
+          endUnit = endUnit || _gsap_core_js__rspack_import_0._config.units[prop] || startUnit;
 
           if (index === end.length) {
             end += endUnit;
@@ -4405,7 +4385,7 @@ _convertToUnit = function _convertToUnit(target, property, value, unit) {
     pt.r = prop === "display" && end === "none" ? _renderNonTweeningValueOnlyAtEnd : _renderNonTweeningValue;
   }
 
-  _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._relExp.test(end) && (pt.e = 0); //if the end string contains relative values or dynamic random(...) values, delete the end it so that on the final render we don't actually set it to the string with += or -= characters (forces it to use the calculated value).
+  _gsap_core_js__rspack_import_0._relExp.test(end) && (pt.e = 0); //if the end string contains relative values or dynamic random(...) values, delete the end it so that on the final render we don't actually set it to the string with += or -= characters (forces it to use the calculated value).
 
   this._pt = pt; //start the linked list with this new PropTween. Remember, we call _tweenComplexCSSString.call(pluginInstance...) to ensure that it's scoped properly. We may call it from within another plugin too, thus "this" would refer to the plugin.
 
@@ -4484,7 +4464,7 @@ _convertToUnit = function _convertToUnit(target, property, value, unit) {
 _specialProps = {
   clearProps: function clearProps(plugin, target, property, endValue, tween) {
     if (tween.data !== "isFromStart") {
-      var pt = plugin._pt = new _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.PropTween(plugin._pt, target, property, 0, 0, _renderClearProps);
+      var pt = plugin._pt = new _gsap_core_js__rspack_import_0.PropTween(plugin._pt, target, property, 0, 0, _renderClearProps);
       pt.u = endValue;
       pt.pr = -10;
       pt.tween = tween;
@@ -4573,10 +4553,10 @@ _identity2DMatrix = [1, 0, 0, 1, 0, 0],
     _getComputedTransformMatrixAsArray = function _getComputedTransformMatrixAsArray(target) {
   var matrixString = _getComputedProperty(target, _transformProp);
 
-  return _isNullTransform(matrixString) ? _identity2DMatrix : matrixString.substr(7).match(_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._numExp).map(_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._round);
+  return _isNullTransform(matrixString) ? _identity2DMatrix : matrixString.substr(7).match(_gsap_core_js__rspack_import_0._numExp).map(_gsap_core_js__rspack_import_0._round);
 },
     _getMatrix = function _getMatrix(target, force2D) {
-  var cache = target._gsap || (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._getCache)(target),
+  var cache = target._gsap || (0,_gsap_core_js__rspack_import_0._getCache)(target),
       style = target.style,
       matrix = _getComputedTransformMatrixAsArray(target),
       parent,
@@ -4681,7 +4661,7 @@ _identity2DMatrix = [1, 0, 0, 1, 0, 0],
   target.setAttribute("data-svg-origin", xOrigin + " " + yOrigin);
 },
     _parseTransform = function _parseTransform(target, uncache) {
-  var cache = target._gsap || new _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.GSCache(target);
+  var cache = target._gsap || new _gsap_core_js__rspack_import_0.GSCache(target);
 
   if ("x" in cache && !uncache && !cache.uncache) {
     return cache;
@@ -4846,8 +4826,8 @@ _identity2DMatrix = [1, 0, 0, 1, 0, 0],
         rotationY = 180 - rotationY;
       }
 
-      scaleX = (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._round)(Math.sqrt(a * a + b * b + c * c));
-      scaleY = (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._round)(Math.sqrt(a22 * a22 + a32 * a32));
+      scaleX = (0,_gsap_core_js__rspack_import_0._round)(Math.sqrt(a * a + b * b + c * c));
+      scaleY = (0,_gsap_core_js__rspack_import_0._round)(Math.sqrt(a22 * a22 + a32 * a32));
       angle = _atan2(a12, a22);
       skewX = Math.abs(angle) > 0.0002 ? angle * _RAD2DEG : 0;
       perspective = a43 ? 1 / (a43 < 0 ? -a43 : a43) : 0;
@@ -4876,11 +4856,11 @@ _identity2DMatrix = [1, 0, 0, 1, 0, 0],
   cache.x = x - ((cache.xPercent = x && (!uncache && cache.xPercent || (Math.round(target.offsetWidth / 2) === Math.round(-x) ? -50 : 0))) ? target.offsetWidth * cache.xPercent / 100 : 0) + px;
   cache.y = y - ((cache.yPercent = y && (!uncache && cache.yPercent || (Math.round(target.offsetHeight / 2) === Math.round(-y) ? -50 : 0))) ? target.offsetHeight * cache.yPercent / 100 : 0) + px;
   cache.z = z + px;
-  cache.scaleX = (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._round)(scaleX);
-  cache.scaleY = (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._round)(scaleY);
-  cache.rotation = (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._round)(rotation) + deg;
-  cache.rotationX = (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._round)(rotationX) + deg;
-  cache.rotationY = (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._round)(rotationY) + deg;
+  cache.scaleX = (0,_gsap_core_js__rspack_import_0._round)(scaleX);
+  cache.scaleY = (0,_gsap_core_js__rspack_import_0._round)(scaleY);
+  cache.rotation = (0,_gsap_core_js__rspack_import_0._round)(rotation) + deg;
+  cache.rotationX = (0,_gsap_core_js__rspack_import_0._round)(rotationX) + deg;
+  cache.rotationY = (0,_gsap_core_js__rspack_import_0._round)(rotationY) + deg;
   cache.skewX = skewX + deg;
   cache.skewY = skewY + deg;
   cache.transformPerspective = perspective + px;
@@ -4890,7 +4870,7 @@ _identity2DMatrix = [1, 0, 0, 1, 0, 0],
   }
 
   cache.xOffset = cache.yOffset = 0;
-  cache.force3D = _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._config.force3D;
+  cache.force3D = _gsap_core_js__rspack_import_0._config.force3D;
   cache.renderTransform = cache.svg ? _renderSVGTransforms : _supports3D ? _renderCSSTransforms : _renderNon3DTransforms;
   cache.uncache = 0;
   return cache;
@@ -4900,8 +4880,8 @@ _identity2DMatrix = [1, 0, 0, 1, 0, 0],
 },
     //for handling transformOrigin values, stripping out the 3rd dimension
 _addPxTranslate = function _addPxTranslate(target, start, value) {
-  var unit = (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.getUnit)(start);
-  return (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._round)(parseFloat(start) + parseFloat(_convertToUnit(target, "x", value + "px", unit))) + unit;
+  var unit = (0,_gsap_core_js__rspack_import_0.getUnit)(start);
+  return (0,_gsap_core_js__rspack_import_0._round)(parseFloat(start) + parseFloat(_convertToUnit(target, "x", value + "px", unit))) + unit;
 },
     _renderNon3DTransforms = function _renderNon3DTransforms(ratio, cache) {
   cache.z = "0px";
@@ -5041,10 +5021,10 @@ _addPxTranslate = function _addPxTranslate(target, start, value) {
       }
     }
 
-    a11 = (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._round)(a11);
-    a21 = (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._round)(a21);
-    a12 = (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._round)(a12);
-    a22 = (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._round)(a22);
+    a11 = (0,_gsap_core_js__rspack_import_0._round)(a11);
+    a21 = (0,_gsap_core_js__rspack_import_0._round)(a21);
+    a12 = (0,_gsap_core_js__rspack_import_0._round)(a12);
+    a22 = (0,_gsap_core_js__rspack_import_0._round)(a22);
   } else {
     a11 = scaleX;
     a22 = scaleY;
@@ -5057,15 +5037,15 @@ _addPxTranslate = function _addPxTranslate(target, start, value) {
   }
 
   if (xOrigin || yOrigin || xOffset || yOffset) {
-    tx = (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._round)(tx + xOrigin - (xOrigin * a11 + yOrigin * a12) + xOffset);
-    ty = (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._round)(ty + yOrigin - (xOrigin * a21 + yOrigin * a22) + yOffset);
+    tx = (0,_gsap_core_js__rspack_import_0._round)(tx + xOrigin - (xOrigin * a11 + yOrigin * a12) + xOffset);
+    ty = (0,_gsap_core_js__rspack_import_0._round)(ty + yOrigin - (xOrigin * a21 + yOrigin * a22) + yOffset);
   }
 
   if (xPercent || yPercent) {
     //The SVG spec doesn't support percentage-based translation in the "transform" attribute, so we merge it into the translation to simulate it.
     temp = target.getBBox();
-    tx = (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._round)(tx + xPercent / 100 * temp.width);
-    ty = (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._round)(ty + yPercent / 100 * temp.height);
+    tx = (0,_gsap_core_js__rspack_import_0._round)(tx + xPercent / 100 * temp.width);
+    ty = (0,_gsap_core_js__rspack_import_0._round)(ty + yPercent / 100 * temp.height);
   }
 
   temp = "matrix(" + a11 + "," + a21 + "," + a12 + "," + a22 + "," + tx + "," + ty + ")";
@@ -5074,7 +5054,7 @@ _addPxTranslate = function _addPxTranslate(target, start, value) {
 },
     _addRotationalPropTween = function _addRotationalPropTween(plugin, target, property, startNum, endValue) {
   var cap = 360,
-      isString = (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._isString)(endValue),
+      isString = (0,_gsap_core_js__rspack_import_0._isString)(endValue),
       endNum = parseFloat(endValue) * (isString && ~endValue.indexOf("rad") ? _RAD2DEG : 1),
       change = endNum - startNum,
       finalValue = startNum + change + "deg",
@@ -5099,7 +5079,7 @@ _addPxTranslate = function _addPxTranslate(target, start, value) {
     }
   }
 
-  plugin._pt = pt = new _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.PropTween(plugin._pt, target, property, startNum, change, _renderPropWithEnd);
+  plugin._pt = pt = new _gsap_core_js__rspack_import_0.PropTween(plugin._pt, target, property, startNum, change, _renderPropWithEnd);
   pt.e = finalValue;
   pt.u = "deg";
 
@@ -5151,11 +5131,11 @@ _addPxTranslate = function _addPxTranslate(target, start, value) {
 
     if (startValue !== endValue && exclude.indexOf(p) < 0) {
       //tweening to no perspective gives very unintuitive results - just keep the same perspective in that case.
-      startUnit = (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.getUnit)(startValue);
-      endUnit = (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.getUnit)(endValue);
+      startUnit = (0,_gsap_core_js__rspack_import_0.getUnit)(startValue);
+      endUnit = (0,_gsap_core_js__rspack_import_0.getUnit)(endValue);
       startNum = startUnit !== endUnit ? _convertToUnit(target, p, startValue, endUnit) : parseFloat(startValue);
       endNum = parseFloat(endValue);
-      plugin._pt = new _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.PropTween(plugin._pt, endCache, p, startNum, endNum - startNum, _renderCSSProp);
+      plugin._pt = new _gsap_core_js__rspack_import_0.PropTween(plugin._pt, endCache, p, startNum, endNum - startNum, _renderCSSProp);
       plugin._pt.u = endUnit || 0;
 
       plugin._props.push(p);
@@ -5166,7 +5146,7 @@ _addPxTranslate = function _addPxTranslate(target, start, value) {
 }; // handle splitting apart padding, margin, borderWidth, and borderRadius into their 4 components. Firefox, for example, won't report borderRadius correctly - it will only do borderTopLeftRadius and the other corners. We also want to handle paddingTop, marginLeft, borderRightWidth, etc.
 
 
-(0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._forEachName)("padding,margin,Width,Radius", function (name, index) {
+(0,_gsap_core_js__rspack_import_0._forEachName)("padding,margin,Width,Radius", function (name, index) {
   var t = "Top",
       r = "Right",
       b = "Bottom",
@@ -5221,7 +5201,8 @@ var CSSPlugin = {
         cache,
         smooth,
         hasPriority,
-        inlineProps;
+        inlineProps,
+        finalTransformValue;
     _pluginInitted || _initCore(); // we may call init() multiple times on the same plugin instance, like when adding special properties, so make sure we don't overwrite the revert data or inlineProps
 
     this.styles = this.styles || _getStyleSaver(target);
@@ -5235,7 +5216,7 @@ var CSSPlugin = {
 
       endValue = vars[p];
 
-      if (_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._plugins[p] && (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._checkPlugin)(p, vars, tween, index, target, targets)) {
+      if (_gsap_core_js__rspack_import_0._plugins[p] && (0,_gsap_core_js__rspack_import_0._checkPlugin)(p, vars, tween, index, target, targets)) {
         // plugins
         continue;
       }
@@ -5249,7 +5230,7 @@ var CSSPlugin = {
       }
 
       if (type === "string" && ~endValue.indexOf("random(")) {
-        endValue = (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._replaceRandom)(endValue);
+        endValue = (0,_gsap_core_js__rspack_import_0._replaceRandom)(endValue);
       }
 
       if (specialProp) {
@@ -5258,15 +5239,15 @@ var CSSPlugin = {
         //CSS variable
         startValue = (getComputedStyle(target).getPropertyValue(p) + "").trim();
         endValue += "";
-        _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._colorExp.lastIndex = 0;
+        _gsap_core_js__rspack_import_0._colorExp.lastIndex = 0;
 
-        if (!_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._colorExp.test(startValue)) {
+        if (!_gsap_core_js__rspack_import_0._colorExp.test(startValue)) {
           // colors don't have units
-          startUnit = (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.getUnit)(startValue);
-          endUnit = (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.getUnit)(endValue);
+          startUnit = (0,_gsap_core_js__rspack_import_0.getUnit)(startValue);
+          endUnit = (0,_gsap_core_js__rspack_import_0.getUnit)(endValue);
+          endUnit ? startUnit !== endUnit && (startValue = _convertToUnit(target, p, startValue, endUnit) + endUnit) : startUnit && (endValue += startUnit);
         }
 
-        endUnit ? startUnit !== endUnit && (startValue = _convertToUnit(target, p, startValue, endUnit) + endUnit) : startUnit && (endValue += startUnit);
         this.add(style, "setProperty", startValue, endValue, index, targets, 0, 0, p);
         props.push(p);
         inlineProps.push(p, 0, style[p]);
@@ -5274,8 +5255,8 @@ var CSSPlugin = {
         if (startAt && p in startAt) {
           // in case someone hard-codes a complex value as the start, like top: "calc(2vh / 2)". Without this, it'd use the computed value (always in px)
           startValue = typeof startAt[p] === "function" ? startAt[p].call(tween, index, target, targets) : startAt[p];
-          (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._isString)(startValue) && ~startValue.indexOf("random(") && (startValue = (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._replaceRandom)(startValue));
-          (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.getUnit)(startValue + "") || startValue === "auto" || (startValue += _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._config.units[p] || (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.getUnit)(_get(target, p)) || ""); // for cases when someone passes in a unitless value like {x: 100}; if we try setting translate(100, 0px) it won't work.
+          (0,_gsap_core_js__rspack_import_0._isString)(startValue) && ~startValue.indexOf("random(") && (startValue = (0,_gsap_core_js__rspack_import_0._replaceRandom)(startValue));
+          (0,_gsap_core_js__rspack_import_0.getUnit)(startValue + "") || startValue === "auto" || (startValue += _gsap_core_js__rspack_import_0._config.units[p] || (0,_gsap_core_js__rspack_import_0.getUnit)(_get(target, p)) || ""); // for cases when someone passes in a unitless value like {x: 100}; if we try setting translate(100, 0px) it won't work.
 
           (startValue + "").charAt(1) === "=" && (startValue = _get(target, p)); // can't work with relative values
         } else {
@@ -5310,9 +5291,18 @@ var CSSPlugin = {
 
         if (isTransformRelated) {
           this.styles.save(p);
+          finalTransformValue = endValue; // this is always the same as endValue except when it's a var(--) value, in which case we need to calculate the end value.
 
           if (type === "string" && endValue.substring(0, 6) === "var(--") {
             endValue = _getComputedProperty(target, endValue.substring(4, endValue.indexOf(")")));
+
+            if (endValue.substring(0, 5) === "calc(") {
+              var origPerspective = target.style.perspective;
+              target.style.perspective = endValue;
+              endValue = _getComputedProperty(target, "perspective");
+              origPerspective ? target.style.perspective = origPerspective : _removeProperty(target, "perspective");
+            }
+
             endNum = parseFloat(endValue);
           }
 
@@ -5321,13 +5311,13 @@ var CSSPlugin = {
             cache.renderTransform && !vars.parseTransform || _parseTransform(target, vars.parseTransform); // if, for example, gsap.set(... {transform:"translateX(50vw)"}), the _get() call doesn't parse the transform, thus cache.renderTransform won't be set yet so force the parsing of the transform here.
 
             smooth = vars.smoothOrigin !== false && cache.smooth;
-            transformPropTween = this._pt = new _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.PropTween(this._pt, style, _transformProp, 0, 1, cache.renderTransform, cache, 0, -1); //the first time through, create the rendering PropTween so that it runs LAST (in the linked list, we keep adding to the beginning)
+            transformPropTween = this._pt = new _gsap_core_js__rspack_import_0.PropTween(this._pt, style, _transformProp, 0, 1, cache.renderTransform, cache, 0, -1); //the first time through, create the rendering PropTween so that it runs LAST (in the linked list, we keep adding to the beginning)
 
             transformPropTween.dep = 1; //flag it as dependent so that if things get killed/overwritten and this is the only PropTween left, we can safely kill the whole tween.
           }
 
           if (p === "scale") {
-            this._pt = new _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.PropTween(this._pt, cache, "scaleY", cache.scaleY, (relative ? (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._parseRelative)(cache.scaleY, relative + endNum) : endNum) - cache.scaleY || 0, _renderCSSProp);
+            this._pt = new _gsap_core_js__rspack_import_0.PropTween(this._pt, cache, "scaleY", cache.scaleY, (relative ? (0,_gsap_core_js__rspack_import_0._parseRelative)(cache.scaleY, relative + endNum) : endNum) - cache.scaleY || 0, _renderCSSProp);
             this._pt.u = 0;
             props.push("scaleY", p);
             p += "X";
@@ -5351,7 +5341,7 @@ var CSSPlugin = {
 
             continue;
           } else if (p in _rotationalProperties) {
-            _addRotationalPropTween(this, cache, p, startNum, relative ? (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._parseRelative)(startNum, relative + endValue) : endValue);
+            _addRotationalPropTween(this, cache, p, startNum, relative ? (0,_gsap_core_js__rspack_import_0._parseRelative)(startNum, relative + endValue) : endValue);
 
             continue;
           } else if (p === "smoothOrigin") {
@@ -5374,12 +5364,16 @@ var CSSPlugin = {
           startUnit = (startValue + "").substr((startNum + "").length);
           endNum || (endNum = 0); // protect against NaN
 
-          endUnit = (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.getUnit)(endValue) || (p in _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._config.units ? _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._config.units[p] : startUnit);
+          endUnit = (0,_gsap_core_js__rspack_import_0.getUnit)(endValue) || (p in _gsap_core_js__rspack_import_0._config.units ? _gsap_core_js__rspack_import_0._config.units[p] : startUnit);
           startUnit !== endUnit && (startNum = _convertToUnit(target, p, startValue, endUnit));
-          this._pt = new _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.PropTween(this._pt, isTransformRelated ? cache : style, p, startNum, (relative ? (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._parseRelative)(startNum, relative + endNum) : endNum) - startNum, !isTransformRelated && (endUnit === "px" || p === "zIndex") && vars.autoRound !== false ? _renderRoundedCSSProp : _renderCSSProp);
+          this._pt = new _gsap_core_js__rspack_import_0.PropTween(this._pt, isTransformRelated ? cache : style, p, startNum, (relative ? (0,_gsap_core_js__rspack_import_0._parseRelative)(startNum, relative + endNum) : endNum) - startNum, !isTransformRelated && (endUnit === "px" || p === "zIndex") && vars.autoRound !== false ? _renderRoundedCSSProp : _renderCSSProp);
           this._pt.u = endUnit || 0;
 
-          if (startUnit !== endUnit && endUnit !== "%") {
+          if (isTransformRelated && finalTransformValue !== endValue) {
+            this._pt.b = startValue;
+            this._pt.e = finalTransformValue;
+            this._pt.r = _renderCSSPropWithBeginningAndEnd;
+          } else if (startUnit !== endUnit && endUnit !== "%") {
             //when the tween goes all the way back to the beginning, we need to revert it to the OLD/ORIGINAL value (with those units). We record that as a "b" (beginning) property and point to a render method that handles that. (performance optimization)
             this._pt.b = startValue;
             this._pt.r = _renderCSSPropWithBeginning;
@@ -5389,7 +5383,7 @@ var CSSPlugin = {
             //maybe it's not a style - it could be a property added directly to an element in which case we'll try to animate that.
             this.add(target, p, startValue || target[p], relative ? relative + endValue : endValue, index, targets);
           } else if (p !== "parseTransform") {
-            (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._missingPlugin)(p, endValue);
+            (0,_gsap_core_js__rspack_import_0._missingPlugin)(p, endValue);
 
             continue;
           }
@@ -5402,7 +5396,7 @@ var CSSPlugin = {
       }
     }
 
-    hasPriority && (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._sortPropTweensByPriority)(this);
+    hasPriority && (0,_gsap_core_js__rspack_import_0._sortPropTweensByPriority)(this);
   },
   render: function render(ratio, data) {
     if (data.tween._time || !_reverting()) {
@@ -5422,47 +5416,43 @@ var CSSPlugin = {
     //returns a setter function that accepts target, property, value and applies it accordingly. Remember, properties like "x" aren't as simple as target.style.property = value because they've got to be applied to a proxy object and then merged into a transform string in a renderer.
     var p = _propertyAliases[property];
     p && p.indexOf(",") < 0 && (property = p);
-    return property in _transformProps && property !== _transformOriginProp && (target._gsap.x || _get(target, "x")) ? plugin && _recentSetterPlugin === plugin ? property === "scale" ? _setterScale : _setterTransform : (_recentSetterPlugin = plugin || {}) && (property === "scale" ? _setterScaleWithRender : _setterTransformWithRender) : target.style && !(0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._isUndefined)(target.style[property]) ? _setterCSSStyle : ~property.indexOf("-") ? _setterCSSProp : (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._getSetter)(target, property);
+    return property in _transformProps && property !== _transformOriginProp && (target._gsap.x || _get(target, "x")) ? plugin && _recentSetterPlugin === plugin ? property === "scale" ? _setterScale : _setterTransform : (_recentSetterPlugin = plugin || {}) && (property === "scale" ? _setterScaleWithRender : _setterTransformWithRender) : target.style && !(0,_gsap_core_js__rspack_import_0._isUndefined)(target.style[property]) ? _setterCSSStyle : ~property.indexOf("-") ? _setterCSSProp : (0,_gsap_core_js__rspack_import_0._getSetter)(target, property);
   },
   core: {
     _removeProperty: _removeProperty,
     _getMatrix: _getMatrix
   }
 };
-_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.gsap.utils.checkPrefix = _checkPropPrefix;
-_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.gsap.core.getStyleSaver = _getStyleSaver;
+_gsap_core_js__rspack_import_0.gsap.utils.checkPrefix = _checkPropPrefix;
+_gsap_core_js__rspack_import_0.gsap.core.getStyleSaver = _getStyleSaver;
 
 (function (positionAndScale, rotation, others, aliases) {
-  var all = (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._forEachName)(positionAndScale + "," + rotation + "," + others, function (name) {
+  var all = (0,_gsap_core_js__rspack_import_0._forEachName)(positionAndScale + "," + rotation + "," + others, function (name) {
     _transformProps[name] = 1;
   });
 
-  (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._forEachName)(rotation, function (name) {
-    _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._config.units[name] = "deg";
+  (0,_gsap_core_js__rspack_import_0._forEachName)(rotation, function (name) {
+    _gsap_core_js__rspack_import_0._config.units[name] = "deg";
     _rotationalProperties[name] = 1;
   });
 
   _propertyAliases[all[13]] = positionAndScale + "," + rotation;
 
-  (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._forEachName)(aliases, function (name) {
+  (0,_gsap_core_js__rspack_import_0._forEachName)(aliases, function (name) {
     var split = name.split(":");
     _propertyAliases[split[1]] = all[split[0]];
   });
 })("x,y,z,scale,scaleX,scaleY,xPercent,yPercent", "rotation,rotationX,rotationY,skewX,skewY", "transform,transformOrigin,svgOrigin,force3D,smoothOrigin,transformPerspective", "0:translateX,1:translateY,2:translateZ,8:rotate,8:rotationZ,8:rotateZ,9:rotateX,10:rotateY");
 
-(0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._forEachName)("x,y,z,top,right,bottom,left,width,height,fontSize,padding,margin,perspective", function (name) {
-  _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._config.units[name] = "px";
+(0,_gsap_core_js__rspack_import_0._forEachName)("x,y,z,top,right,bottom,left,width,height,fontSize,padding,margin,perspective", function (name) {
+  _gsap_core_js__rspack_import_0._config.units[name] = "px";
 });
 
-_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(CSSPlugin);
+_gsap_core_js__rspack_import_0.gsap.registerPlugin(CSSPlugin);
 
 
-}),
-"./node_modules/gsap/gsap-core.js": 
-/*!****************************************!*\
-  !*** ./node_modules/gsap/gsap-core.js ***!
-  \****************************************/
-(function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+},
+"./node_modules/gsap/gsap-core.js"(__unused_rspack_module, __webpack_exports__, __webpack_require__) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 __webpack_require__.d(__webpack_exports__, {
@@ -5541,7 +5531,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 /*!
- * GSAP 3.13.0
+ * GSAP 3.14.2
  * https://gsap.com
  *
  * @license Copyright 2008-2025, GreenSock. All rights reserved.
@@ -5601,6 +5591,8 @@ var _config = {
     _isTypedArray = typeof ArrayBuffer === "function" && ArrayBuffer.isView || function () {},
     // note: IE10 has ArrayBuffer, but NOT ArrayBuffer.isView().
 _isArray = Array.isArray,
+    _randomExp = /random\([^)]+\)/g,
+    _commaDelimExp = /,\s*/g,
     _strictNumExp = /(?:-?\.?\d|\.)+/gi,
     //only numbers (including negatives and decimals) but NOT relative values.
 _numExp = /[-+=.]*\d+[.e\-+]*\d*[e\-+]*\d*/g,
@@ -6202,7 +6194,7 @@ clamp = function clamp(min, max, value) {
     return _isString(value) && !leaveStrings || _isArrayLike(value, 1) ? (_accumulator = accumulator).push.apply(_accumulator, toArray(value)) : accumulator.push(value);
   }) || accumulator;
 },
-    //takes any value and returns an array. If it's a string (and leaveStrings isn't true), it'll use document.querySelectorAll() and convert that to an array. It'll also accept iterables like jQuery objects.
+    // takes any value and returns an Array. If it's a string (and leaveStrings isn't true), it'll use document.querySelectorAll() and convert that to an array. It'll also accept iterables like jQuery objects.
 toArray = function toArray(value, scope, leaveStrings) {
   return _context && !scope && _context.selector ? _context.selector(value) : _isString(value) && !leaveStrings && (_coreInitted || !_wake()) ? _slice.call((scope || _doc).querySelectorAll(value), 0) : _isArray(value) ? _flatten(value, leaveStrings) : _isArrayLike(value) ? _slice.call(value, 0) : value ? [value] : [];
 },
@@ -6219,7 +6211,7 @@ toArray = function toArray(value, scope, leaveStrings) {
   });
 },
     // alternative that's a bit faster and more reliably diverse but bigger:   for (let j, v, i = a.length; i; j = (Math.random() * i) | 0, v = a[--i], a[i] = a[j], a[j] = v); return a;
-//for distributing values across an array. Can accept a number, a function or (most commonly) a function which can contain the following properties: {base, amount, from, ease, grid, axis, length, each}. Returns a function that expects the following parameters: index, target, array. Recognizes the following
+// for distributing values across an Array. Can accept a number, a function or (most commonly) an object which can contain the following properties: {base, amount, from, ease, grid, axis, length, each}. Returns a function that expects the following parameters: index, target, array.
 distribute = function distribute(v) {
   if (_isFunction(v)) {
     return v;
@@ -6406,24 +6398,13 @@ distribute = function distribute(v) {
     return min + (value > range ? total - value : value);
   });
 },
-    _replaceRandom = function _replaceRandom(value) {
-  //replaces all occurrences of random(...) in a string with the calculated random value. can be a range like random(-100, 100, 5) or an array like random([0, 100, 500])
-  var prev = 0,
-      s = "",
-      i,
-      nums,
-      end,
-      isArray;
-
-  while (~(i = value.indexOf("random(", prev))) {
-    end = value.indexOf(")", i);
-    isArray = value.charAt(i + 7) === "[";
-    nums = value.substr(i + 7, end - i - 7).match(isArray ? _delimitedValueExp : _strictNumExp);
-    s += value.substr(prev, i - prev) + random(isArray ? nums : +nums[0], isArray ? 0 : +nums[1], +nums[2] || 1e-5);
-    prev = end + 1;
-  }
-
-  return s + value.substr(prev, value.length - prev);
+    _replaceRandom = function _replaceRandom(s) {
+  return s.replace(_randomExp, function (match) {
+    //replaces all occurrences of random(...) in a string with the calculated random value. can be a range like random(-100, 100, 5) or an array like random([0, 100, 500])
+    var arIndex = match.indexOf("[") + 1,
+        values = match.substring(arIndex || 7, arIndex ? match.indexOf("]") : match.length - 1).split(_commaDelimExp);
+    return random(arIndex ? values : +values[0], arIndex ? 0 : +values[1], +values[2] || 1e-5);
+  });
 },
     mapRange = function mapRange(inMin, inMax, outMin, outMax, value) {
   var inRange = inMax - inMin,
@@ -7259,7 +7240,7 @@ var Animation = /*#__PURE__*/function () {
       }
     }
 
-    if (this._tTime !== _totalTime || !this._dur && !suppressEvents || this._initted && Math.abs(this._zTime) === _tinyNum || !_totalTime && !this._initted && (this.add || this._ptLookup)) {
+    if (this._tTime !== _totalTime || !this._dur && !suppressEvents || this._initted && Math.abs(this._zTime) === _tinyNum || !this._initted && this._dur && _totalTime || !_totalTime && !this._initted && (this.add || this._ptLookup)) {
       // check for _ptLookup on a Tween instance to ensure it has actually finished being instantiated, otherwise if this.reverse() gets called in the Animation constructor, it could trigger a render() here even though the _targets weren't populated, thus when _init() is called there won't be any PropTweens (it'll act like the tween is non-functional)
       this._ts || (this._pTime = _totalTime); // otherwise, if an animation is paused, then the playhead is moved back to zero, then resumed, it'd revert back to the original time at the pause
       //if (!this._lock) { // avoid endless recursion (not sure we need this yet or if it's worth the performance hit)
@@ -7354,9 +7335,9 @@ var Animation = /*#__PURE__*/function () {
 
   _proto.startTime = function startTime(value) {
     if (arguments.length) {
-      this._start = value;
+      this._start = _roundPrecise(value);
       var parent = this.parent || this._dp;
-      parent && (parent._sort || !this.parent) && _addToTimeline(parent, this, value - this._delay);
+      parent && (parent._sort || !this.parent) && _addToTimeline(parent, this, this._start - this._delay);
       return this;
     }
 
@@ -7506,13 +7487,15 @@ var Animation = /*#__PURE__*/function () {
   };
 
   _proto.then = function then(onFulfilled) {
-    var self = this;
+    var self = this,
+        prevProm = self._prom;
     return new Promise(function (resolve) {
       var f = _isFunction(onFulfilled) ? onFulfilled : _passThrough,
           _resolve = function _resolve() {
         var _then = self.then;
         self.then = null; // temporarily null the then() method to avoid an infinite loop (see https://github.com/greensock/GSAP/issues/322)
 
+        prevProm && prevProm();
         _isFunction(f) && (f = f(self)) && (f.then || f === self) && (self.then = _then);
         resolve(f);
         self.then = _then;
@@ -7733,7 +7716,11 @@ var Timeline = /*#__PURE__*/function (_Animation) {
           this._tTime = tTime; // if a user gets the iteration() inside the onRepeat, for example, it should be accurate.
 
           !suppressEvents && this.parent && _callback(this, "onRepeat");
-          this.vars.repeatRefresh && !isYoyo && (this.invalidate()._lock = 1);
+
+          if (this.vars.repeatRefresh && !isYoyo) {
+            this.invalidate()._lock = 1;
+            prevIteration = iteration; // otherwise, the onStart() may fire on the 2nd iteration.
+          }
 
           if (prevTime && prevTime !== this._time || prevPaused !== !this._ts || this.vars.onRepeat && !this.parent && !this._act) {
             // if prevTime is 0 and we render at the very end, _time will be the end, thus won't match. So in this edge case, prevTime won't match _time but that's okay. If it gets killed in the onRepeat, eject as well.
@@ -7781,7 +7768,7 @@ var Timeline = /*#__PURE__*/function (_Animation) {
         prevTime = 0; // upon init, the playhead should always go forward; someone could invalidate() a completed timeline and then if they restart(), that would make child tweens render in reverse order which could lock in the wrong starting values if they build on each other, like tl.to(obj, {x: 100}).to(obj, {x: 0}).
       }
 
-      if (!prevTime && tTime && !suppressEvents && !prevIteration) {
+      if (!prevTime && tTime && dur && !suppressEvents && !prevIteration) {
         _callback(this, "onStart");
 
         if (this._tTime !== tTime) {
@@ -8128,6 +8115,7 @@ var Timeline = /*#__PURE__*/function (_Animation) {
     var child = this._first,
         labels = this.labels,
         p;
+    amount = _roundPrecise(amount);
 
     while (child) {
       if (child._start >= ignoreBeforeTime) {
@@ -8217,7 +8205,7 @@ var Timeline = /*#__PURE__*/function (_Animation) {
           max -= start;
 
           if (!parent && !self._dp || parent && parent.smoothChildTiming) {
-            self._start += start / self._ts;
+            self._start += _roundPrecise(start / self._ts);
             self._time -= start;
             self._tTime -= start;
           }
@@ -10017,7 +10005,7 @@ var gsap = _gsap.registerPlugin({
   }
 }, _buildModifierPlugin("roundProps", _roundModifier), _buildModifierPlugin("modifiers"), _buildModifierPlugin("snap", snap)) || _gsap; //to prevent the core plugins from being dropped via aggressive tree shaking, we must include them in the variable declaration in this way.
 
-Tween.version = Timeline.version = gsap.version = "3.13.0";
+Tween.version = Timeline.version = gsap.version = "3.14.2";
 _coreReady = 1;
 _windowExists() && _wake();
 var Power0 = _easeMap.Power0,
@@ -10043,56 +10031,26 @@ var Power0 = _easeMap.Power0,
 
 
 
-}),
-"./node_modules/gsap/index.js": 
-/*!************************************!*\
-  !*** ./node_modules/gsap/index.js ***!
-  \************************************/
-(function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+},
+"./node_modules/gsap/index.js"(__unused_rspack_module, __webpack_exports__, __webpack_require__) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 __webpack_require__.d(__webpack_exports__, {
-  Back: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_1__.Back),
-  Bounce: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_1__.Bounce),
-  CSSPlugin: () => (/* reexport safe */ _CSSPlugin_js__WEBPACK_IMPORTED_MODULE_0__.CSSPlugin),
-  Circ: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_1__.Circ),
-  Cubic: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_1__.Cubic),
-  Elastic: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_1__.Elastic),
-  Expo: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_1__.Expo),
-  Linear: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_1__.Linear),
-  Power0: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_1__.Power0),
-  Power1: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_1__.Power1),
-  Power2: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_1__.Power2),
-  Power3: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_1__.Power3),
-  Power4: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_1__.Power4),
-  Quad: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_1__.Quad),
-  Quart: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_1__.Quart),
-  Quint: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_1__.Quint),
-  Sine: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_1__.Sine),
-  SteppedEase: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_1__.SteppedEase),
-  Strong: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_1__.Strong),
-  TimelineLite: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_1__.TimelineLite),
-  TimelineMax: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_1__.TimelineMax),
-  TweenLite: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_1__.TweenLite),
   TweenMax: () => (TweenMaxWithCSS),
   "default": () => (gsapWithCSS),
   gsap: () => (gsapWithCSS)
 });
-/* ESM import */var _gsap_core_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./gsap-core.js */ "./node_modules/gsap/gsap-core.js");
-/* ESM import */var _CSSPlugin_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CSSPlugin.js */ "./node_modules/gsap/CSSPlugin.js");
+/* import */ var _gsap_core_js__rspack_import_0 = __webpack_require__("./node_modules/gsap/gsap-core.js");
+/* import */ var _CSSPlugin_js__rspack_import_1 = __webpack_require__("./node_modules/gsap/CSSPlugin.js");
 
 
-var gsapWithCSS = _gsap_core_js__WEBPACK_IMPORTED_MODULE_1__.gsap.registerPlugin(_CSSPlugin_js__WEBPACK_IMPORTED_MODULE_0__.CSSPlugin) || _gsap_core_js__WEBPACK_IMPORTED_MODULE_1__.gsap,
+var gsapWithCSS = _gsap_core_js__rspack_import_0.gsap.registerPlugin(_CSSPlugin_js__rspack_import_1.CSSPlugin) || _gsap_core_js__rspack_import_0.gsap,
     // to protect from tree shaking
 TweenMaxWithCSS = gsapWithCSS.core.Tween;
 
 
-}),
-"./node_modules/lodash/lodash.js": 
-/*!***************************************!*\
-  !*** ./node_modules/lodash/lodash.js ***!
-  \***************************************/
-(function (module, exports, __webpack_require__) {
+},
+"./node_modules/lodash/lodash.js"(module, exports, __webpack_require__) {
 /* module decorator */ module = __webpack_require__.nmd(module);
 /**
  * @license
@@ -10108,7 +10066,7 @@ TweenMaxWithCSS = gsapWithCSS.core.Tween;
   var undefined;
 
   /** Used as the semantic version number. */
-  var VERSION = '4.17.21';
+  var VERSION = '4.17.23';
 
   /** Used as the size to enable large array optimizations. */
   var LARGE_ARRAY_SIZE = 200;
@@ -13862,7 +13820,7 @@ TweenMaxWithCSS = gsapWithCSS.core.Tween;
           if (isArray(iteratee)) {
             return function(value) {
               return baseGet(value, iteratee.length === 1 ? iteratee[0] : iteratee);
-            }
+            };
           }
           return iteratee;
         });
@@ -14466,8 +14424,47 @@ TweenMaxWithCSS = gsapWithCSS.core.Tween;
      */
     function baseUnset(object, path) {
       path = castPath(path, object);
-      object = parent(object, path);
-      return object == null || delete object[toKey(last(path))];
+
+      // Prevent prototype pollution, see: https://github.com/lodash/lodash/security/advisories/GHSA-xxjr-mmjv-4gpg
+      var index = -1,
+          length = path.length;
+
+      if (!length) {
+        return true;
+      }
+
+      var isRootPrimitive = object == null || (typeof object !== 'object' && typeof object !== 'function');
+
+      while (++index < length) {
+        var key = path[index];
+
+        // skip non-string keys (e.g., Symbols, numbers)
+        if (typeof key !== 'string') {
+          continue;
+        }
+
+        // Always block "__proto__" anywhere in the path if it's not expected
+        if (key === '__proto__' && !hasOwnProperty.call(object, '__proto__')) {
+          return false;
+        }
+
+        // Block "constructor.prototype" chains
+        if (key === 'constructor' &&
+            (index + 1) < length &&
+            typeof path[index + 1] === 'string' &&
+            path[index + 1] === 'prototype') {
+
+          // Allow ONLY when the path starts at a primitive root, e.g., _.unset(0, 'constructor.prototype.a')
+          if (isRootPrimitive && index === 0) {
+            continue;
+          }
+
+          return false;
+        }
+      }
+
+      var obj = parent(object, path);
+      return obj == null || delete obj[toKey(last(path))];
     }
 
     /**
@@ -27305,21 +27302,17 @@ TweenMaxWithCSS = gsapWithCSS.core.Tween;
 }.call(this));
 
 
-}),
-"./src/apps/become-a-model/index.js": 
-/*!******************************************!*\
-  !*** ./src/apps/become-a-model/index.js ***!
-  \******************************************/
-(function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+},
+"./src/apps/become-a-model/index.js"(__unused_rspack_module, __webpack_exports__, __webpack_require__) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 __webpack_require__.d(__webpack_exports__, {
   "default": () => (BecomeAModel)
 });
-/* ESM import */var country_list__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! country-list */ "./node_modules/country-list/country-list.js");
-/* ESM import */var lodash__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
-/* ESM import */var lodash__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_1__);
-/* ESM import */var _extra_model_height_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../extra/model-height-data */ "./src/apps/extra/model-height-data.js");
+/* import */ var country_list__rspack_import_0 = __webpack_require__("./node_modules/country-list/country-list.js");
+/* import */ var lodash__rspack_import_1 = __webpack_require__("./node_modules/lodash/lodash.js");
+/* import */ var lodash__rspack_import_1_default = /*#__PURE__*/__webpack_require__.n(lodash__rspack_import_1);
+/* import */ var _extra_model_height_data__rspack_import_2 = __webpack_require__("./src/apps/extra/model-height-data.js");
 function _class_call_check(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
         throw new TypeError("Cannot call a class as a function");
@@ -27363,7 +27356,7 @@ var BecomeAModel = /*#__PURE__*/ function() {
                 var _this = this;
                 this.countries = document.querySelector('.countries');
                 if (this.countries) {
-                    lodash__WEBPACK_IMPORTED_MODULE_1___default().map((0,country_list__WEBPACK_IMPORTED_MODULE_0__.getData)(), function(element) {
+                    lodash__rspack_import_1_default().map((0,country_list__rspack_import_0.getData)(), function(element) {
                         _this.countries.innerHTML += '<option value="'.concat(element.name, '">').concat(element.code, " - ").concat(element.name, "</option>");
                     });
                 }
@@ -27375,7 +27368,7 @@ var BecomeAModel = /*#__PURE__*/ function() {
                 var _this = this;
                 this.heights = document.querySelector('.heights');
                 if (this.heights) {
-                    lodash__WEBPACK_IMPORTED_MODULE_1___default().map(_extra_model_height_data__WEBPACK_IMPORTED_MODULE_2__.modelHeights, function(element) {
+                    lodash__rspack_import_1_default().map(_extra_model_height_data__rspack_import_2.modelHeights, function(element) {
                         _this.heights.innerHTML += '<option value="'.concat(element.cm, '">').concat(element.cm, " cm - ").concat(element.label, "</option>");
                     });
                 }
@@ -27388,7 +27381,7 @@ var BecomeAModel = /*#__PURE__*/ function() {
                 if (true) {
                     that.input = document.querySelectorAll('.file-button .file');
                     that.placeHolder = document.querySelectorAll('.file-button .place-holder');
-                    lodash__WEBPACK_IMPORTED_MODULE_1___default().forEach(that.input, function(element, index) {
+                    lodash__rspack_import_1_default().forEach(that.input, function(element, index) {
                         element.addEventListener('change', function() {
                             that.placeHolder[index].textContent = element.files[0].name;
                         });
@@ -27402,12 +27395,8 @@ var BecomeAModel = /*#__PURE__*/ function() {
 
 
 
-}),
-"./src/apps/contact/index.js": 
-/*!***********************************!*\
-  !*** ./src/apps/contact/index.js ***!
-  \***********************************/
-(function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+},
+"./src/apps/contact/index.js"(__unused_rspack_module, __webpack_exports__, __webpack_require__) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 __webpack_require__.d(__webpack_exports__, {
@@ -27449,12 +27438,8 @@ var Contact = /*#__PURE__*/ function() {
 
 
 
-}),
-"./src/apps/extra/model-height-data.js": 
-/*!*********************************************!*\
-  !*** ./src/apps/extra/model-height-data.js ***!
-  \*********************************************/
-(function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+},
+"./src/apps/extra/model-height-data.js"(__unused_rspack_module, __webpack_exports__, __webpack_require__) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 __webpack_require__.d(__webpack_exports__, {
@@ -27668,19 +27653,15 @@ var modelHeights = [
 ];
 
 
-}),
-"./src/apps/home/index.js": 
-/*!********************************!*\
-  !*** ./src/apps/home/index.js ***!
-  \********************************/
-(function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+},
+"./src/apps/home/index.js"(__unused_rspack_module, __webpack_exports__, __webpack_require__) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 __webpack_require__.d(__webpack_exports__, {
   "default": () => (Home)
 });
-/* ESM import */var _splidejs_splide__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @splidejs/splide */ "./node_modules/@splidejs/splide/dist/js/splide.esm.js");
-/* ESM import */var _splidejs_splide_css_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @splidejs/splide/css/core */ "./node_modules/@splidejs/splide/dist/css/splide-core.min.css");
+/* import */ var _splidejs_splide__rspack_import_0 = __webpack_require__("./node_modules/@splidejs/splide/dist/js/splide.esm.js");
+/* import */ var _splidejs_splide_css_core__rspack_import_1 = __webpack_require__("./node_modules/@splidejs/splide/dist/css/splide-core.min.css");
 function _class_call_check(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
         throw new TypeError("Cannot call a class as a function");
@@ -27735,7 +27716,7 @@ var Home = /*#__PURE__*/ function() {
                 this.splideHome = document.querySelector(".splide");
                 if (this.splideHome) {
                     var _obj;
-                    this.splide = new _splidejs_splide__WEBPACK_IMPORTED_MODULE_0__["default"](this.splideHome, (_obj = {
+                    this.splide = new _splidejs_splide__rspack_import_0["default"](this.splideHome, (_obj = {
                         type: 'loop',
                         drag: 'free',
                         perPage: 5,
@@ -27774,19 +27755,14 @@ var Home = /*#__PURE__*/ function() {
 
 
 
-}),
-"./node_modules/country-list/data.json": 
-/*!*********************************************!*\
-  !*** ./node_modules/country-list/data.json ***!
-  \*********************************************/
-(function (module) {
+},
+"./node_modules/country-list/data.json"(module) {
 "use strict";
 module.exports = JSON.parse('[{"code":"AD","name":"Andorra"},{"code":"AE","name":"United Arab Emirates (the)"},{"code":"AF","name":"Afghanistan"},{"code":"AG","name":"Antigua and Barbuda"},{"code":"AI","name":"Anguilla"},{"code":"AL","name":"Albania"},{"code":"AM","name":"Armenia"},{"code":"AO","name":"Angola"},{"code":"AQ","name":"Antarctica"},{"code":"AR","name":"Argentina"},{"code":"AS","name":"American Samoa"},{"code":"AT","name":"Austria"},{"code":"AU","name":"Australia"},{"code":"AW","name":"Aruba"},{"code":"AX","name":"Åland Islands"},{"code":"AZ","name":"Azerbaijan"},{"code":"BA","name":"Bosnia and Herzegovina"},{"code":"BB","name":"Barbados"},{"code":"BD","name":"Bangladesh"},{"code":"BE","name":"Belgium"},{"code":"BF","name":"Burkina Faso"},{"code":"BG","name":"Bulgaria"},{"code":"BH","name":"Bahrain"},{"code":"BI","name":"Burundi"},{"code":"BJ","name":"Benin"},{"code":"BL","name":"Saint Barthélemy"},{"code":"BM","name":"Bermuda"},{"code":"BN","name":"Brunei Darussalam"},{"code":"BO","name":"Bolivia (Plurinational State of)"},{"code":"BQ","name":"Bonaire, Sint Eustatius and Saba"},{"code":"BR","name":"Brazil"},{"code":"BS","name":"Bahamas (The)"},{"code":"BT","name":"Bhutan"},{"code":"BV","name":"Bouvet Island"},{"code":"BW","name":"Botswana"},{"code":"BY","name":"Belarus"},{"code":"BZ","name":"Belize"},{"code":"CA","name":"Canada"},{"code":"CC","name":"Cocos (Keeling) Islands (the)"},{"code":"CD","name":"Congo (the Democratic Republic of the)"},{"code":"CF","name":"Central African Republic (the)"},{"code":"CG","name":"Congo (the)"},{"code":"CH","name":"Switzerland"},{"code":"CI","name":"Côte d\'Ivoire"},{"code":"CK","name":"Cook Islands (the)"},{"code":"CL","name":"Chile"},{"code":"CM","name":"Cameroon"},{"code":"CN","name":"China"},{"code":"CO","name":"Colombia"},{"code":"CR","name":"Costa Rica"},{"code":"CU","name":"Cuba"},{"code":"CV","name":"Cabo Verde"},{"code":"CW","name":"Curaçao"},{"code":"CX","name":"Christmas Island"},{"code":"CY","name":"Cyprus"},{"code":"CZ","name":"Czechia"},{"code":"DE","name":"Germany"},{"code":"DJ","name":"Djibouti"},{"code":"DK","name":"Denmark"},{"code":"DM","name":"Dominica"},{"code":"DO","name":"Dominican Republic (the)"},{"code":"DZ","name":"Algeria"},{"code":"EC","name":"Ecuador"},{"code":"EE","name":"Estonia"},{"code":"EG","name":"Egypt"},{"code":"EH","name":"Western Sahara*"},{"code":"ER","name":"Eritrea"},{"code":"ES","name":"Spain"},{"code":"ET","name":"Ethiopia"},{"code":"FI","name":"Finland"},{"code":"FJ","name":"Fiji"},{"code":"FK","name":"Falkland Islands (the) [Malvinas]"},{"code":"FM","name":"Micronesia (Federated States of)"},{"code":"FO","name":"Faroe Islands (the)"},{"code":"FR","name":"France"},{"code":"GA","name":"Gabon"},{"code":"GB","name":"United Kingdom of Great Britain and Northern Ireland (the)"},{"code":"GD","name":"Grenada"},{"code":"GE","name":"Georgia"},{"code":"GF","name":"French Guiana"},{"code":"GG","name":"Guernsey"},{"code":"GH","name":"Ghana"},{"code":"GI","name":"Gibraltar"},{"code":"GL","name":"Greenland"},{"code":"GM","name":"Gambia (the)"},{"code":"GN","name":"Guinea"},{"code":"GP","name":"Guadeloupe"},{"code":"GQ","name":"Equatorial Guinea"},{"code":"GR","name":"Greece"},{"code":"GS","name":"South Georgia and the South Sandwich Islands"},{"code":"GT","name":"Guatemala"},{"code":"GU","name":"Guam"},{"code":"GW","name":"Guinea-Bissau"},{"code":"GY","name":"Guyana"},{"code":"HK","name":"Hong Kong"},{"code":"HM","name":"Heard Island and McDonald Islands"},{"code":"HN","name":"Honduras"},{"code":"HR","name":"Croatia"},{"code":"HT","name":"Haiti"},{"code":"HU","name":"Hungary"},{"code":"ID","name":"Indonesia"},{"code":"IE","name":"Ireland"},{"code":"IL","name":"Israel"},{"code":"IM","name":"Isle of Man"},{"code":"IN","name":"India"},{"code":"IO","name":"British Indian Ocean Territory (the)"},{"code":"IQ","name":"Iraq"},{"code":"IR","name":"Iran (Islamic Republic of)"},{"code":"IS","name":"Iceland"},{"code":"IT","name":"Italy"},{"code":"JE","name":"Jersey"},{"code":"JM","name":"Jamaica"},{"code":"JO","name":"Jordan"},{"code":"JP","name":"Japan"},{"code":"KE","name":"Kenya"},{"code":"KG","name":"Kyrgyzstan"},{"code":"KH","name":"Cambodia"},{"code":"KI","name":"Kiribati"},{"code":"KM","name":"Comoros (the)"},{"code":"KN","name":"Saint Kitts and Nevis"},{"code":"KP","name":"Korea (the Democratic People\'s Republic of)"},{"code":"KR","name":"Korea (the Republic of)"},{"code":"KW","name":"Kuwait"},{"code":"KY","name":"Cayman Islands (the)"},{"code":"KZ","name":"Kazakhstan"},{"code":"LA","name":"Lao People\'s Democratic Republic (the)"},{"code":"LB","name":"Lebanon"},{"code":"LC","name":"Saint Lucia"},{"code":"LI","name":"Liechtenstein"},{"code":"LK","name":"Sri Lanka"},{"code":"LR","name":"Liberia"},{"code":"LS","name":"Lesotho"},{"code":"LT","name":"Lithuania"},{"code":"LU","name":"Luxembourg"},{"code":"LV","name":"Latvia"},{"code":"LY","name":"Libya"},{"code":"MA","name":"Morocco"},{"code":"MC","name":"Monaco"},{"code":"MD","name":"Moldova (the Republic of)"},{"code":"ME","name":"Montenegro"},{"code":"MF","name":"Saint Martin (French part)"},{"code":"MG","name":"Madagascar"},{"code":"MH","name":"Marshall Islands (the)"},{"code":"MK","name":"North Macedonia"},{"code":"ML","name":"Mali"},{"code":"MM","name":"Myanmar"},{"code":"MN","name":"Mongolia"},{"code":"MO","name":"Macao"},{"code":"MP","name":"Northern Mariana Islands (the)"},{"code":"MQ","name":"Martinique"},{"code":"MR","name":"Mauritania"},{"code":"MS","name":"Montserrat"},{"code":"MT","name":"Malta"},{"code":"MU","name":"Mauritius"},{"code":"MV","name":"Maldives"},{"code":"MW","name":"Malawi"},{"code":"MX","name":"Mexico"},{"code":"MY","name":"Malaysia"},{"code":"MZ","name":"Mozambique"},{"code":"NA","name":"Namibia"},{"code":"NC","name":"New Caledonia"},{"code":"NE","name":"Niger (the)"},{"code":"NF","name":"Norfolk Island"},{"code":"NG","name":"Nigeria"},{"code":"NI","name":"Nicaragua"},{"code":"NL","name":"Netherlands (Kingdom of the)"},{"code":"NO","name":"Norway"},{"code":"NP","name":"Nepal"},{"code":"NR","name":"Nauru"},{"code":"NU","name":"Niue"},{"code":"NZ","name":"New Zealand"},{"code":"OM","name":"Oman"},{"code":"PA","name":"Panama"},{"code":"PE","name":"Peru"},{"code":"PF","name":"French Polynesia"},{"code":"PG","name":"Papua New Guinea"},{"code":"PH","name":"Philippines (the)"},{"code":"PK","name":"Pakistan"},{"code":"PL","name":"Poland"},{"code":"PM","name":"Saint Pierre and Miquelon"},{"code":"PN","name":"Pitcairn"},{"code":"PR","name":"Puerto Rico"},{"code":"PS","name":"Palestine, State of"},{"code":"PT","name":"Portugal"},{"code":"PW","name":"Palau"},{"code":"PY","name":"Paraguay"},{"code":"QA","name":"Qatar"},{"code":"RE","name":"Réunion"},{"code":"RO","name":"Romania"},{"code":"RS","name":"Serbia"},{"code":"RU","name":"Russian Federation (the)"},{"code":"RW","name":"Rwanda"},{"code":"SA","name":"Saudi Arabia"},{"code":"SB","name":"Solomon Islands"},{"code":"SC","name":"Seychelles"},{"code":"SD","name":"Sudan (the)"},{"code":"SE","name":"Sweden"},{"code":"SG","name":"Singapore"},{"code":"SH","name":"Saint Helena, Ascension and Tristan da Cunha"},{"code":"SI","name":"Slovenia"},{"code":"SJ","name":"Svalbard and Jan Mayen"},{"code":"SK","name":"Slovakia"},{"code":"SL","name":"Sierra Leone"},{"code":"SM","name":"San Marino"},{"code":"SN","name":"Senegal"},{"code":"SO","name":"Somalia"},{"code":"SR","name":"Suriname"},{"code":"SS","name":"South Sudan"},{"code":"ST","name":"Sao Tome and Principe"},{"code":"SV","name":"El Salvador"},{"code":"SX","name":"Sint Maarten (Dutch part)"},{"code":"SY","name":"Syrian Arab Republic (the)"},{"code":"SZ","name":"Eswatini"},{"code":"TC","name":"Turks and Caicos Islands (the)"},{"code":"TD","name":"Chad"},{"code":"TF","name":"French Southern Territories (the)"},{"code":"TG","name":"Togo"},{"code":"TH","name":"Thailand"},{"code":"TJ","name":"Tajikistan"},{"code":"TK","name":"Tokelau"},{"code":"TL","name":"Timor-Leste"},{"code":"TM","name":"Turkmenistan"},{"code":"TN","name":"Tunisia"},{"code":"TO","name":"Tonga"},{"code":"TR","name":"Türkiye"},{"code":"TT","name":"Trinidad and Tobago"},{"code":"TV","name":"Tuvalu"},{"code":"TW","name":"Taiwan (Province of China)"},{"code":"TZ","name":"Tanzania, the United Republic of"},{"code":"UA","name":"Ukraine"},{"code":"UG","name":"Uganda"},{"code":"UM","name":"United States Minor Outlying Islands (the)"},{"code":"US","name":"United States of America (the)"},{"code":"UY","name":"Uruguay"},{"code":"UZ","name":"Uzbekistan"},{"code":"VA","name":"Holy See (the)"},{"code":"VC","name":"Saint Vincent and the Grenadines"},{"code":"VE","name":"Venezuela (Bolivarian Republic of)"},{"code":"VG","name":"Virgin Islands (British)"},{"code":"VI","name":"Virgin Islands (U.S.)"},{"code":"VN","name":"Viet Nam"},{"code":"VU","name":"Vanuatu"},{"code":"WF","name":"Wallis and Futuna"},{"code":"WS","name":"Samoa"},{"code":"YE","name":"Yemen"},{"code":"YT","name":"Mayotte"},{"code":"ZA","name":"South Africa"},{"code":"ZM","name":"Zambia"},{"code":"ZW","name":"Zimbabwe"}]')
 
-}),
+},
 
 });
-/************************************************************************/
 // The module cache
 var __webpack_module_cache__ = {};
 
@@ -27814,7 +27790,6 @@ return module.exports;
 
 }
 
-/************************************************************************/
 // webpack/runtime/compat_get_default_export
 (() => {
 // getDefaultExport function for compatibility with non-ESM modules
@@ -27872,32 +27847,26 @@ __webpack_require__.nmd = (module) => {
 })();
 // webpack/runtime/rspack_version
 (() => {
-__webpack_require__.rv = () => ("1.3.4")
+__webpack_require__.rv = () => ("1.7.8")
 })();
 // webpack/runtime/rspack_unique_id
 (() => {
-__webpack_require__.ruid = "bundler=rspack@1.3.4";
-
+__webpack_require__.ruid = "bundler=rspack@1.7.8";
 })();
-/************************************************************************/
 var __webpack_exports__ = {};
 // This entry needs to be wrapped in an IIFE because it needs to be in strict mode.
 (() => {
 "use strict";
-
-/*!***************************!*\
-  !*** ./src/apps/index.js ***!
-  \***************************/
 __webpack_require__.r(__webpack_exports__);
-/* ESM import */var _home__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./home */ "./src/apps/home/index.js");
-/* ESM import */var _contact__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./contact */ "./src/apps/contact/index.js");
-/* ESM import */var _become_a_model__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./become-a-model */ "./src/apps/become-a-model/index.js");
-/* ESM import */var _barba_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @barba/core */ "./node_modules/@barba/core/dist/barba.umd.js");
-/* ESM import */var _barba_core__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_barba_core__WEBPACK_IMPORTED_MODULE_3__);
-/* ESM import */var gsap__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
-/* ESM import */var lodash__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
-/* ESM import */var lodash__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_4__);
-/* ESM import */var _scss_main_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../scss/main.scss */ "./src/scss/main.scss");
+/* import */ var _home__rspack_import_0 = __webpack_require__("./src/apps/home/index.js");
+/* import */ var _contact__rspack_import_1 = __webpack_require__("./src/apps/contact/index.js");
+/* import */ var _become_a_model__rspack_import_2 = __webpack_require__("./src/apps/become-a-model/index.js");
+/* import */ var _barba_core__rspack_import_3 = __webpack_require__("./node_modules/@barba/core/dist/barba.umd.js");
+/* import */ var _barba_core__rspack_import_3_default = /*#__PURE__*/__webpack_require__.n(_barba_core__rspack_import_3);
+/* import */ var gsap__rspack_import_6 = __webpack_require__("./node_modules/gsap/index.js");
+/* import */ var lodash__rspack_import_4 = __webpack_require__("./node_modules/lodash/lodash.js");
+/* import */ var lodash__rspack_import_4_default = /*#__PURE__*/__webpack_require__.n(lodash__rspack_import_4);
+/* import */ var _scss_main_scss__rspack_import_5 = __webpack_require__("./src/scss/main.scss");
 function _class_call_check(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
         throw new TypeError("Cannot call a class as a function");
@@ -27929,9 +27898,9 @@ var App = /*#__PURE__*/ function() {
     function App() {
         _class_call_check(this, App);
         this.pages = {
-            home: new _home__WEBPACK_IMPORTED_MODULE_0__["default"](),
-            contact: new _contact__WEBPACK_IMPORTED_MODULE_1__["default"](),
-            become_a_model: new _become_a_model__WEBPACK_IMPORTED_MODULE_2__["default"]()
+            home: new _home__rspack_import_0["default"](),
+            contact: new _contact__rspack_import_1["default"](),
+            become_a_model: new _become_a_model__rspack_import_2["default"]()
         };
         this.offCanvas = document.querySelector('#offcanvas');
         this.links = document.querySelectorAll('.menu li a');
@@ -27944,29 +27913,29 @@ var App = /*#__PURE__*/ function() {
             key: "createAjaxNavigation",
             value: function createAjaxNavigation() {
                 var _this = this;
-                lodash__WEBPACK_IMPORTED_MODULE_4___default().forEach(this.links, function(element) {
+                lodash__rspack_import_4_default().forEach(this.links, function(element) {
                     element.addEventListener('click', function() {
                         return _this.offCanvas.checked = false;
                     });
                 });
-                var easeIn = function(container, done) {
-                    return gsap__WEBPACK_IMPORTED_MODULE_6__["default"].to(container, {
+                var easeIn = function easeIn(container, done) {
+                    return gsap__rspack_import_6["default"].to(container, {
                         autoAlpha: 0,
                         duration: 1,
                         ease: 'none',
-                        onComplete: function() {
+                        onComplete: function onComplete() {
                             return done();
                         }
                     });
                 };
-                var easeOut = function(container) {
-                    return gsap__WEBPACK_IMPORTED_MODULE_6__["default"].from(container, {
+                var easeOut = function easeOut(container) {
+                    return gsap__rspack_import_6["default"].from(container, {
                         autoAlpha: 0,
                         duration: 1,
                         ease: 'none'
                     });
                 };
-                _barba_core__WEBPACK_IMPORTED_MODULE_3___default().init({
+                _barba_core__rspack_import_3_default().init({
                     preventRunning: true,
                     transitions: [
                         {
@@ -27992,8 +27961,8 @@ var App = /*#__PURE__*/ function() {
             key: "createReRender",
             value: function createReRender() {
                 var _this = this;
-                _barba_core__WEBPACK_IMPORTED_MODULE_3___default().hooks.before(function() {});
-                _barba_core__WEBPACK_IMPORTED_MODULE_3___default().hooks.after(function() {
+                _barba_core__rspack_import_3_default().hooks.before(function() {});
+                _barba_core__rspack_import_3_default().hooks.after(function() {
                     _this.pages.home.createReRender();
                     _this.pages.become_a_model.createReRender();
                 });
