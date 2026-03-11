@@ -11778,14 +11778,24 @@ section.become-a-model-section-1 .form select {
   border: none;
   padding: 0.625rem 0;
   transition: all 0.2s ease;
-  color: #9ca3af;
   border-bottom: 0.125rem solid rgba(18, 18, 18, 0.2);
+  background: transparent;
 }
 section.become-a-model-section-1 .form input:focus,
 section.become-a-model-section-1 .form select:focus {
   outline: none;
   border-bottom: 0.125rem solid #121212;
   transition: all 0.2s ease;
+}
+section.become-a-model-section-1 .form input::-moz-placeholder, section.become-a-model-section-1 .form select::-moz-placeholder {
+  color: #9ca3af;
+}
+section.become-a-model-section-1 .form input::placeholder,
+section.become-a-model-section-1 .form select::placeholder {
+  color: #9ca3af;
+}
+section.become-a-model-section-1 .form select {
+  color: #9ca3af;
 }
 
 /* ABOUT */ /* SERVICES */ /* BLOG */ /* CONTACT */
@@ -11931,6 +11941,9 @@ header.become-model-header .text-body{
   header.become-model-header .text-body{
     max-width: 55ch;
   }
+}
+header.become-model-header .text-body {
+  color: #111111;
 }
 
 *, ::before, ::after{
@@ -13324,6 +13337,9 @@ video {
   padding-top: 5rem;
   padding-bottom: 5rem;
 }
+.pt-\[3rem\]{
+  padding-top: 3rem;
+}
 .text-right{
   text-align: right;
 }
@@ -13393,5 +13409,8 @@ video {
   .md\:py-\[5rem\]{
     padding-top: 5rem;
     padding-bottom: 5rem;
+  }
+  .md\:pt-\[5rem\]{
+    padding-top: 5rem;
   }
 }
