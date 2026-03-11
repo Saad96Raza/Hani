@@ -11945,6 +11945,9 @@ header.become-model-header .text-body{
 header.become-model-header .text-body {
   color: #111111;
 }
+header.become-a-model-section- .text-highlight {
+  color: #111111;
+}
 
 *, ::before, ::after{
   --tw-border-spacing-x: 0;
@@ -13235,6 +13238,9 @@ video {
 }
 .col-span-2{
   grid-column: span 2 / span 2;
+}
+.ml-2{
+  margin-left: 0.5rem;
 }
 .ml-auto{
   margin-left: auto;
