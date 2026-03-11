@@ -13007,6 +13007,10 @@ video {
   cursor: not-allowed;
   opacity: 20%;
 }
+.checkbox-sm{
+  padding: 0.1875rem;
+  --size: calc(var(--size-selector, 0.25rem) * 5);
+}
 @keyframes rating{
   0%, 40%{
     scale: 1.1;
@@ -13299,6 +13303,9 @@ video {
 .ml-auto{
   margin-left: auto;
 }
+.mt-12{
+  margin-top: 3rem;
+}
 .mt-auto{
   margin-top: auto;
 }
@@ -13449,6 +13456,9 @@ video {
   }
   .md\:hidden{
     display: none;
+  }
+  .md\:grid-cols-2{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .md\:grid-cols-3{
     grid-template-columns: repeat(3, minmax(0, 1fr));
