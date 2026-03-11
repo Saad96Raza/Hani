@@ -11501,11 +11501,10 @@ section.become-a-model-section-1 .file-button input {
   cursor: pointer;
   opacity: 0;
 }
-section.become-a-model-section-1 .checkbox ~ .terms-text .text-highlight {
+section.become-a-model-section-1 .terms .checkbox ~ .terms-text .text-highlight {
   color: rgb(156, 163, 175);
-  transition: color 0.2s ease;
 }
-section.become-a-model-section-1 .checkbox:checked ~ .terms-text .text-highlight {
+section.become-a-model-section-1 .terms .checkbox:checked ~ .terms-text .text-highlight {
   color: rgb(17, 17, 17);
 }
 
@@ -11656,7 +11655,8 @@ header.become-model-header .text-body{
 header.become-model-header .text-body {
   color: #111111;
 }
-header.become-a-model-section-1 .text-highlight {
+
+section.become-a-model-section-1 .text-highlight {
   color: rgb(17, 17, 17);
 }
 
