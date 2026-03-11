@@ -1,8 +1,19 @@
 @use "variables" as *;
 @use "mixins" as *;
+@use "blocks/blocks" as *;
 //HOME
 
 
 section{
-   
+   &.home-section-1{
+    .splide{
+        .splide__slide{
+            .text-md{
+               color: color($primary-color-1,1.0);
+            }
+            @extend %img-overlay-base;
+           
+        }
+    }
+   }
 }

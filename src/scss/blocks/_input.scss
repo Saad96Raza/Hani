@@ -1,0 +1,23 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+section{
+    &.become-a-model-section-1{
+        .form{
+            input,
+            select{
+                border: none;
+                padding: rem(10) 0;
+                transition: all  0.2s ease;
+                color: color($primary-color-6,1.0);
+                border-bottom: rem(2) solid color($primary-color-5,0.2);
+                &:focus{
+                    outline: none;
+                    border-bottom: rem(2) solid color($primary-color-5,1.0);
+                    transition: all  0.2s ease;
+                }
+            }
+           
+        }
+    }
+}

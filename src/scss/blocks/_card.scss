@@ -1,0 +1,75 @@
+@use "variables" as *;
+@use "mixins" as *;
+//CARD
+
+%img-overlay-base{
+    .img-overlay{
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+        z-index: 0;
+        
+        @apply h-[30rem] md:h-[40rem];
+        .body-measurment{
+            position: relative;
+            z-index: 2;
+            padding: rem(40);
+            .text-highlight,
+            .text-md{
+                color : color($primary-color-4,1.0);
+            }
+            i,
+            .location{
+                color : color($primary-color-4,1.0);
+                opacity: 0;
+                transition: opacity .4s ease-out;
+            }
+            .figure{
+                transform: translateY(rem(10));
+                opacity: 0;
+                transition: opacity .4s ease-in, transform .4s ease-in;
+            }
+        }
+
+
+        img{
+            width: 100%;
+            object-fit: cover;
+            height: 100%;
+            filter: grayscale(1);
+            transition: filter .4s ease;
+            position: absolute;
+            inset: 0;
+        }
+
+        &::after{
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: color($primary-color-1,0.6);
+            opacity: 0;
+            transition: opacity .5s ease;
+            z-index: 1;
+            pointer-events: none;
+        }
+        &:hover .body-measurment i,
+        &:hover .body-measurment .location{
+            opacity: 1;
+        }
+
+        &:hover .body-measurment .figure{
+            transform: translateY(0);
+            opacity: 1;
+            transition: opacity .4s ease-out, transform .4s ease-out;
+        }
+
+        &:hover img{
+            filter: grayscale(0);
+        }
+
+        &:hover::after{
+            opacity: 1;
+        }
+    }
+    
+}

@@ -2,11 +2,11 @@
 @use "mixins" as *;
 // ICONS 
 .pry-btn{
-    padding :rem(25) rem(50);
+    padding :rem(20) rem(30);
     background: color($primary-color-1,1.0);
     color: color($primary-color-4,1.0);
     transition: all ease 0.4s;
-    border: rem(3) solid color($primary-color-1,1.0);
+    border: rem(2) solid color($primary-color-1,1.0);
     &:hover{
         background: transparent;
         transition: all ease 0.4s;

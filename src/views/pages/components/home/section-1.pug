@@ -1,2 +1,24 @@
-section(class="section home-section-1")
+include ../../mixins/card.pug
+section(class="section home-section-1 py-[5rem]")
+    div(class="splide flex flex-col gap-8 md:gap-16")
+        .splide__track
+            ul.splide__list
+                li.splide__slide 
+                    +modelCard("Gabriella Rousseau", "./media/models/1.png")
+                li.splide__slide
+                    +modelCard("Alessia Fontaine", "./media/models/2.png")                    
+                li.splide__slide
+                    +modelCard("Victoria Sinclair", "./media/models/3.png")
+                li.splide__slide
+                    +modelCard("Sarena Moreau", "./media/models/4.png")
+                li.splide__slide
+                    +modelCard("Celeste Vaughn", "./media/models/5.png")
+                li.splide__slide
+                    +modelCard("Sophia Lennox", "./media/models/6.png")
+                li.splide__slide
+                    +modelCard("Ava Delacroix", "./media/models/7.png")
+                li.splide__slide
+                    +modelCard("Isla Harrington", "./media/models/8.png")       
+        div(class="my-slider-progress")
+            div(class="my-slider-progress-bar")
 

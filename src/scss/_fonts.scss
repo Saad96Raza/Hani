@@ -10,18 +10,19 @@
 }
 
 .text-xl{
-   @apply leading-none uppercase tracking-tighter;
-   font-family: $primary-font-regular;
+   @apply leading-none capitalize;
+   font-family: $secondary-font;
    font-weight: 'normal';
 }
 
 .text-lg {
-   @apply leading-none;  
+   @apply leading-none capitalize;  
+   font-family: $secondary-font;
 }
 
 .text-md{
-   @apply leading-none uppercase; 
-   font-family: $primary-font-thin;
+   @apply capitalize tracking-tighter; 
+   font-family: $primary-font-regular;
 }
 
 .text-sm {
@@ -29,14 +30,15 @@
 }
 
 .text-body {
-    @apply leading-none;   
+   @apply capitalize;
+   font-family: $primary-font-thin;   
 }
 .text-input {
    @apply leading-none; 
 }
 
 .text-highlight {
-   @apply leading-none uppercase font-normal; 
+   @apply leading-none capitalize font-normal; 
    font-family: $primary-font-thin;
 }
 

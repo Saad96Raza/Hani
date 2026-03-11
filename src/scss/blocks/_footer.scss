@@ -3,8 +3,14 @@
 /* FOOTER */
 
 .footer{
+    background : color($primary-color-4,1.0);
     border-top: rem(1) solid color($primary-color-5,0.1);
     padding: rem(30) 0;
+    .text-highlight{
+        color: color($primary-color-1,1.0);
+        display: inline-block;
+
+    }
     i{
         color: color($primary-color-1,1.0);
     }

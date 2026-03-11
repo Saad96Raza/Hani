@@ -17,20 +17,23 @@ module.exports = {
     },
     extend: {
       fontSize: {        
-        xxl: [Fluid(4, 200)], 
-        xl: [Fluid(4, 120)], 
-        lg: [], 
-        md: [[Fluid(1.2, 3)]], 
+        xxl: [Fluid(4, 180)], 
+        xl: [Fluid(4, 70)], 
+        lg: [Fluid(3, 14)], 
+        md: [[Fluid(1, 10)]], 
         sm: [], 
-        body: [], 
+        body: [Fluid(1, 6)], 
         input: [], 
-        highlight: [Fluid(1.2, 1.2)], 
+        highlight: [Fluid(0.6, 8)], 
       },      
     },
   },
   plugins: [
-    daisyui
+    daisyui({
+      exclude:['rootscrollgutter','input','label'],
+    })
   ],
+
   corePlugins: {
     preflight: true, /** Ensure it's enabled */
   },
