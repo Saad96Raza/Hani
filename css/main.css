@@ -13121,6 +13121,10 @@ video {
 .leading-\[1\.5\]{
   line-height: 1.5;
 }
+.text-white{
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
 .checked\:bg-transparent:checked{
   background-color: transparent;
 }
