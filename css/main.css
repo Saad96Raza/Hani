@@ -11460,7 +11460,6 @@ section.become-a-model-section-1 .form select:focus {
   border-bottom: 0.125rem solid #121212;
   transition: all 0.2s ease;
   color: #111111;
-  color-scheme: white;
 }
 section.become-a-model-section-1 .form input::-moz-placeholder, section.become-a-model-section-1 .form select::-moz-placeholder {
   color: #9ca3af;
@@ -11474,18 +11473,6 @@ section.become-a-model-section-1 .form select {
 }
 section.become-a-model-section-1 .form .date {
   color: #9ca3af;
-}
-section.become-a-model-section-1 .form .date ::-webkit-calendar-picker-indicator {
-  filter: invert(1) brightness(50%) sepia(100%) saturate(10000%) hue-rotate(180deg);
-}
-section.become-a-model-section-1 .form input[type=file] {
-  color: #9ca3af;
-  font-family: "GTAmerica-Regular";
-  text-transform: capitalize;
-  font-size: 1.25rem;
-}
-section.become-a-model-section-1 .form input[type=file]::file-selector-button {
-  color: transparent;
 }
 section.become-a-model-section-1 .file-button {
   display: flex;
@@ -11513,9 +11500,6 @@ section.become-a-model-section-1 .terms .checkbox ~ .terms-text .text-highlight 
 }
 section.become-a-model-section-1 .terms .checkbox:checked ~ .terms-text .text-highlight {
   color: rgb(17, 17, 17);
-}
-section.become-a-model-section-1 .terms .checkbox:checked{
-  background-image: none;
 }
 
 /* ABOUT */ /* SERVICES */ /* BLOG */ /* CONTACT */
