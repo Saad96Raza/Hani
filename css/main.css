@@ -11655,6 +11655,9 @@ header.become-model-header .text-body{
 header.become-model-header .text-body {
   color: #111111;
 }
+header.become-model-header .text-xl {
+  color: #111111;
+}
 
 section.become-a-model-section-1 .text-highlight {
   color: rgb(17, 17, 17);
@@ -12567,6 +12570,34 @@ video {
     padding: 3px;
   }
 }
+.label{
+  display: inline-flex;
+  align-items: center;
+  gap: calc(0.25rem * 1.5);
+  white-space: nowrap;
+  color: color-mix(in oklab, currentColor 60%, transparent);
+}
+.label:has(input){
+  cursor: pointer;
+}
+.label:is(.input > *, .select > *){
+  display: flex;
+  height: calc(100% - 0.5rem);
+  align-items: center;
+  padding-inline: calc(0.25rem * 3);
+  white-space: nowrap;
+  font-size: inherit;
+}
+.label:is(.input > *, .select > *):first-child{
+  margin-inline-start: calc(0.25rem * -3);
+  margin-inline-end: calc(0.25rem * 3);
+  border-inline-end: var(--border) solid color-mix(in oklab, currentColor 10%, #0000);
+}
+.label:is(.input > *, .select > *):last-child{
+  margin-inline-start: calc(0.25rem * 3);
+  margin-inline-end: calc(0.25rem * -3);
+  border-inline-start: var(--border) solid color-mix(in oklab, currentColor 10%, #0000);
+}
 .link{
   cursor: pointer;
   text-decoration-line: underline;
@@ -12659,6 +12690,10 @@ video {
   opacity: 100%;
   translate: 0 -35%;
   clip-path: polygon(20% 100%, 20% 80%, 50% 80%, 50% 80%, 80% 80%, 80% 100%);
+}
+.checkbox-neutral{
+  color: var(--color-neutral-content);
+  --input-color: var(--color-neutral);
 }
 .checkbox:disabled{
   cursor: not-allowed;
