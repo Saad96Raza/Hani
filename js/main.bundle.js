@@ -27354,6 +27354,7 @@ var BecomeAModel = /*#__PURE__*/ function() {
             value: function createReRender() {
                 this.createCountries();
                 this.createModelHeight();
+                this.createFileInput();
             }
         },
         {
@@ -27376,6 +27377,21 @@ var BecomeAModel = /*#__PURE__*/ function() {
                 if (this.heights) {
                     lodash__WEBPACK_IMPORTED_MODULE_1___default().map(_extra_model_height_data__WEBPACK_IMPORTED_MODULE_2__.modelHeights, function(element) {
                         _this.heights.innerHTML += '<option value="'.concat(element.cm, '">').concat(element.cm, " cm - ").concat(element.label, "</option>");
+                    });
+                }
+            }
+        },
+        {
+            key: "createFileInput",
+            value: function createFileInput() {
+                var that = this;
+                if (true) {
+                    that.input = document.querySelectorAll('.file-button .file');
+                    that.placeHolder = document.querySelectorAll('.file-button .place-holder');
+                    lodash__WEBPACK_IMPORTED_MODULE_1___default().forEach(that.input, function(element, index) {
+                        element.addEventListener('change', function() {
+                            that.placeHolder[index].textContent = element.files[0].name;
+                        });
                     });
                 }
             }
