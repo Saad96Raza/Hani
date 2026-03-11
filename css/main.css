@@ -11472,7 +11472,7 @@ section.become-a-model-section-1 .form select {
   color: #9ca3af;
 }
 section.become-a-model-section-1 .form .date {
-  color: #9ca3af;
+  color: #9ca3af !important;
 }
 section.become-a-model-section-1 .file-button {
   display: flex;
