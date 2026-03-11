@@ -11473,6 +11473,7 @@ section.become-a-model-section-1 .form select {
 }
 section.become-a-model-section-1 .form .date {
   color: #9ca3af;
+  background: #111111;
 }
 section.become-a-model-section-1 .file-button {
   display: flex;
