@@ -12097,6 +12097,25 @@ section.become-a-model-section-1 .text-highlight {
   color: rgb(17, 17, 17);
 }
 
+section.single-mode-section-1 .measurements{
+  padding: 3rem;
+  background: #111111;
+}
+section.single-mode-section-1 .measurements .text-xl,
+section.single-mode-section-1 .measurements span {
+  color: white;
+  font-family: "Miller Display";
+}
+section.single-mode-section-1 .measurements i {
+  color: white;
+}
+section.single-mode-section-1 .bg img {
+  width: auto;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 *, ::before, ::after{
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -13543,6 +13562,9 @@ video {
 .grid-cols-2{
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
+.grid-cols-4{
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
 .flex-col{
   flex-direction: column;
 }
@@ -13617,6 +13639,9 @@ video {
 .pt-\[3rem\]{
   padding-top: 3rem;
 }
+.text-center{
+  text-align: center;
+}
 .text-right{
   text-align: right;
 }
@@ -13630,13 +13655,19 @@ video {
   font-size: clamp(3rem, calc(3rem + (14 - 3) * ((100vw - 320px) / (1440 - 320))), 14rem);
 }
 .text-md{
-  font-size: clamp(1rem, calc(1rem + (10 - 1) * ((100vw - 320px) / (1440 - 320))), 10rem);
+  font-size: clamp(1rem, calc(1rem + (9 - 1) * ((100vw - 320px) / (1440 - 320))), 9rem);
 }
 .text-xl{
   font-size: clamp(4rem, calc(4rem + (70 - 4) * ((100vw - 320px) / (1440 - 320))), 70rem);
 }
+.uppercase{
+  text-transform: uppercase;
+}
 .leading-\[1\.5\]{
   line-height: 1.5;
+}
+.tracking-normal{
+  letter-spacing: 0em;
 }
 .checked\:bg-transparent:checked{
   background-color: transparent;
@@ -13670,14 +13701,14 @@ video {
   .md\:grid-cols-\[60\%_40\%\]{
     grid-template-columns: 60% 40%;
   }
+  .md\:gap-10{
+    gap: 2.5rem;
+  }
   .md\:gap-12{
     gap: 3rem;
   }
   .md\:gap-16{
     gap: 4rem;
-  }
-  .md\:gap-6{
-    gap: 1.5rem;
   }
   .md\:py-\[10rem\]{
     padding-top: 10rem;

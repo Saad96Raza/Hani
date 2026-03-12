@@ -27336,7 +27336,7 @@ __webpack_require__.d(__webpack_exports__, {
 /* import */ var lodash__rspack_import_1_default = /*#__PURE__*/__webpack_require__.n(lodash__rspack_import_1);
 /* import */ var litepicker__rspack_import_2 = __webpack_require__("./node_modules/litepicker/dist/litepicker.umd.js");
 /* import */ var litepicker__rspack_import_2_default = /*#__PURE__*/__webpack_require__.n(litepicker__rspack_import_2);
-/* import */ var _extra_model_height_data__rspack_import_3 = __webpack_require__("./src/apps/extra/model-height-data.js");
+/* import */ var _extra_model_data__rspack_import_3 = __webpack_require__("./src/apps/extra/model-data.js");
 /* import */ var litepicker_dist_css_litepicker_css__rspack_import_4 = __webpack_require__("./node_modules/litepicker/dist/css/litepicker.css");
 function _class_call_check(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -27373,7 +27373,7 @@ var BecomeAModel = /*#__PURE__*/ function() {
             key: "createReRender",
             value: function createReRender() {
                 this.createCountries();
-                this.createModelHeight();
+                this.createModelMeasurement();
                 this.createFileInput();
                 this.createDateInput();
             }
@@ -27391,13 +27391,46 @@ var BecomeAModel = /*#__PURE__*/ function() {
             }
         },
         {
-            key: "createModelHeight",
-            value: function createModelHeight() {
+            key: "createModelMeasurement",
+            value: function createModelMeasurement() {
                 var _this = this;
                 this.heights = document.querySelector('.heights');
-                if (this.heights) {
-                    lodash__rspack_import_1_default().map(_extra_model_height_data__rspack_import_3.modelHeights, function(element) {
-                        _this.heights.innerHTML += '<option value="'.concat(element.cm, '">').concat(element.cm, " cm - ").concat(element.label, "</option>");
+                this.waist = document.querySelector('.waist');
+                this.hips = document.querySelector('.hips');
+                this.shoeSize = document.querySelector('.shoe-size');
+                this.hairColor = document.querySelector('.hair-color');
+                this.eyeColor = document.querySelector('.eye-color');
+                this.bust = document.querySelector('.bust');
+                if (this.heights || this.waist || this.hips || this.shoeSize || this.hairColor || this.eyeColor) {
+                    lodash__rspack_import_1_default().map(_extra_model_data__rspack_import_3.modelProfileAttributes, function(element) {
+                        switch(element.type){
+                            case "Height":
+                                return _this.heights.innerHTML += '<option value="'.concat(element.cm, '">').concat(element.cm, " cm - ").concat(element.label, "</option>");
+                        }
+                        switch(element.type){
+                            case "Eye Color":
+                                return _this.eyeColor.innerHTML += '<option value="'.concat(element.name, '">"').concat(element.name, '"</option>');
+                        }
+                        switch(element.type){
+                            case "Hair Color":
+                                return _this.hairColor.innerHTML += '<option value="'.concat(element.name, '">"').concat(element.name, '"</option>');
+                        }
+                        switch(element.type){
+                            case "Waist":
+                                return _this.waist.innerHTML += '<option value="'.concat(element.cm, '">').concat(element.cm, " cm - ").concat(element.label, "</option>");
+                        }
+                        switch(element.type){
+                            case "Bust":
+                                return _this.bust.innerHTML += '<option value="'.concat(element.cm, '">').concat(element.cm, " cm - ").concat(element.label, "</option>");
+                        }
+                        switch(element.type){
+                            case "Hips":
+                                return _this.hips.innerHTML += '<option value="'.concat(element.cm, '">').concat(element.cm, " cm - ").concat(element.label, "</option>");
+                        }
+                        switch(element.type){
+                            case "Shoe Size":
+                                return _this.shoeSize.innerHTML += '<option value="'.concat(element.size, '">"Size - ').concat(element.size, '"</option>');
+                        }
                     });
                 }
             }
@@ -27406,8 +27439,8 @@ var BecomeAModel = /*#__PURE__*/ function() {
             key: "createFileInput",
             value: function createFileInput() {
                 var that = this;
-                if (true) {
-                    that.input = document.querySelectorAll('.file-button .file');
+                that.input = document.querySelectorAll('.file-button .file');
+                if (that.input) {
                     that.placeHolder = document.querySelectorAll('.file-button .place-holder');
                     lodash__rspack_import_1_default().forEach(that.input, function(element, index) {
                         element.addEventListener('change', function() {
@@ -27420,17 +27453,21 @@ var BecomeAModel = /*#__PURE__*/ function() {
         {
             key: "createDateInput",
             value: function createDateInput() {
-                new (litepicker__rspack_import_2_default())({
-                    element: document.getElementById("datePicker"),
-                    format: "YYYY-MM-DD",
-                    allowInput: true,
-                    dropdowns: {
-                        minYear: 1970,
-                        maxYear: 2026,
-                        months: true,
-                        years: true // show year dropdown
-                    }
-                });
+                var that = this;
+                that.dataPicker = document.getElementById("datePicker");
+                if (that.dataPicker) {
+                    new (litepicker__rspack_import_2_default())({
+                        element: that.dataPicker,
+                        format: "YYYY-MM-DD",
+                        allowInput: true,
+                        dropdowns: {
+                            minYear: 1970,
+                            maxYear: 2026,
+                            months: true,
+                            years: true // show year dropdown
+                        }
+                    });
+                }
             }
         }
     ]);
@@ -27483,216 +27520,743 @@ var Contact = /*#__PURE__*/ function() {
 
 
 },
-"./src/apps/extra/model-height-data.js"(__unused_rspack_module, __webpack_exports__, __webpack_require__) {
+"./src/apps/extra/model-data.js"(__unused_rspack_module, __webpack_exports__, __webpack_require__) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 __webpack_require__.d(__webpack_exports__, {
-  modelHeights: () => (modelHeights)
+  modelProfileAttributes: () => (modelProfileAttributes)
 });
-var modelHeights = [
+var modelProfileAttributes = [
+    // Heights
     {
+        type: "Height",
         cm: 150,
         label: "4'11''"
     },
     {
+        type: "Height",
         cm: 151,
         label: "4'11'' 1/2"
     },
     {
+        type: "Height",
         cm: 152,
-        label: "4'12''"
+        label: "5'0''"
     },
     {
+        type: "Height",
         cm: 153,
-        label: "5'"
+        label: "5'0'' 1/2"
     },
     {
+        type: "Height",
         cm: 154,
-        label: "5' 1/2"
-    },
-    {
-        cm: 155,
         label: "5'1''"
     },
     {
-        cm: 156,
+        type: "Height",
+        cm: 155,
         label: "5'1'' 1/2"
     },
     {
+        type: "Height",
+        cm: 156,
+        label: "5'2''"
+    },
+    {
+        type: "Height",
         cm: 157,
-        label: "5'2''"
-    },
-    {
-        cm: 158,
-        label: "5'2''"
-    },
-    {
-        cm: 159,
         label: "5'2'' 1/2"
     },
     {
-        cm: 160,
+        type: "Height",
+        cm: 158,
         label: "5'3''"
     },
     {
-        cm: 161,
+        type: "Height",
+        cm: 159,
         label: "5'3'' 1/2"
     },
     {
-        cm: 162,
+        type: "Height",
+        cm: 160,
         label: "5'4''"
     },
     {
-        cm: 163,
-        label: "5'4''"
-    },
-    {
-        cm: 164,
+        type: "Height",
+        cm: 161,
         label: "5'4'' 1/2"
     },
     {
-        cm: 165,
+        type: "Height",
+        cm: 162,
         label: "5'5''"
     },
     {
-        cm: 166,
+        type: "Height",
+        cm: 163,
         label: "5'5'' 1/2"
     },
     {
-        cm: 167,
-        label: "5'5'' 1/2"
-    },
-    {
-        cm: 168,
+        type: "Height",
+        cm: 164,
         label: "5'6''"
     },
     {
-        cm: 169,
+        type: "Height",
+        cm: 165,
         label: "5'6'' 1/2"
     },
     {
-        cm: 170,
+        type: "Height",
+        cm: 166,
         label: "5'7''"
     },
     {
-        cm: 171,
+        type: "Height",
+        cm: 167,
         label: "5'7'' 1/2"
     },
     {
-        cm: 172,
-        label: "5'7'' 1/2"
-    },
-    {
-        cm: 173,
+        type: "Height",
+        cm: 168,
         label: "5'8''"
     },
     {
-        cm: 174,
+        type: "Height",
+        cm: 169,
         label: "5'8'' 1/2"
     },
     {
-        cm: 175,
+        type: "Height",
+        cm: 170,
         label: "5'9''"
     },
     {
-        cm: 176,
+        type: "Height",
+        cm: 171,
         label: "5'9'' 1/2"
     },
     {
-        cm: 177,
-        label: "5'9'' 1/2"
-    },
-    {
-        cm: 178,
+        type: "Height",
+        cm: 172,
         label: "5'10''"
     },
     {
-        cm: 179,
+        type: "Height",
+        cm: 173,
         label: "5'10'' 1/2"
     },
     {
-        cm: 180,
+        type: "Height",
+        cm: 174,
         label: "5'11''"
     },
     {
-        cm: 181,
+        type: "Height",
+        cm: 175,
         label: "5'11'' 1/2"
     },
     {
-        cm: 182,
-        label: "5'11'' 1/2"
+        type: "Height",
+        cm: 176,
+        label: "6'0''"
     },
     {
-        cm: 183,
-        label: "6'"
+        type: "Height",
+        cm: 177,
+        label: "6'0'' 1/2"
     },
     {
-        cm: 184,
-        label: "6' 1/2"
-    },
-    {
-        cm: 185,
+        type: "Height",
+        cm: 178,
         label: "6'1''"
     },
     {
-        cm: 186,
-        label: "6'1''"
-    },
-    {
-        cm: 187,
+        type: "Height",
+        cm: 179,
         label: "6'1'' 1/2"
     },
     {
-        cm: 188,
+        type: "Height",
+        cm: 180,
         label: "6'2''"
     },
     {
-        cm: 189,
+        type: "Height",
+        cm: 181,
         label: "6'2'' 1/2"
     },
     {
-        cm: 190,
+        type: "Height",
+        cm: 182,
         label: "6'3''"
     },
     {
-        cm: 191,
-        label: "6'3''"
-    },
-    {
-        cm: 192,
+        type: "Height",
+        cm: 183,
         label: "6'3'' 1/2"
     },
     {
-        cm: 193,
+        type: "Height",
+        cm: 184,
         label: "6'4''"
     },
     {
-        cm: 194,
+        type: "Height",
+        cm: 185,
         label: "6'4'' 1/2"
     },
     {
-        cm: 195,
+        type: "Height",
+        cm: 186,
         label: "6'5''"
     },
     {
-        cm: 196,
-        label: "6'5''"
-    },
-    {
-        cm: 197,
+        type: "Height",
+        cm: 187,
         label: "6'5'' 1/2"
     },
     {
-        cm: 198,
+        type: "Height",
+        cm: 188,
         label: "6'6''"
     },
     {
-        cm: 199,
+        type: "Height",
+        cm: 189,
         label: "6'6'' 1/2"
     },
     {
+        type: "Height",
+        cm: 190,
+        label: "6'7''"
+    },
+    {
+        type: "Height",
+        cm: 191,
+        label: "6'7'' 1/2"
+    },
+    {
+        type: "Height",
+        cm: 192,
+        label: "6'8''"
+    },
+    {
+        type: "Height",
+        cm: 193,
+        label: "6'8'' 1/2"
+    },
+    {
+        type: "Height",
+        cm: 194,
+        label: "6'9''"
+    },
+    {
+        type: "Height",
+        cm: 195,
+        label: "6'9'' 1/2"
+    },
+    {
+        type: "Height",
+        cm: 196,
+        label: "6'10''"
+    },
+    {
+        type: "Height",
+        cm: 197,
+        label: "6'10'' 1/2"
+    },
+    {
+        type: "Height",
+        cm: 198,
+        label: "6'11''"
+    },
+    {
+        type: "Height",
+        cm: 199,
+        label: "6'11'' 1/2"
+    },
+    {
+        type: "Height",
         cm: 200,
-        label: "6'6'' 1/2"
+        label: "7'0''"
+    },
+    {
+        type: "Eye Color",
+        name: "Brown"
+    },
+    {
+        type: "Eye Color",
+        name: "Dark Brown"
+    },
+    {
+        type: "Eye Color",
+        name: "Light Brown"
+    },
+    {
+        type: "Eye Color",
+        name: "Hazel"
+    },
+    {
+        type: "Eye Color",
+        name: "Amber"
+    },
+    {
+        type: "Eye Color",
+        name: "Green"
+    },
+    {
+        type: "Eye Color",
+        name: "Light Green"
+    },
+    {
+        type: "Eye Color",
+        name: "Blue"
+    },
+    {
+        type: "Eye Color",
+        name: "Light Blue"
+    },
+    {
+        type: "Eye Color",
+        name: "Ice Blue"
+    },
+    {
+        type: "Eye Color",
+        name: "Gray"
+    },
+    {
+        type: "Eye Color",
+        name: "Silver"
+    },
+    {
+        type: "Eye Color",
+        name: "Violet"
+    },
+    {
+        type: "Eye Color",
+        name: "Purple"
+    },
+    {
+        type: "Eye Color",
+        name: "Golden"
+    },
+    {
+        type: "Eye Color",
+        name: "Honey"
+    },
+    {
+        type: "Eye Color",
+        name: "Turquoise"
+    },
+    {
+        type: "Eye Color",
+        name: "Sea Green"
+    },
+    {
+        type: "Eye Color",
+        name: "Steel Blue"
+    },
+    {
+        type: "Eye Color",
+        name: "Copper"
+    },
+    {
+        type: "Eye Color",
+        name: "Chestnut"
+    },
+    // Hair Colors
+    {
+        type: "Hair Color",
+        name: "Black"
+    },
+    {
+        type: "Hair Color",
+        name: "Dark Brown"
+    },
+    {
+        type: "Hair Color",
+        name: "Brown"
+    },
+    {
+        type: "Hair Color",
+        name: "Light Brown"
+    },
+    {
+        type: "Hair Color",
+        name: "Blonde"
+    },
+    {
+        type: "Hair Color",
+        name: "Platinum Blonde"
+    },
+    {
+        type: "Hair Color",
+        name: "Ash Blonde"
+    },
+    {
+        type: "Hair Color",
+        name: "Golden Blonde"
+    },
+    {
+        type: "Hair Color",
+        name: "Strawberry Blonde"
+    },
+    {
+        type: "Hair Color",
+        name: "Red"
+    },
+    {
+        type: "Hair Color",
+        name: "Auburn"
+    },
+    {
+        type: "Hair Color",
+        name: "Ginger"
+    },
+    {
+        type: "Hair Color",
+        name: "Copper"
+    },
+    {
+        type: "Hair Color",
+        name: "Chestnut"
+    },
+    {
+        type: "Hair Color",
+        name: "Gray"
+    },
+    {
+        type: "Hair Color",
+        name: "Silver"
+    },
+    {
+        type: "Hair Color",
+        name: "White"
+    },
+    {
+        type: "Hair Color",
+        name: "Pastel Pink"
+    },
+    {
+        type: "Hair Color",
+        name: "Pastel Blue"
+    },
+    {
+        type: "Hair Color",
+        name: "Pastel Purple"
+    },
+    {
+        type: "Hair Color",
+        name: "Rainbow / Multicolor"
+    },
+    {
+        type: "Hair Color",
+        name: "Ombre"
+    },
+    {
+        type: "Hair Color",
+        name: "Highlights"
+    },
+    {
+        type: "Hair Color",
+        name: "Balayage"
+    },
+    {
+        type: "Hair Color",
+        name: "Jet Black"
+    },
+    {
+        type: "Hair Color",
+        name: "Chocolate Brown"
+    },
+    {
+        type: "Hair Color",
+        name: "Honey Brown"
+    },
+    // Numeric busts in cm
+    {
+        type: "Bust",
+        cm: 71,
+        label: "28\""
+    },
+    {
+        type: "Bust",
+        cm: 76,
+        label: "30\""
+    },
+    {
+        type: "Bust",
+        cm: 81,
+        label: "32\""
+    },
+    {
+        type: "Bust",
+        cm: 86,
+        label: "34\""
+    },
+    {
+        type: "Bust",
+        cm: 91,
+        label: "36\""
+    },
+    {
+        type: "Bust",
+        cm: 97,
+        label: "38\""
+    },
+    {
+        type: "Bust",
+        cm: 102,
+        label: "40\""
+    },
+    {
+        type: "Bust",
+        cm: 107,
+        label: "42\""
+    },
+    {
+        type: "Bust",
+        cm: 112,
+        label: "44\""
+    },
+    {
+        type: "Bust",
+        cm: 117,
+        label: "46\""
+    },
+    {
+        type: "Bust",
+        cm: 122,
+        label: "48\""
+    },
+    {
+        type: "Bust",
+        cm: 83.5,
+        label: "A"
+    },
+    {
+        type: "Bust",
+        cm: 86,
+        label: "B"
+    },
+    {
+        type: "Bust",
+        cm: 88.5,
+        label: "C"
+    },
+    {
+        type: "Bust",
+        cm: 91,
+        label: "D"
+    },
+    {
+        type: "Bust",
+        cm: 93.5,
+        label: "DD / E"
+    },
+    {
+        type: "Bust",
+        cm: 96,
+        label: "F"
+    },
+    {
+        type: "Bust",
+        cm: 98.5,
+        label: "G"
+    },
+    // Waist Sizes
+    {
+        type: "Waist",
+        cm: 56,
+        label: "22\""
+    },
+    {
+        type: "Waist",
+        cm: 58,
+        label: "23\""
+    },
+    {
+        type: "Waist",
+        cm: 61,
+        label: "24\""
+    },
+    {
+        type: "Waist",
+        cm: 64,
+        label: "25\""
+    },
+    {
+        type: "Waist",
+        cm: 66,
+        label: "26\""
+    },
+    {
+        type: "Waist",
+        cm: 69,
+        label: "27\""
+    },
+    {
+        type: "Waist",
+        cm: 71,
+        label: "28\""
+    },
+    {
+        type: "Waist",
+        cm: 74,
+        label: "29\""
+    },
+    {
+        type: "Waist",
+        cm: 76,
+        label: "30\""
+    },
+    {
+        type: "Waist",
+        cm: 79,
+        label: "31\""
+    },
+    {
+        type: "Waist",
+        cm: 81,
+        label: "32\""
+    },
+    {
+        type: "Waist",
+        cm: 84,
+        label: "33\""
+    },
+    {
+        type: "Waist",
+        cm: 86,
+        label: "34\""
+    },
+    {
+        type: "Hips",
+        cm: 81,
+        label: "32\""
+    },
+    {
+        type: "Hips",
+        cm: 86,
+        label: "34\""
+    },
+    {
+        type: "Hips",
+        cm: 91,
+        label: "36\""
+    },
+    {
+        type: "Hips",
+        cm: 97,
+        label: "38\""
+    },
+    {
+        type: "Hips",
+        cm: 102,
+        label: "40\""
+    },
+    {
+        type: "Hips",
+        cm: 107,
+        label: "42\""
+    },
+    {
+        type: "Hips",
+        cm: 112,
+        label: "44\""
+    },
+    {
+        type: "Hips",
+        cm: 117,
+        label: "46\""
+    },
+    {
+        type: "Hips",
+        cm: 122,
+        label: "48\""
+    },
+    {
+        type: "Hips",
+        cm: 127,
+        label: "50\""
+    },
+    {
+        type: "Shoe Size",
+        size: 4,
+        label: "4"
+    },
+    {
+        type: "Shoe Size",
+        size: 4.5,
+        label: "4.5"
+    },
+    {
+        type: "Shoe Size",
+        size: 5,
+        label: "5"
+    },
+    {
+        type: "Shoe Size",
+        size: 5.5,
+        label: "5.5"
+    },
+    {
+        type: "Shoe Size",
+        size: 6,
+        label: "6"
+    },
+    {
+        type: "Shoe Size",
+        size: 6.5,
+        label: "6.5"
+    },
+    {
+        type: "Shoe Size",
+        size: 7,
+        label: "7"
+    },
+    {
+        type: "Shoe Size",
+        size: 7.5,
+        label: "7.5"
+    },
+    {
+        type: "Shoe Size",
+        size: 8,
+        label: "8"
+    },
+    {
+        type: "Shoe Size",
+        size: 8.5,
+        label: "8.5"
+    },
+    {
+        type: "Shoe Size",
+        size: 9,
+        label: "9"
+    },
+    {
+        type: "Shoe Size",
+        size: 9.5,
+        label: "9.5"
+    },
+    {
+        type: "Shoe Size",
+        size: 10,
+        label: "10"
+    },
+    {
+        type: "Shoe Size",
+        size: 10.5,
+        label: "10.5"
+    },
+    {
+        type: "Shoe Size",
+        size: 11,
+        label: "11"
     }
 ];
 
