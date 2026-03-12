@@ -1,0 +1,28 @@
+@use "variables" as *;
+@use "mixins" as *;
+@use "blocks/blocks" as *;
+//SINGLE MODLE
+
+section{
+    &.single-mode-section-1{
+        .measurements{
+            @apply p-[3rem];
+            background: color($primary-color-1,1);
+            .text-xl,
+            span{
+                color: color($primary-color-4,1);
+                font-family: $secondary-font;  
+            }
+            i{
+                color: color($primary-color-4,1);  
+            }
+        }
+        .bg{
+            img{
+                width: auto;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}

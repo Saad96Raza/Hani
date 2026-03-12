@@ -1,6 +1,7 @@
 @use "variables" as *;
 @use "mixins" as *;
 @use "blocks/blocks" as *;
+// BECOME A MODEL
 
 header{
     &.become-model-header{
@@ -24,6 +25,19 @@ header{
         }
         .text-body{
             @apply max-w-full md:max-w-[55ch] w-full;
+            color: color($primary-color-1,1);
+        }
+        .text-xl{
+            color: color($primary-color-1,1);
+        }
+    }
+    
+}
+
+section{
+    &.become-a-model-section-1{
+        .text-highlight{
+            color: $primary-color-1;
         }
     }
 }

@@ -111,7 +111,6 @@ module.exports = {
             jQuery: 'jquery',
             'window.jQuery': 'jquery', 
         }),
-
         ...pugPages.map((file) => {
             const pageName = path.basename(file, '.pug')
             return new HtmlWebpackPlugin({

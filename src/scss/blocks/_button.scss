@@ -13,3 +13,16 @@
         color: color($primary-color-1,1.0);
     }
 }
+
+.pry-btn-stroke{
+    padding:rem(30) rem(30);
+    background:transparent;
+    color: color($primary-color-1,1.0);
+    transition: all ease 0.4s;
+    border: rem(2) solid color($primary-color-1,1.0);
+    &:hover{
+        background: color($primary-color-1,1.0);
+        transition: all ease 0.4s;
+        color: color($primary-color-4,1.0);
+    }
+}

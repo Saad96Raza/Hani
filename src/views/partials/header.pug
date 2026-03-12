@@ -17,7 +17,6 @@ header(class="header flex justify-between align-items-center")
                         label(class="drawer-button hamburger" for='offcanvas')
                             svg(viewbox='0 0 60 60')
                                 path(d='M10 25H50M10 35H50')
-
                     div(class="drawer-side")
                         label(class="drawer-overlay" for='offcanvas' aria-label='close sidebar')
                         ul(class="menu min-h-full flex flex-col justify-between")
@@ -26,7 +25,7 @@ header(class="header flex justify-between align-items-center")
                                     i(class="fa-solid fa-xmark fa-2xl" for='offcanvas')
                             li
                                 div
-                                    a(class="text-lg" href="/") portfolio
+                                    a(class="text-lg" href="index.html") portfolio
                                 div
                                     a(class="text-lg" href="model.html") models
                                 div
@@ -35,6 +34,6 @@ header(class="header flex justify-between align-items-center")
                                     a(class="text-lg" href="contact.html") contact
                             li(class="flex md:hidden")   
                                 a(href="become-a-model.html" class="w-full flex") 
-                                    button(class="pry-btn hidden md:flex w-full items-center justify-center text-highlight gap-2")
+                                    button(class="pry-btn w-full items-center justify-center text-highlight gap-2")
                                         |become a model
-                                        i(class="fa-solid fa-heart fa-sm")
+                                        i(class="fa-solid fa-heart fa-sm ml-2")

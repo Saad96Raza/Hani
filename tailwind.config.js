@@ -2,7 +2,7 @@
 /**
  * fluid function
  */
-import { Fluid } from './src/apps/extra/math.js'
+const { Fluid } = require("./src/apps/extra/math.js");
 const daisyui = require('daisyui')
 
 module.exports = {
@@ -20,7 +20,7 @@ module.exports = {
         xxl: [Fluid(4, 180)], 
         xl: [Fluid(4, 70)], 
         lg: [Fluid(3, 14)], 
-        md: [[Fluid(1, 10)]], 
+        md: [[Fluid(1, 9)]], 
         sm: [], 
         body: [Fluid(1, 6)], 
         input: [], 
@@ -30,7 +30,7 @@ module.exports = {
   },
   plugins: [
     daisyui({
-      exclude:['rootscrollgutter','input','label'],
+      exclude:['rootscrollgutter','input'],
     })
   ],
 

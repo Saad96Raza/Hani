@@ -1,0 +1,82 @@
+section(class="become-a-model-section-1 grid  grid-cols-1 md:grid-cols-[60%] gap-12 py-[5rem]")      
+        div(class="space-y-12")
+            div(class="flex gap-6")
+                div(class="flex items-center gap-2") 
+                    input(type="radio" name="radio-3" class="radio radio-neutral radio-sm checked:bg-transparent" checked="checked")
+                    span(class="text-highlight") female
+                div(class="flex items-center gap-2") 
+                    input(type="radio" name="radio-3" class="radio radio-neutral radio-sm checked:bg-transparent")
+                    span(class="text-highlight") male    
+                div(class="flex items-center gap-2")      
+                    input(type="radio" name="radio-3" class="radio radio-neutral radio-sm checked:bg-transparent")
+                    span(class="text-highlight") non-binary 
+            form(action="" class="flex flex-col gap-16" )
+                div(class="form grid grid-cols-2 gap-8")
+                    input(type="text" placeholder="first name" class="input w-full  col-span-2 text-body")     
+                    input(type="text" placeholder="last name" class="input w-full  col-span-2 text-body")     
+                    input(type="text" placeholder="phone" class="input text-body")     
+                    input(type="text" placeholder="email" class="input text-body")
+                    div(class="date w-full")
+                        input(id="datePicker" class="text-body w-full" type="text" placeholder="date of birth")
+                        i(class="fa-regular fa-calendar fa-xl")     
+                    input(type="text" placeholder="city" class="input text-body")     
+                    select(class="text-body countries w-full")
+                        option(disabled selected) country
+                    input(type="text" placeholder="agency (if modeling already ?)" class="input text-body")
+                    select(class="text-body heights w-full")
+                        option(disabled selected) height 
+                    select(class="text-body w-full waist")
+                        option(disabled selected) waist  (optional)
+                    select(class="text-body w-full bust")
+                        option(disabled selected) bust (optional)    
+                    select(class="text-body w-full hips")
+                        option(disabled selected) hips  (optional)
+                    select(class="text-body w-full shoe-size")
+                        option(disabled selected) shoe size 
+                    select(class="text-body w-full hair-color")
+                        option(disabled selected) hair color 
+                    select(class="text-body heights w-full eye-color")
+                        option(disabled selected) eye color 
+                    select(class="text-body  w-full")
+                        option(disabled selected) Previous modelling experience ?
+                        option(value="") yes
+                        option(value="") no
+                    select(class="text-body  w-full")
+                        option(disabled selected) Available to travel internationally? 
+                        option(value="") yes
+                        option(value="") no                        
+                    input(type="text" placeholder="instagram (optional)" class="input text-body")
+                div(class="grid grid-cols-1 md:grid-cols-3 gap-8")    
+                    div(class="file-button")
+                        span(class="text-body place-holder") upload photo
+                        input(type="file" class="file")
+                    div(class="file-button")
+                        span(class="text-body place-holder") upload photo
+                        input(type="file" class="file")
+                    div(class="file-button")
+                        span(class="text-body place-holder") upload photo
+                        input(type="file" class="file")          
+                div(class="terms flex flex-col gap-8")
+                    div(class="flex items-start gap-2") 
+                        input(type="checkbox"  defaultChecked class="checkbox checkbox-neutral checkbox-sm")
+                        div(class="flex flex-col gap-2 terms-text")  
+                            p(class="text-highlight leading-[1.5]")  I have read and I accept the Terms & Conditions.  
+                            p(class="text-highlight leading-[1.5]")  Information to the applicant  
+                    div(class="flex items-start gap-2") 
+                        input(type="checkbox"  defaultChecked class="checkbox checkbox-neutral checkbox-sm")
+                        div(class="flex flex-col gap-2 terms-text")  
+                            p(class="text-highlight leading-[1.5]")  | I understand and agree that, upon my acceptance
+                                                       | (that is not compulsory) you will also send me information
+                                                       |by email and/or SMS about existing and new services and special offers.   
+                    div(class="flex items-start gap-2") 
+                        input(type="checkbox" defaultChecked class="checkbox checkbox-neutral checkbox-sm")
+                        div(class="flex flex-col gap-2 terms-text")  
+                            p(class="text-highlight leading-[1.5]")  | I understand and agree that upon my acceptance (that is not compulsory) 
+                                                       | you will be entitled to transfer my data to third parties with whom you
+                                                       | have a contractual relationship (partners, sponsors, etc.) so that I may receive
+                                                       | special offers or other information from them.
+                                                      
+                    button(class="pry-btn-stroke flex justify-center items-center text-body gap-2 mt-12")
+                        |submit application form
+                        i(class="fa-solid fa-angles-right ml-2")            
+                                
