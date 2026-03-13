@@ -12807,20 +12807,21 @@ section.become-a-model-section-1 .text-highlight {
   color: rgb(17, 17, 17);
 }
 
+section.single-mode-section-1 .text-xl,
+section.single-mode-section-1 .text-md {
+  color: #111111;
+}
 section.single-mode-section-1 .measurements{
   padding: 2rem;
 }
-
 @media (min-width: 768px){
   section.single-mode-section-1 .measurements{
     padding: 6rem;
   }
 }
-
 section.single-mode-section-1 .measurements {
   background: #111111;
 }
-section.single-mode-section-1 .measurements .text-xl,
 section.single-mode-section-1 .measurements .text-lg,
 section.single-mode-section-1 .measurements span {
   color: white;
