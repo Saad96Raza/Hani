@@ -28616,7 +28616,22 @@ function _create_class(Constructor, protoProps, staticProps) {
 var App = /*#__PURE__*/ function() {
     "use strict";
     function App() {
+        var _this = this;
         _class_call_check(this, App);
+        this.scroll = {
+            last: 0,
+            current: 0
+        };
+        var nav = document.querySelector('.header');
+        window.addEventListener('scroll', function() {
+            _this.scroll.current = window.scrollY;
+            if (_this.scroll.current > _this.scroll.last) {
+                nav.style.transform = "translateY(-100%)";
+            } else {
+                nav.style.transform = "translateY(0)";
+            }
+            _this.scroll.last = _this.scroll.current;
+        });
         this.pages = {
             home: new _home__rspack_import_0["default"](),
             contact: new _contact__rspack_import_1["default"](),
