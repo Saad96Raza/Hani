@@ -13955,6 +13955,13 @@ video {
 @media (min-width: 1440px){
   .container{
     max-width: 1440px;
+    padding-right: 3rem;
+    padding-left: 3rem;
+  }
+}
+@media (min-width: 1800px){
+  .container{
+    max-width: 1800px;
   }
 }
 .footer{
