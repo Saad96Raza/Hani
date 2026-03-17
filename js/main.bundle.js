@@ -28797,6 +28797,7 @@ var App = /*#__PURE__*/ function() {
                 _barba_core__rspack_import_5_default().hooks.before(function() {});
                 _barba_core__rspack_import_5_default().hooks.after(function() {
                     _this.pages.home.createReRender();
+                    _this.pages.model.createReRender();
                     _this.pages.become_a_model.createReRender();
                     _this.pages.single_model.createReRender();
                     _this.createCreativeCta();
