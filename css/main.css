@@ -12792,7 +12792,7 @@ header.header {
   left: 0;
   right: 0;
   width: 100%;
-  transition: transform 0.6s ease-in-out;
+  transition: transform 0.3s ease-in-out;
   transform: translateY(0);
   border-bottom: 0.0625rem solid rgba(18, 18, 18, 0.1);
   z-index: 999;
@@ -13035,6 +13035,41 @@ section.become-a-model-section-1 .terms .checkbox ~ .terms-text .text-highlight,
 section.become-a-model-section-1 .terms .checkbox:checked ~ .terms-text .text-highlight, section.contact-section-1 .terms .checkbox:checked ~ .terms-text .text-highlight {
   color: rgb(17, 17, 17);
 }
+section.model-section-1 .filter{
+  margin-top: auto;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+}
+@media (min-width: 768px){
+  section.model-section-1 .filter{
+    margin-left: auto;
+    width: auto;
+  }
+}
+section.model-section-1 .filter i {
+  color: #111111;
+}
+section.model-section-1 .filter input {
+  border: none;
+  padding: 0.625rem 0;
+  transition: all 0.2s ease;
+  border-bottom: 0.125rem solid rgba(18, 18, 18, 0.2);
+  background: transparent;
+  border-radius: 0;
+}
+section.model-section-1 .filter input:focus {
+  outline: none;
+  border-bottom: 0.125rem solid #121212;
+  transition: all 0.2s ease;
+  color: #111111;
+}
+section.model-section-1 .filter input::-moz-placeholder {
+  color: #9ca3af;
+}
+section.model-section-1 .filter input::placeholder {
+  color: #9ca3af;
+}
 
 /* ABOUT */ /* SERVICES */ /* BLOG */ /* CONTACT */
 /* FOOTER */
@@ -13043,7 +13078,8 @@ section.become-a-model-section-1 .terms .checkbox:checked ~ .terms-text .text-hi
   border-top: 0.0625rem solid rgba(18, 18, 18, 0.1);
   padding: 1.875rem 0;
 }
-.footer .text-highlight {
+.footer .text-highlight,
+.footer .text-md {
   color: #111111;
   display: inline-block;
 }
@@ -13081,6 +13117,67 @@ section.become-a-model-section-1 .terms .checkbox:checked ~ .terms-text .text-hi
   width: 0;
 }
 
+section.model-section-1 .tabs{
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  row-gap: 3rem;
+}
+
+header.header .menu .header-social-icons section.model-section-1 .tabs i,
+header.header .menu .header-social-icons section.model-section-1 .tabs span {
+  color: #9ca3af;
+  transition: all ease 0.3s;
+}
+
+header.header .menu .header-social-icons section.model-section-1 .tabs:hover i,
+header.header .menu .header-social-icons section.model-section-1 .tabs:hover span {
+  color: #111111;
+  transition: all ease 0.3s;
+}
+
+@media (min-width: 768px){
+  section.model-section-1 .tabs{
+    row-gap: 6rem;
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
+  }
+}
+section.model-section-1 .tabs .tab{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+@media (min-width: 768px){
+  section.model-section-1 .tabs .tab{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+}
+section.model-section-1 .tabs .tab {
+  background: transparent;
+  color: #111111;
+  border: 0.125rem solid #111111;
+  transition: all ease 0.6s;
+}
+section.model-section-1 .tabs .tab:checked {
+  background: #111111;
+  color: white;
+  transition: all ease 0.6s;
+}
+section.model-section-1 .tabs .tab::after {
+  position: absolute;
+}
+
+section.home-section-1 h1 {
+  color: #111111;
+}
+section.home-section-1 p {
+  color: #9ca3af;
+}
 section.home-section-1 .splide .splide__slide .text-md {
   color: #111111;
 }
@@ -13280,6 +13377,26 @@ section.single-mode-section-1 .measurements .measurements-feature .feature span:
 section.single-mode-section-1 .bg img {
   width: auto;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+section.become-a-model-section-2 .next-model .next-mode-cta{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  background: #111111;
+}
+section.become-a-model-section-2 .next-model .next-mode-cta .text-body {
+  color: #9ca3af;
+  font-family: "Miller Display";
+}
+section.become-a-model-section-2 .next-model .next-mode-cta .text-md {
+  color: white;
+}
+section.become-a-model-section-2 .next-model .next-mode-cta img{
+  height: auto;
+  width: 30%;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -13955,8 +14072,6 @@ video {
 @media (min-width: 1440px){
   .container{
     max-width: 1440px;
-    padding-right: 3rem;
-    padding-left: 3rem;
   }
 }
 @media (min-width: 1800px){
@@ -14000,6 +14115,44 @@ video {
   50%{
     background-position-x: -115%;
   }
+}
+.filter{
+  display: flex;
+  flex-wrap: wrap;
+}
+.filter input[type="radio"]{
+  width: auto;
+}
+.filter input{
+  overflow: hidden;
+  opacity: 100%;
+  scale: 1;
+  transition: margin 0.1s, opacity 0.3s, padding 0.3s, border-width 0.1s;
+}
+.filter input:not(:last-child){
+  margin-inline-end: calc(0.25rem * 1);
+}
+.filter input.filter-reset{
+  aspect-ratio: 1 / 1;
+}
+.filter input.filter-reset::after{
+  content: "×";
+}
+.filter:not(:has(input:checked:not(.filter-reset))) .filter-reset, .filter:not(:has(input:checked:not(.filter-reset))) input[type="reset"]{
+  scale: 0;
+  border-width: 0;
+  margin-inline: calc(0.25rem * 0);
+  width: calc(0.25rem * 0);
+  padding-inline: calc(0.25rem * 0);
+  opacity: 0%;
+}
+.filter:has(input:checked:not(.filter-reset)) input:not(:checked, .filter-reset, input[type="reset"]){
+  scale: 0;
+  border-width: 0;
+  margin-inline: calc(0.25rem * 0);
+  width: calc(0.25rem * 0);
+  padding-inline: calc(0.25rem * 0);
+  opacity: 0%;
 }
 .input{
   cursor: text;
@@ -14332,6 +14485,358 @@ video {
 .link:focus-visible{
   outline: 2px solid currentColor;
   outline-offset: 2px;
+}
+.tabs{
+  display: flex;
+  flex-wrap: wrap;
+  --tabs-height: auto;
+  --tabs-direction: row;
+  height: var(--tabs-height);
+  flex-direction: var(--tabs-direction);
+}
+.tab{
+  position: relative;
+  display: inline-flex;
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  webkit-user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+@media (hover: hover){
+  .tab:hover{
+    color: var(--color-base-content);
+  }
+}
+.tab{
+  --tab-p: 1rem;
+  --tab-bg: var(--color-base-100);
+  --tab-border-color: var(--color-base-300);
+  --tab-radius-ss: 0;
+  --tab-radius-se: 0;
+  --tab-radius-es: 0;
+  --tab-radius-ee: 0;
+  --tab-order: 0;
+  --tab-radius-min: calc(0.75rem - var(--border));
+  border-color: #0000;
+  order: var(--tab-order);
+  height: calc(var(--size-field, 0.25rem) * 10);
+  font-size: 0.875rem;
+  padding-inline-start: var(--tab-p);
+  padding-inline-end: var(--tab-p);
+}
+.tab:is(input[type="radio"]){
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+}
+.tab:is(input[type="radio"]):after{
+  content: attr(aria-label);
+}
+.tab:is(label){
+  position: relative;
+}
+.tab:is(label) input{
+  position: absolute;
+  inset: calc(0.25rem * 0);
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  opacity: 0%;
+}
+.tab:checked + .tab-content, .tab:is(label:has(:checked)) + .tab-content, .tab:is(.tab-active, [aria-selected="true"]) + .tab-content{
+  display: block;
+  height: 100%;
+}
+.tab:not(:checked, label:has(:checked), :hover, .tab-active, [aria-selected="true"]){
+  color: color-mix(in oklab, var(--color-base-content) 50%, transparent);
+}
+.tab:not(input):empty{
+  flex-grow: 1;
+  cursor: default;
+}
+.tab:focus{
+  --tw-outline-style: none;
+  outline-style: none;
+}
+@media (forced-colors: active){
+  .tab:focus{
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+}
+.tab:focus-visible, .tab:is(label:has(:checked:focus-visible)){
+  outline: 2px solid currentColor;
+  outline-offset: -5px;
+}
+.tab[disabled]{
+  pointer-events: none;
+  opacity: 40%;
+}
+.tabs-border .tab{
+  --tab-border-color: #0000 #0000 var(--tab-border-color) #0000;
+  position: relative;
+  border-radius: var(--radius-field);
+}
+.tabs-border .tab:before{
+  --tw-content: "";
+  content: var(--tw-content);
+  background-color: var(--tab-border-color);
+  transition: background-color 0.2s ease;
+  width: 80%;
+  height: 3px;
+  border-radius: var(--radius-field);
+  bottom: 0;
+  left: 10%;
+  position: absolute;
+}
+.tabs-border .tab:is(.tab-active, [aria-selected="true"]):not(.tab-disabled, [disabled]):before, .tabs-border .tab:is(input:checked):before, .tabs-border .tab:is(label:has(:checked)):before{
+  --tab-border-color: currentColor;
+  border-top: 3px solid;
+}
+.tabs-lift > .tab{
+  --tab-border: 0 0 var(--border) 0;
+  --tab-radius-ss: min(var(--radius-field), var(--tab-radius-min));
+  --tab-radius-se: min(var(--radius-field), var(--tab-radius-min));
+  --tab-radius-es: 0;
+  --tab-radius-ee: 0;
+  --tab-paddings: var(--border) var(--tab-p) 0 var(--tab-p);
+  --tab-border-colors: #0000 #0000 var(--tab-border-color) #0000;
+  --tab-corner-width: calc(100% + min(var(--radius-field), var(--tab-radius-min)) * 2);
+  --tab-corner-height: min(var(--radius-field), var(--tab-radius-min));
+  --tab-corner-position: top left, top right;
+  border-width: var(--tab-border);
+  border-start-start-radius: var(--tab-radius-ss);
+  border-start-end-radius: var(--tab-radius-se);
+  border-end-start-radius: var(--tab-radius-es);
+  border-end-end-radius: var(--tab-radius-ee);
+  padding: var(--tab-paddings);
+  border-color: var(--tab-border-colors);
+}
+.tabs-lift > .tab:is(.tab-active, [aria-selected="true"]):not(.tab-disabled, [disabled]), .tabs-lift > .tab:is(input:checked, label:has(:checked)){
+  --tab-border: var(--border) var(--border) 0 var(--border);
+  --tab-border-colors: var(--tab-border-color) var(--tab-border-color) #0000
+        var(--tab-border-color);
+  --tab-paddings: 0 calc(var(--tab-p) - var(--border)) var(--border)
+        calc(var(--tab-p) - var(--border));
+  --tab-inset: auto auto 0 auto;
+  --tab-grad: calc(69% - var(--border));
+  --radius-start: radial-gradient(
+        circle at top left,
+        #0000 var(--tab-grad),
+        var(--tab-border-color) calc(var(--tab-grad) + 0.25px),
+        var(--tab-border-color) calc(var(--tab-grad) + var(--border)),
+        var(--tab-bg) calc(var(--tab-grad) + var(--border) + 0.25px)
+      );
+  --radius-end: radial-gradient(
+        circle at top right,
+        #0000 var(--tab-grad),
+        var(--tab-border-color) calc(var(--tab-grad) + 0.25px),
+        var(--tab-border-color) calc(var(--tab-grad) + var(--border)),
+        var(--tab-bg) calc(var(--tab-grad) + var(--border) + 0.25px)
+      );
+  background-color: var(--tab-bg);
+}
+.tabs-lift > .tab:is(.tab-active, [aria-selected="true"]):not(.tab-disabled, [disabled]):before, .tabs-lift > .tab:is(input:checked, label:has(:checked)):before{
+  z-index: 1;
+  content: "";
+  display: block;
+  position: absolute;
+  width: var(--tab-corner-width);
+  height: var(--tab-corner-height);
+  background-position: var(--tab-corner-position);
+  background-image: var(--radius-start), var(--radius-end);
+  background-size: min(var(--radius-field), var(--tab-radius-min)) min(var(--radius-field), var(--tab-radius-min));
+  background-repeat: no-repeat;
+  inset: var(--tab-inset);
+}
+.tabs-lift > .tab:is(.tab-active, [aria-selected="true"]):not(.tab-disabled, [disabled]):first-child:before, .tabs-lift > .tab:is(input:checked, label:has(:checked)):first-child:before{
+  --radius-start: none;
+}
+[dir="rtl"] .tabs-lift > .tab:is(.tab-active, [aria-selected="true"]):not(.tab-disabled, [disabled]):first-child:before, [dir="rtl"] .tabs-lift > .tab:is(input:checked, label:has(:checked)):first-child:before{
+  transform: rotateY(180deg);
+}
+.tabs-lift > .tab:is(.tab-active, [aria-selected="true"]):not(.tab-disabled, [disabled]):last-child:before, .tabs-lift > .tab:is(input:checked, label:has(:checked)):last-child:before{
+  --radius-end: none;
+}
+[dir="rtl"] .tabs-lift > .tab:is(.tab-active, [aria-selected="true"]):not(.tab-disabled, [disabled]):last-child:before, [dir="rtl"] .tabs-lift > .tab:is(input:checked, label:has(:checked)):last-child:before{
+  transform: rotateY(180deg);
+}
+.tabs-lift:has(.tab-content) > .tab:first-child:not(.tab-active, [aria-selected="true"]){
+  --tab-border-colors: var(--tab-border-color) var(--tab-border-color) #0000
+          var(--tab-border-color);
+}
+.tabs-lift .tab-content{
+  --tabcontent-margin: calc(-1 * var(--border)) 0 0 0;
+  --tabcontent-radius-ss: 0;
+  --tabcontent-radius-se: var(--radius-box);
+  --tabcontent-radius-es: var(--radius-box);
+  --tabcontent-radius-ee: var(--radius-box);
+}
+.tabs-lift :checked + .tab-content:nth-child(1), .tabs-lift :checked + .tab-content:nth-child(n + 3), .tabs-lift label:has(:checked) + .tab-content:nth-child(1), .tabs-lift label:has(:checked) + .tab-content:nth-child(n + 3), .tabs-lift :is(.tab-active, [aria-selected="true"]) + .tab-content:nth-child(1), .tabs-lift :is(.tab-active, [aria-selected="true"]) + .tab-content:nth-child(n + 3){
+  --tabcontent-radius-ss: var(--radius-box);
+}
+.tabs-top .tab{
+  --tab-order: 0;
+  --tab-border: 0 0 var(--border) 0;
+  --tab-radius-ss: min(var(--radius-field), var(--tab-radius-min));
+  --tab-radius-se: min(var(--radius-field), var(--tab-radius-min));
+  --tab-radius-es: 0;
+  --tab-radius-ee: 0;
+  --tab-paddings: var(--border) var(--tab-p) 0 var(--tab-p);
+  --tab-border-colors: #0000 #0000 var(--tab-border-color) #0000;
+  --tab-corner-width: calc(100% + min(var(--radius-field), var(--tab-radius-min)) * 2);
+  --tab-corner-height: min(var(--radius-field), var(--tab-radius-min));
+  --tab-corner-position: top left, top right;
+}
+.tabs-top .tab:is(.tab-active, [aria-selected="true"]):not(.tab-disabled, [disabled]), .tabs-top .tab:is(input:checked), .tabs-top .tab:is(label:has(:checked)){
+  --tab-border: var(--border) var(--border) 0 var(--border);
+  --tab-border-colors: var(--tab-border-color) var(--tab-border-color) #0000
+        var(--tab-border-color);
+  --tab-paddings: 0 calc(var(--tab-p) - var(--border)) var(--border)
+        calc(var(--tab-p) - var(--border));
+  --tab-inset: auto auto 0 auto;
+  --radius-start: radial-gradient(
+        circle at top left,
+        #0000 var(--tab-grad),
+        var(--tab-border-color) calc(var(--tab-grad) + 0.25px),
+        var(--tab-border-color) calc(var(--tab-grad) + var(--border)),
+        var(--tab-bg) calc(var(--tab-grad) + var(--border) + 0.25px)
+      );
+  --radius-end: radial-gradient(
+        circle at top right,
+        #0000 var(--tab-grad),
+        var(--tab-border-color) calc(var(--tab-grad) + 0.25px),
+        var(--tab-border-color) calc(var(--tab-grad) + var(--border)),
+        var(--tab-bg) calc(var(--tab-grad) + var(--border) + 0.25px)
+      );
+}
+.tabs-top:has(.tab-content) > .tab:first-child:not(.tab-active, [aria-selected="true"]){
+  --tab-border-colors: var(--tab-border-color) var(--tab-border-color) #0000
+          var(--tab-border-color);
+}
+.tabs-top .tab-content{
+  --tabcontent-order: 1;
+  --tabcontent-margin: calc(-1 * var(--border)) 0 0 0;
+  --tabcontent-radius-ss: 0;
+  --tabcontent-radius-se: var(--radius-box);
+  --tabcontent-radius-es: var(--radius-box);
+  --tabcontent-radius-ee: var(--radius-box);
+}
+.tabs-top :checked + .tab-content:nth-child(1), .tabs-top :checked + .tab-content:nth-child(n + 3), .tabs-top label:has(:checked) + .tab-content:nth-child(1), .tabs-top label:has(:checked) + .tab-content:nth-child(n + 3), .tabs-top :is(.tab-active, [aria-selected="true"]) + .tab-content:nth-child(1), .tabs-top :is(.tab-active, [aria-selected="true"]) + .tab-content:nth-child(n + 3){
+  --tabcontent-radius-ss: var(--radius-box);
+}
+.tabs-bottom .tab{
+  --tab-order: 1;
+  --tab-border: var(--border) 0 0 0;
+  --tab-radius-ss: 0;
+  --tab-radius-se: 0;
+  --tab-radius-es: min(var(--radius-field), var(--tab-radius-min));
+  --tab-radius-ee: min(var(--radius-field), var(--tab-radius-min));
+  --tab-border-colors: var(--tab-border-color) #0000 #0000 #0000;
+  --tab-paddings: 0 var(--tab-p) var(--border) var(--tab-p);
+  --tab-corner-width: calc(100% + min(var(--radius-field), var(--tab-radius-min)) * 2);
+  --tab-corner-height: min(var(--radius-field), var(--tab-radius-min));
+  --tab-corner-position: top left, top right;
+}
+.tabs-bottom .tab:is(.tab-active, [aria-selected="true"]):not(.tab-disabled, [disabled]), .tabs-bottom .tab:is(input:checked), .tabs-bottom .tab:is(label:has(:checked)){
+  --tab-border: 0 var(--border) var(--border) var(--border);
+  --tab-border-colors: #0000 var(--tab-border-color) var(--tab-border-color)
+        var(--tab-border-color);
+  --tab-paddings: var(--border) calc(var(--tab-p) - var(--border)) 0
+        calc(var(--tab-p) - var(--border));
+  --tab-inset: 0 auto auto auto;
+  --radius-start: radial-gradient(
+        circle at bottom left,
+        #0000 var(--tab-grad),
+        var(--tab-border-color) calc(var(--tab-grad) + 0.25px),
+        var(--tab-border-color) calc(var(--tab-grad) + var(--border)),
+        var(--tab-bg) calc(var(--tab-grad) + var(--border) + 0.25px)
+      );
+  --radius-end: radial-gradient(
+        circle at bottom right,
+        #0000 var(--tab-grad),
+        var(--tab-border-color) calc(var(--tab-grad) + 0.25px),
+        var(--tab-border-color) calc(var(--tab-grad) + var(--border)),
+        var(--tab-bg) calc(var(--tab-grad) + var(--border) + 0.25px)
+      );
+}
+.tabs-bottom:has(.tab-content) > .tab:first-child:not(.tab-active, [aria-selected="true"]){
+  --tab-border-colors: #0000 var(--tab-border-color) var(--tab-border-color)
+          var(--tab-border-color);
+}
+.tabs-bottom .tab-content{
+  --tabcontent-order: 0;
+  --tabcontent-margin: 0 0 calc(-1 * var(--border)) 0;
+  --tabcontent-radius-ss: var(--radius-box);
+  --tabcontent-radius-se: var(--radius-box);
+  --tabcontent-radius-es: 0;
+  --tabcontent-radius-ee: var(--radius-box);
+}
+.tabs-bottom > :checked + .tab-content:not(:nth-child(2)), .tabs-bottom > :is(label:has(:checked)) + .tab-content:not(:nth-child(2)), .tabs-bottom > :is(.tab-active, [aria-selected="true"]) + .tab-content:not(:nth-child(2)){
+  --tabcontent-radius-es: var(--radius-box);
+}
+.tabs-box .tab{
+  border-radius: var(--radius-field);
+  border-style: none;
+}
+.tabs-box .tab:focus-visible, .tabs-box .tab:is(label:has(:checked:focus-visible)){
+  outline-offset: 2px;
+}
+.tab-content{
+  order: 1;
+  order: var(--tabcontent-order);
+  display: none;
+  border-color: transparent;
+  --tabcontent-radius-ss: 0;
+  --tabcontent-radius-se: 0;
+  --tabcontent-radius-es: 0;
+  --tabcontent-radius-ee: 0;
+  --tabcontent-order: 1;
+  width: 100%;
+  margin: var(--tabcontent-margin);
+  border-width: var(--border);
+  border-start-start-radius: var(--tabcontent-radius-ss);
+  border-start-end-radius: var(--tabcontent-radius-se);
+  border-end-start-radius: var(--tabcontent-radius-es);
+  border-end-end-radius: var(--tabcontent-radius-ee);
+}
+.tabs-xs :where(.tab){
+  height: calc(var(--size-field, 0.25rem) * 6);
+  font-size: 0.75rem;
+  --tab-p: 0.375rem;
+  --tab-radius-min: calc(0.5rem - var(--border));
+}
+.tabs-sm :where(.tab){
+  height: calc(var(--size-field, 0.25rem) * 8);
+  font-size: 0.875rem;
+  --tab-p: 0.5rem;
+  --tab-radius-min: calc(0.5rem - var(--border));
+}
+.tabs-md :where(.tab){
+  height: calc(var(--size-field, 0.25rem) * 10);
+  font-size: 0.875rem;
+  --tab-p: 0.75rem;
+  --tab-radius-min: calc(0.75rem - var(--border));
+}
+.tabs-lg :where(.tab){
+  height: calc(var(--size-field, 0.25rem) * 12);
+  font-size: 1.125rem;
+  --tab-p: 1rem;
+  --tab-radius-min: calc(1.5rem - var(--border));
+}
+.tabs-xl :where(.tab){
+  height: calc(var(--size-field, 0.25rem) * 14);
+  font-size: 1.125rem;
+  --tab-p: 1.25rem;
+  --tab-radius-min: calc(2rem - var(--border));
 }
 .dropdown{
   position: relative;
@@ -14842,11 +15347,18 @@ video {
 .collapse{
   visibility: collapse;
 }
+.absolute{
+  position: absolute;
+}
 .relative{
   position: relative;
 }
 .col-span-2{
   grid-column: span 2 / span 2;
+}
+.mx-auto{
+  margin-left: auto;
+  margin-right: auto;
 }
 .ml-1{
   margin-left: 0.25rem;
@@ -14973,9 +15485,13 @@ video {
   margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
 }
-.py-\[1rem\]{
+.py-4{
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+.py-\[2rem\]{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 .py-\[5rem\]{
   padding-top: 5rem;
@@ -14983,6 +15499,9 @@ video {
 }
 .pb-\[5rem\]{
   padding-bottom: 5rem;
+}
+.pt-12{
+  padding-top: 3rem;
 }
 .pt-\[10rem\]{
   padding-top: 10rem;
@@ -14992,6 +15511,9 @@ video {
 }
 .pt-\[3rem\]{
   padding-top: 3rem;
+}
+.pt-\[5rem\]{
+  padding-top: 5rem;
 }
 .pt-\[9\.7rem\]{
   padding-top: 9.7rem;
@@ -15048,6 +15570,9 @@ video {
 .underline{
   text-decoration-line: underline;
 }
+.filter{
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
 .checked\:bg-transparent:checked{
   background-color: transparent;
 }
@@ -15077,6 +15602,9 @@ video {
   .md\:grid-cols-4{
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
+  .md\:grid-cols-\[30\%_30\%\]{
+    grid-template-columns: 30% 30%;
+  }
   .md\:grid-cols-\[60\%\]{
     grid-template-columns: 60%;
   }
@@ -15092,8 +15620,16 @@ video {
   .md\:gap-16{
     gap: 4rem;
   }
+  .md\:gap-4{
+    gap: 1rem;
+  }
   .md\:gap-\[8rem\]{
     gap: 8rem;
+  }
+  .md\:space-y-6 > :not([hidden]) ~ :not([hidden]){
+    --tw-space-y-reverse: 0;
+    margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
   }
   .md\:p-10{
     padding: 2.5rem;
@@ -15102,11 +15638,18 @@ video {
     padding-top: 10rem;
     padding-bottom: 10rem;
   }
+  .md\:py-\[5rem\]{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
   .md\:pt-\[15rem\]{
     padding-top: 15rem;
   }
   .md\:pt-\[5rem\]{
     padding-top: 5rem;
+  }
+  .md\:pt-\[8rem\]{
+    padding-top: 8rem;
   }
   .md\:text-5xl{
     font-size: 3rem;

@@ -28364,6 +28364,99 @@ var Home = /*#__PURE__*/ function() {
 
 
 },
+"./src/apps/model/index.js"(__unused_rspack_module, __webpack_exports__, __webpack_require__) {
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+__webpack_require__.d(__webpack_exports__, {
+  "default": () => (Model)
+});
+/* import */ var lodash__rspack_import_0 = __webpack_require__("./node_modules/lodash/lodash.js");
+/* import */ var lodash__rspack_import_0_default = /*#__PURE__*/__webpack_require__.n(lodash__rspack_import_0);
+function _array_like_to_array(arr, len) {
+    if (len == null || len > arr.length) len = arr.length;
+    for(var i = 0, arr2 = new Array(len); i < len; i++)arr2[i] = arr[i];
+    return arr2;
+}
+function _array_without_holes(arr) {
+    if (Array.isArray(arr)) return _array_like_to_array(arr);
+}
+function _class_call_check(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+        throw new TypeError("Cannot call a class as a function");
+    }
+}
+function _defineProperties(target, props) {
+    for(var i = 0; i < props.length; i++){
+        var descriptor = props[i];
+        descriptor.enumerable = descriptor.enumerable || false;
+        descriptor.configurable = true;
+        if ("value" in descriptor) descriptor.writable = true;
+        Object.defineProperty(target, descriptor.key, descriptor);
+    }
+}
+function _create_class(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    return Constructor;
+}
+function _iterable_to_array(iter) {
+    if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
+}
+function _non_iterable_spread() {
+    throw new TypeError("Invalid attempt to spread non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+function _to_consumable_array(arr) {
+    return _array_without_holes(arr) || _iterable_to_array(arr) || _unsupported_iterable_to_array(arr) || _non_iterable_spread();
+}
+function _unsupported_iterable_to_array(o, minLen) {
+    if (!o) return;
+    if (typeof o === "string") return _array_like_to_array(o, minLen);
+    var n = Object.prototype.toString.call(o).slice(8, -1);
+    if (n === "Object" && o.constructor) n = o.constructor.name;
+    if (n === "Map" || n === "Set") return Array.from(n);
+    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _array_like_to_array(o, minLen);
+}
+
+var Model = /*#__PURE__*/ function() {
+    "use strict";
+    function Model() {
+        _class_call_check(this, Model);
+        this.createReRender();
+    }
+    _create_class(Model, [
+        {
+            key: "createReRender",
+            value: function createReRender() {
+                this.createModelFilter();
+            }
+        },
+        {
+            key: "createModelFilter",
+            value: function createModelFilter() {
+                var _this = this;
+                this.filter = document.querySelector('.filter input');
+                this.filterCard = _to_consumable_array(document.querySelectorAll('.model-section-1 .filter-card'));
+                if (this.filter && this.filterCard) {
+                    this.filter.addEventListener('input', function(e) {
+                        var value = e.target.value.trim().toLowerCase();
+                        lodash__rspack_import_0_default().filter(_this.filterCard, function(element) {
+                            var titles = element.querySelectorAll('h3');
+                            var match = lodash__rspack_import_0_default().some(titles, function(text) {
+                                return text.innerText.trim().toLowerCase().startsWith(value);
+                            });
+                            element.style.display = match || value === '' ? 'block' : 'none';
+                        });
+                    });
+                }
+            }
+        }
+    ]);
+    return Model;
+}();
+
+
+
+},
 "./src/apps/single-model/index.js"(__unused_rspack_module, __webpack_exports__, __webpack_require__) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -28579,13 +28672,14 @@ __webpack_require__.r(__webpack_exports__);
 /* import */ var _home__rspack_import_0 = __webpack_require__("./src/apps/home/index.js");
 /* import */ var _contact__rspack_import_1 = __webpack_require__("./src/apps/contact/index.js");
 /* import */ var _become_a_model__rspack_import_2 = __webpack_require__("./src/apps/become-a-model/index.js");
-/* import */ var _single_model__rspack_import_3 = __webpack_require__("./src/apps/single-model/index.js");
-/* import */ var _barba_core__rspack_import_4 = __webpack_require__("./node_modules/@barba/core/dist/barba.umd.js");
-/* import */ var _barba_core__rspack_import_4_default = /*#__PURE__*/__webpack_require__.n(_barba_core__rspack_import_4);
-/* import */ var gsap__rspack_import_7 = __webpack_require__("./node_modules/gsap/index.js");
-/* import */ var lodash__rspack_import_5 = __webpack_require__("./node_modules/lodash/lodash.js");
-/* import */ var lodash__rspack_import_5_default = /*#__PURE__*/__webpack_require__.n(lodash__rspack_import_5);
-/* import */ var _scss_main_scss__rspack_import_6 = __webpack_require__("./src/scss/main.scss");
+/* import */ var _model__rspack_import_3 = __webpack_require__("./src/apps/model/index.js");
+/* import */ var _single_model__rspack_import_4 = __webpack_require__("./src/apps/single-model/index.js");
+/* import */ var _barba_core__rspack_import_5 = __webpack_require__("./node_modules/@barba/core/dist/barba.umd.js");
+/* import */ var _barba_core__rspack_import_5_default = /*#__PURE__*/__webpack_require__.n(_barba_core__rspack_import_5);
+/* import */ var gsap__rspack_import_8 = __webpack_require__("./node_modules/gsap/index.js");
+/* import */ var lodash__rspack_import_6 = __webpack_require__("./node_modules/lodash/lodash.js");
+/* import */ var lodash__rspack_import_6_default = /*#__PURE__*/__webpack_require__.n(lodash__rspack_import_6);
+/* import */ var _scss_main_scss__rspack_import_7 = __webpack_require__("./src/scss/main.scss");
 function _class_call_check(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
         throw new TypeError("Cannot call a class as a function");
@@ -28605,6 +28699,7 @@ function _create_class(Constructor, protoProps, staticProps) {
     if (staticProps) _defineProperties(Constructor, staticProps);
     return Constructor;
 }
+
 
 
 
@@ -28635,13 +28730,14 @@ var App = /*#__PURE__*/ function() {
         this.pages = {
             home: new _home__rspack_import_0["default"](),
             contact: new _contact__rspack_import_1["default"](),
+            model: new _model__rspack_import_3["default"](),
             become_a_model: new _become_a_model__rspack_import_2["default"](),
-            single_model: new _single_model__rspack_import_3["default"]()
+            single_model: new _single_model__rspack_import_4["default"]()
         };
         this.offCanvas = document.querySelector('#offcanvas');
         this.links = document.querySelectorAll('.menu li a');
-        this.buttons = document.querySelectorAll('.button-1-stroke');
         this.createAjaxNavigation();
+        this.createCreativeCta();
         this.createReRender();
         this.addEventListeners();
     }
@@ -28650,13 +28746,13 @@ var App = /*#__PURE__*/ function() {
             key: "createAjaxNavigation",
             value: function createAjaxNavigation() {
                 var _this = this;
-                lodash__rspack_import_5_default().forEach(this.links, function(element) {
+                lodash__rspack_import_6_default().forEach(this.links, function(element) {
                     element.addEventListener('click', function() {
                         return _this.offCanvas.checked = false;
                     });
                 });
                 var easeIn = function easeIn(container, done) {
-                    return gsap__rspack_import_7["default"].to(container, {
+                    return gsap__rspack_import_8["default"].to(container, {
                         autoAlpha: 0,
                         duration: 1,
                         ease: 'none',
@@ -28666,13 +28762,13 @@ var App = /*#__PURE__*/ function() {
                     });
                 };
                 var easeOut = function easeOut(container) {
-                    return gsap__rspack_import_7["default"].from(container, {
+                    return gsap__rspack_import_8["default"].from(container, {
                         autoAlpha: 0,
                         duration: 1,
                         ease: 'none'
                     });
                 };
-                _barba_core__rspack_import_4_default().init({
+                _barba_core__rspack_import_5_default().init({
                     preventRunning: true,
                     transitions: [
                         {
@@ -28698,18 +28794,20 @@ var App = /*#__PURE__*/ function() {
             key: "createReRender",
             value: function createReRender() {
                 var _this = this;
-                _barba_core__rspack_import_4_default().hooks.before(function() {});
-                _barba_core__rspack_import_4_default().hooks.after(function() {
+                _barba_core__rspack_import_5_default().hooks.before(function() {});
+                _barba_core__rspack_import_5_default().hooks.after(function() {
                     _this.pages.home.createReRender();
                     _this.pages.become_a_model.createReRender();
                     _this.pages.single_model.createReRender();
+                    _this.createCreativeCta();
                 });
             }
         },
         {
-            key: "addEventListeners",
-            value: function addEventListeners() {
-                lodash__rspack_import_5_default().forEach(this.buttons, function(element) {
+            key: "createCreativeCta",
+            value: function createCreativeCta() {
+                this.buttons = document.querySelectorAll('.button-1-stroke');
+                lodash__rspack_import_6_default().forEach(this.buttons, function(element) {
                     element.addEventListener('mouseenter', function() {
                         if (!element.classList.contains('is-animating')) element.classList.add('is-animating');
                         element.addEventListener('animationend', function() {
@@ -28718,6 +28816,10 @@ var App = /*#__PURE__*/ function() {
                     });
                 });
             }
+        },
+        {
+            key: "addEventListeners",
+            value: function addEventListeners() {}
         }
     ]);
     return App;
