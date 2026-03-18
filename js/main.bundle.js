@@ -28807,7 +28807,7 @@ var App = /*#__PURE__*/ function() {
         {
             key: "createCreativeCta",
             value: function createCreativeCta() {
-                this.buttons = document.querySelectorAll('.button-1-stroke');
+                this.buttons = document.querySelectorAll('.button-1-stroke , .button-1-bg');
                 lodash__rspack_import_6_default().forEach(this.buttons, function(element) {
                     element.addEventListener('mouseenter', function() {
                         if (!element.classList.contains('is-animating')) element.classList.add('is-animating');
