@@ -13170,6 +13170,7 @@ section.model-section-1 .tabs .tab {
 }
 section.model-section-1 .tabs .tab::before {
   content: attr(aria-label);
+  color: #1a1a1a;
 }
 section.model-section-1 .tabs .tab::after {
   content: "";
@@ -15412,9 +15413,6 @@ video {
 .grid-cols-3{
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
-.grid-cols-\[30\%\]{
-  grid-template-columns: 30%;
-}
 .flex-col{
   flex-direction: column;
 }
@@ -15616,6 +15614,9 @@ video {
   }
   .md\:grid-cols-5{
     grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+  .md\:grid-cols-\[30\%\]{
+    grid-template-columns: 30%;
   }
   .md\:grid-cols-\[30\%_30\%\]{
     grid-template-columns: 30% 30%;
