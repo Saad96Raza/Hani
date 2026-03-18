@@ -12860,7 +12860,7 @@ section.model-section-1 .is-animating.tabs::after, .is-animating.tab.button-1-st
   position: relative;
   color: white;
   z-index: 1;
-  padding: 1.25rem 2.5rem;
+  padding: 1.25rem 3.125rem;
   box-shadow: inset 0 0 0 0.125rem #1a1a1a;
   transition: all ease 0.1s;
 }
