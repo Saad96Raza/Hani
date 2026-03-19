@@ -27408,23 +27408,12 @@ var BecomeAModel = /*#__PURE__*/ function() {
                 this.heights = document.querySelector('.heights');
                 this.waist = document.querySelector('.waist');
                 this.hips = document.querySelector('.hips');
-                this.shoeSize = document.querySelector('.shoe-size');
-                this.hairColor = document.querySelector('.hair-color');
-                this.eyeColor = document.querySelector('.eye-color');
                 this.bust = document.querySelector('.bust');
-                if (this.heights || this.waist || this.hips || this.shoeSize || this.hairColor || this.eyeColor) {
+                if (this.heights || this.waist || this.hips) {
                     lodash__rspack_import_1_default().map(_extra_model_data__rspack_import_3.modelProfileAttributes, function(element) {
                         switch(element.type){
                             case "Height":
                                 return _this.heights.innerHTML += '<option value="'.concat(element.cm, '">').concat(element.cm, " cm - ").concat(element.label, "</option>");
-                        }
-                        switch(element.type){
-                            case "Eye Color":
-                                return _this.eyeColor.innerHTML += '<option value="'.concat(element.name, '">"').concat(element.name, '"</option>');
-                        }
-                        switch(element.type){
-                            case "Hair Color":
-                                return _this.hairColor.innerHTML += '<option value="'.concat(element.name, '">"').concat(element.name, '"</option>');
                         }
                         switch(element.type){
                             case "Waist":
@@ -27437,10 +27426,6 @@ var BecomeAModel = /*#__PURE__*/ function() {
                         switch(element.type){
                             case "Hips":
                                 return _this.hips.innerHTML += '<option value="'.concat(element.cm, '">').concat(element.cm, " cm - ").concat(element.label, "</option>");
-                        }
-                        switch(element.type){
-                            case "Shoe Size":
-                                return _this.shoeSize.innerHTML += '<option value="'.concat(element.size, '">"Size - ').concat(element.size, '"</option>');
                         }
                     });
                 }
@@ -28328,10 +28313,10 @@ var Home = /*#__PURE__*/ function() {
                         autoplay: true,
                         speed: 2000,
                         pauseOnHover: false,
-                        perPage: 4,
+                        perPage: 3,
                         arrows: false,
-                        focus: 'start',
-                        gap: '1rem',
+                        focus: 'center',
+                        gap: '4rem',
                         breakpoints: {
                             1280: {
                                 perPage: 4
@@ -28347,7 +28332,7 @@ var Home = /*#__PURE__*/ function() {
                             }
                         }
                     });
-                    this.bar = this.splide.root.querySelector('.my-slider-progress-bar');
+                    this.bar = this.splide.root.querySelector('.home-slider-progress-bar');
                     this.splide.on('mounted move', function() {
                         var end = _this.splide.Components.Controller.getEnd() + 1;
                         var rate = Math.min((_this.splide.index + 1) / end, 1);
@@ -28533,7 +28518,7 @@ var SingleModel = /*#__PURE__*/ function() {
                         speed: 1000,
                         arrows: false,
                         focus: 'start',
-                        gap: '1rem'
+                        gap: 'calc(7.527rem/2)'
                     }, _define_property(_obj, "drag", true), _define_property(_obj, "breakpoints", {
                         1280: {
                             perPage: 4
@@ -28545,7 +28530,8 @@ var SingleModel = /*#__PURE__*/ function() {
                             perPage: 2
                         },
                         480: {
-                            perPage: 1.5
+                            perPage: 1.5,
+                            gap: 'calc(7.527rem/4)'
                         }
                     }), _obj)).mount();
                 }
@@ -28713,6 +28699,8 @@ var App = /*#__PURE__*/ function() {
     function App() {
         var _this = this;
         _class_call_check(this, App);
+        this.header = document.querySelector('.header');
+        console.log(this.header.getBoundingClientRect().height);
         this.scroll = {
             last: 0,
             current: 0
