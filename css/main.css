@@ -12934,7 +12934,7 @@ section.model-section-1 .img-overlay, section.home-section-1 .splide .splide__sl
 }
 @media (min-width: 768px){
   section.model-section-1 .img-overlay, section.home-section-1 .splide .splide__slide .img-overlay{
-    height: 40rem;
+    height: 50rem;
   }
 }
 section.model-section-1 .img-overlay .body-measurment, section.home-section-1 .splide .splide__slide .img-overlay .body-measurment {
