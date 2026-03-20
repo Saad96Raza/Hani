@@ -1,2 +1,22 @@
+include ../../mixins/buttons.pug
 
 section(class="section contact-section-1")
+    div(class="grid grid-cols-1 md:grid-cols-2 gap-12 container")
+        div(class="bg") 
+            img(src="./media/banners/contact.png", alt="")
+        div(class="flex flex-col gap-[4rem] justify-center md:p-10")
+            div(class="flex flex-col gap-12") 
+                h1(class="text-xl") Contact
+                p(class="text-body") For bookings and general enquiries : #[strong(class="underline text-highlight") info@hanimodels.com]
+            form(action="" class="py-[calc(7.527rem/2)]")
+                div(class="form grid grid-cols-2 gap-[calc(7.527rem/3)]")
+                    input(type="text" placeholder="name" class="input w-full text-body")   
+                    input(type="text" placeholder="e-mail" class="input w-full text-body")   
+                    textarea(type="text" placeholder="your message" class="w-full col-span-2 text-body")
+                    div(class="py-[3rem]")
+                        +Buttons(
+                            '',
+                            'send message',
+                            null,
+                            'link'
+                        )       

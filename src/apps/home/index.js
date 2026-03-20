@@ -3,7 +3,6 @@ import '@splidejs/splide/css/core';
 
 export default class Home {
     constructor() {
-        
         this.createReRender()        
     }
     createReRender(){
@@ -11,18 +10,19 @@ export default class Home {
     }
 
     createModelsSlider(){
-        this.splideHome =  document.querySelector(".splide")
-        if(this.splideHome){
-            this.splide = new Splide(this.splideHome,{
+        this.splideWrapper =  document.querySelector(".home-gallery-slider")
+        if(this.splideWrapper){
+            this.splide = new Splide(this.splideWrapper,{
             type   : 'loop',
             drag   : 'free',
-            perPage: 5,
+            interval:3000,
             autoplay:true,
-            speed : 1000,
+            speed:2000,
+            pauseOnHover:false,
+            perPage: 3,
             arrows:false,
-            focus  : 'start',
-            gap:'1.5rem',
-            drag   : true,
+            focus  : 'center',
+            gap:'4rem',
             breakpoints: {
                 1280: {
                     perPage: 4,
@@ -39,7 +39,7 @@ export default class Home {
   }
         })
 
-        this.bar = this.splide.root.querySelector('.my-slider-progress-bar')
+        this.bar = this.splide.root.querySelector('.home-slider-progress-bar')
 
         this.splide.on('mounted move', () => {
             const end  = this.splide.Components.Controller.getEnd() + 1

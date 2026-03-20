@@ -1,0 +1,7 @@
+mixin Buttons(link,text,icon,type,className="hidden md:flex")
+    if type === 'link'
+        a(href=link class="button-1 items-center "+''+" "+className+"")
+            button(class="button-1-stroke text-body uppercase") #{text}
+    else if type === 'submit'
+        a(href=link class="button-1 items-center "+''+" "+className+"")
+            button(class="button-1-bg text-body uppercase") #{text}

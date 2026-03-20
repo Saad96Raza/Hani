@@ -10,16 +10,22 @@ module.exports = {
   theme: {
     container: {
       center: true,
+      padding: {
+        DEFAULT: '1rem',
+        // md: '3rem',
+      },
       screens: {
         DEFAULT: '100%', 
-        xl: '1440px',    
+        md: '1440px',
+        ultra: '1800px', 
+            
       },
     },
     extend: {
       fontSize: {        
         xxl: [Fluid(4, 180)], 
         xl: [Fluid(4, 70)], 
-        lg: [Fluid(3, 14)], 
+        lg: [Fluid(2, 26)], 
         md: [[Fluid(1, 9)]], 
         sm: [], 
         body: [Fluid(1, 6)], 
@@ -30,7 +36,7 @@ module.exports = {
   },
   plugins: [
     daisyui({
-      exclude:['rootscrollgutter','input'],
+      exclude: ['rootscrollgutter', 'rootcolor', 'menu'],
     })
   ],
 

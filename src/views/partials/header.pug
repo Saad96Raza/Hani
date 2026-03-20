@@ -1,39 +1,51 @@
-header(class="header flex justify-between align-items-center")
-    div(class="logo flex")
-        div(class="logo-wrapper")
-            img(src="./media/logo.png", alt="")
-    div(class="flex justify-end items-center gap-16")
-        a(href="become-a-model.html") 
-            button(class="pry-btn hidden md:flex items-center text-highlight gap-2")
-                |become a model
-                i(class="fa-solid fa-heart fa-sm")   
-        div(class="flex gap-6")            
-            a(href="" class="instagram-icon hidden md:flex items-center")
-                i(class="fa-brands fa-instagram fa-3x")
-            div(class="flex")
-                div(class="drawer drawer-end")
-                    input(id="offcanvas" class="drawer-toggle" type='checkbox')
-                    div(class="drawer-content")
-                        label(class="drawer-button hamburger" for='offcanvas')
-                            svg(viewbox='0 0 60 60')
-                                path(d='M10 25H50M10 35H50')
-                    div(class="drawer-side")
-                        label(class="drawer-overlay" for='offcanvas' aria-label='close sidebar')
-                        ul(class="menu min-h-full flex flex-col justify-between")
-                            li(class="h-full")
-                                label(for="offcanvas" class="ml-auto bg-transparent")
-                                    i(class="fa-solid fa-xmark fa-2xl" for='offcanvas')
-                            li
-                                div
-                                    a(class="text-lg" href="index.html") portfolio
-                                div
-                                    a(class="text-lg" href="model.html") models
-                                div
-                                    a(class="text-lg") agency
-                                div
-                                    a(class="text-lg" href="contact.html") contact
-                            li(class="flex md:hidden")   
-                                a(href="become-a-model.html" class="w-full flex") 
-                                    button(class="pry-btn w-full items-center justify-center text-highlight gap-2")
-                                        |become a model
-                                        i(class="fa-solid fa-heart fa-sm ml-2")
+include ../../views/pages/mixins/buttons.pug
+
+header(class="header")
+    div(class="container flex justify-between align-items-center")
+        div(class="logo flex")
+            div(class="logo-wrapper")
+                a(href="index.html") 
+                    img(src="./media/logo-transparent.png", alt="" loading="lazy")
+        div(class="flex justify-end items-center gap-16")
+            +Buttons(
+                'become-a-model.html',
+                'become a model',
+                null,
+                'link'
+            )
+            div(class="flex gap-6")            
+                a(href="https://www.instagram.com/" target="_blank" class="instagram-icon hidden md:flex items-center")
+                    i(class="fa-brands fa-instagram text-[2.6rem]")
+                div(class="flex")
+                    div(class="drawer drawer-end")
+                        input(id="offcanvas" class="drawer-toggle" type='checkbox')
+                        div(class="drawer-content")
+                            label(class="drawer-button hamburger" for='offcanvas')
+                                svg(viewbox='0 0 60 60')
+                                    path(d='M10 25H50M10 35H50')
+                        div(class="drawer-side")
+                            label(class="drawer-overlay" for='offcanvas' aria-label='close sidebar')
+                            ul(class="menu min-h-full flex flex-col justify-between")
+                                li(class="h-full")
+                                    label(for="offcanvas" class="w-full flex cursor-pointer")
+                                        i(class="fa-solid fa-xmark text-[1rem] md:text-[2rem] ml-auto" for='offcanvas')
+                                li(class="flex flex-col gap-6")
+                                    div
+                                        a(class="text-lg" href="index.html") Home
+                                    div
+                                        a(class="text-lg" href="model.html") models
+                                    div
+                                        a(class="text-lg" href="about.html") About      
+                                    div
+                                        a(class="text-lg normal-case" href="become-a-model.html") Become a model 
+                                    div
+                                        a(class="text-lg" href="contact.html") contact       
+                        
+                                li 
+                                    div(class="header-social-icons flex flex-col items-start gap-4")
+                                        a(class="flex items-center" href="https://www.instagram.com/" target="_blank")
+                                            i(class="fa-brands fa-instagram fa-lg")
+                                            span(class="text-highlight normal-case") hanimodels
+                                        a(class="flex items-center" href="contact.html")
+                                            i(class="fa-regular fa-envelope fa-lg")
+                                            span(class="text-highlight normal-case") info@hanimodels.com

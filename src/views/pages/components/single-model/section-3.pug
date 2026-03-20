@@ -1,0 +1,27 @@
+include ../../mixins/buttons.pug
+
+div(class="become-a-model-section-2")
+    div(class="container pt-[calc(7.527rem/2)] md:pt-[calc(7.527rem)]")
+        div(class="flex justify-center")
+            +Buttons(
+                    'mailto:info@hanimodels.com?subject=Booking%20enquiry%20-%20Gabriella%20Rousseau',
+                    'model inquiry',
+                    null,
+                    'link',
+                    'flex mx-auto'
+            )
+        div(class="grid grid-cols-1 md:grid-cols-[30%_30%] justify-between gap-6 py-[calc(7.527rem/2)] md:py-[calc(7.527rem)]")
+            a(href="#" class="mx-auto") 
+                div(class="next-model flex items-center gap-6")
+                    div(class="next-mode-cta flex items-center gap-6 w-full")
+                        img(src="./media/models/2.png" class="")
+                        div(class="flex flex-col justify-center")
+                            span(class="text-body") previous model
+                            h5(class="text-md") sarena moreau
+            a(href="#" class="mx-auto") 
+                div(class="next-model flex items-center gap-6")
+                    div(class="next-mode-cta flex items-center gap-6 w-full")
+                        img(src="./media/models/1.png" class="")
+                        div(class="flex flex-col justify-center")
+                            span(class="text-body") next model
+                            h5(class="text-md") Gabriella Rousseau

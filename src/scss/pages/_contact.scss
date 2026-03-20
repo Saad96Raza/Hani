@@ -1,0 +1,20 @@
+@use "variables" as *;
+@use "mixins" as *;
+@use "blocks/blocks" as *;
+//Contact
+
+section{
+    &.contact-section-1{
+        h1,
+        p{
+            color: color($primary-color-1,1);
+        }
+        .bg{
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}

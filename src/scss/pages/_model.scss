@@ -10,21 +10,24 @@ section{
         span{
             color: color($primary-color-1,1.0);
         }
-         @extend %img-overlay-base;
-         .img-overlay{
-            @apply h-[20rem] md:h-[50rem];
-            .body-measurment{
-                @apply p-[1rem] md:p-[4rem];
-                .location{
-                    @apply space-y-6 md:space-y-12;
-                    .fa-instagram{
-                        @apply text-[1rem] md:text-[2rem];
-                    }
-                }
-                .figure{
-                    @apply space-y-3 md:space-y-6;
-                }
-            }
-         }
+        @extend %img-overlay-base;
+        .models-gallery {
+            @apply gap-x-[calc(7.527rem*3/12)] md:gap-x-[calc(7.527rem*3/6)] gap-y-[calc(7.527rem*3/6)] md:gap-y-[calc(7.527rem*3/3)];
+        }
+        //  .img-overlay{
+        //     // @apply h-[20rem] md:h-[50rem];
+        //     .body-measurment{
+        //         @apply p-[1rem] md:p-[4rem];
+        //         .location{
+        //             @apply space-y-6 md:space-y-12;
+        //             .fa-instagram{
+        //                 @apply text-[1rem] md:text-[2rem];
+        //             }
+        //         }
+        //         .figure{
+        //             @apply space-y-3 md:space-y-6;
+        //         }
+        //     }
+        //  }
     }
 }

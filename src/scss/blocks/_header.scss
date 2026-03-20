@@ -5,9 +5,35 @@
 
 
 
+
+
 header{
     &.header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        transition: transform 0.3s ease-in-out; 
+        background: color($primary-color-7,1.0);
+        transform: translateY(0); 
         border-bottom: rem(1) solid color($primary-color-5,0.1);
+        z-index: 999;
+        .logo-wrapper{
+            a{
+                img{
+                    @apply w-[15rem] md:w-[20rem];
+                }
+            }
+        }
+        .drawer{
+            .menu{
+                span,
+                i{
+                    color: color($primary-color-1,1.0);
+                }
+            }
+        }   
     .instagram-icon{
         i{
             color: color($primary-color-1,1.0);
@@ -15,24 +41,51 @@ header{
     }    
     .menu{
         background: color($primary-color-4,1.0);
-        @apply  w-2/3 md:w-1/3  p-[1rem] md:p-[3rem];
-        .menu{
-
-            i{
-                color: color($primary-color-1,1.0);
+        li {
+            a{
+                transition: color ease 0.3s;
+                &:hover{
+                    color: color($primary-color-8,1.0);
+                    transition: color ease 0.3s;
+                }
             }
         }
-
+        @apply  w-2/3 md:w-1/3  p-[1rem] md:p-[3rem];
+   
         .text-lg{
             color: color($primary-color-1,1.0);
         }
+        .header-social-icons{
+                .flex{
+                    i,
+                    span{
+                        color:  color($primary-color-6,1);
+                        transition: all ease 0.3s;
+                    }
+                    &:hover{
+                    i,
+                    span{
+                        color:  color($primary-color-8,1);
+                        transition: all ease 0.3s;
+                    }
+                }
+            }
+            
+        }
     }
-    .drawer-side > *:not(.drawer-overlay){
-        transition: translate 0.5s ease-in-out;
-        
-    }
+   
     
     }
 }
 
+@layer components {
+    .drawer-side{
+        opacity: 1;
+    }
+    .drawer-side > *:not(.drawer-overlay) {
+       @apply transition-all duration-[0.8s]; 
+        transition-timing-function: cubic-bezier(0.37, 0, 0.63, 1);
+    }
+   
+}
 

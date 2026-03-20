@@ -1,28 +1,101 @@
 @use "variables" as *;
 @use "mixins" as *;
 // ICONS 
-.pry-btn{
-    padding :rem(20) rem(30);
-    background: color($primary-color-1,1.0);
-    color: color($primary-color-4,1.0);
-    transition: all ease 0.4s;
-    border: rem(2) solid color($primary-color-1,1.0);
-    &:hover{
-        background: transparent;
-        transition: all ease 0.4s;
-        color: color($primary-color-1,1.0);
-    }
+
+
+
+/*
+primary button stroke
+*/
+
+%p-btn-str {
+  position: relative;
+  color: color($primary-color-1, 1);
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: rem(2.5);
+    border-radius: rem(10);
+    background-color: color($primary-color-1, 1);
+    transform: scaleX(1);
+    transform-origin: right; 
+  }
+
+  &.is-animating::after {
+    animation: wipeInOut 1s ease-in-out forwards;
+  }
 }
 
-.pry-btn-stroke{
-    padding:rem(30) rem(30);
-    background:transparent;
-    color: color($primary-color-1,1.0);
-    transition: all ease 0.4s;
-    border: rem(2) solid color($primary-color-1,1.0);
-    &:hover{
-        background: color($primary-color-1,1.0);
-        transition: all ease 0.4s;
-        color: color($primary-color-4,1.0);
+%p-btn-bg {
+  position: relative;
+  color: color($primary-color-4, 1);
+  z-index: 1;
+  padding: rem(20) rem(50);
+   box-shadow: inset 0 0 0 rem(2) color($primary-color-1, 1);
+  transition: all ease 0.1s;
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    background-color: color($primary-color-1,1);
+    transform: scaleX(1);
+    transform-origin: right;
+    z-index: -1;
+   
+  }
+  &.is-animating {
+    animation: textColorSwap 1s ease-in-out forwards;
+
+    &::after {
+      animation: wipeInOut 1s ease-in-out forwards;
     }
+  }
+}
+
+@keyframes textColorSwap {
+  0% { color: color($primary-color-4, 1); }
+  50% { color: color($primary-color-1,1); } 
+  100% { color: color($primary-color-4, 1); }
+}
+
+
+
+
+.button-1{
+
+  .button-1-bg{
+    @extend %p-btn-bg;
+  }
+  .button-1-stroke{
+     @extend %p-btn-str;
+  }
+}
+
+.tab.button-1-stroke:checked {
+  @extend %p-btn-str;
+}
+
+
+@keyframes wipeInOut {
+  0% {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  45%, 50% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  50.1% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  100% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
 }

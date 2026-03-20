@@ -3,12 +3,17 @@
 @use "blocks/blocks" as *;
 //SINGLE MODLE
 
-section{
+div{
     &.single-mode-section-1{
+        .text-xl,
+        .text-md{
+            color: color($primary-color-1,1);
+        }
+
         .measurements{
-            @apply p-[3rem];
+            @apply p-[calc(7.527rem/2)] md:p-[calc(7.527rem)];
             background: color($primary-color-1,1);
-            .text-xl,
+            .text-lg,
             span{
                 color: color($primary-color-4,1);
                 font-family: $secondary-font;  
@@ -16,12 +21,57 @@ section{
             i{
                 color: color($primary-color-4,1);  
             }
+            .quote-text{
+                i{
+                    color: color($primary-color-6,0.1);
+                    position: absolute;
+                    top: rem(-30);
+                    left: rem(-30);  
+                }
+                
+
+            }
+            .text-body{
+                color: color($primary-color-6,1);  
+            }
+            .measurements-feature{
+                .feature{
+                    span{
+                        &:nth-child(1){
+                            color: color($primary-color-4,1);
+                        }
+                        &:nth-child(2){
+                            color: color($primary-color-6,1);
+                        }
+                    }
+                }
+            }
         }
         .bg{
             img{
                 width: auto;
                 height: 100%;
                 object-fit: cover;
+            }
+        }
+    }
+    &.become-a-model-section-2{
+        .next-model{
+            .next-mode-cta{
+                @apply py-[2rem] px-[2rem];
+                
+                background: color($primary-color-1,1);
+                .text-body{
+                    color :color($primary-color-6,1);
+                    font-family:$secondary-font;
+                }
+                .text-md{
+                   color : color($primary-color-4,1);
+                }
+                img{
+                    @apply w-[30%] h-auto object-cover; 
+                }
+
             }
         }
     }

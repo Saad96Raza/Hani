@@ -3,41 +3,32 @@
 @use "blocks/blocks" as *;
 // BECOME A MODEL
 
-header{
-    &.become-model-header{
-        @apply p-0;
-        .text-xl{
-            @apply 
-            max-w-[10ch]
-            w-full
-            text-left 
-            md:text-center 
-            normal-case
-            absolute 
-            top-3/4
-            left-0
-            pl-[1rem]
-            md:left-1/2 
-            md:pl-0 
-            md:top-1/2            
-            md:-translate-x-1/2 
-            -translate-y-1/2;
-        }
+div{
+    &.become-a-model-section-1{
+        @apply px-0;
+     
         .text-body{
             @apply max-w-full md:max-w-[55ch] w-full;
             color: color($primary-color-1,1);
         }
         .text-xl{
             color: color($primary-color-1,1);
+            @apply mt-auto text-left md:mt-0 md:text-center max-w-[10ch];
         }
     }
     
 }
 
-section{
-    &.become-a-model-section-1{
-        .text-highlight{
-            color: $primary-color-1;
+div{
+    &.become-a-model-section-2{
+        .text-highlight,
+        i
+        {
+            color: color($primary-color-1,1);
         }
+        .upload-feature{
+            color: color($primary-color-6,1);
+        }
+        
     }
 }

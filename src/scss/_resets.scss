@@ -113,7 +113,7 @@ body {
 }
 html,
 body{
-  background: color($primary-color-4,1.0);
+  background: color($primary-color-7,1.0);
 }
 ol,
 ul {
@@ -135,10 +135,11 @@ table {
   border-spacing: 0;
 }
 
-header,
-section,
-footer{
-  @apply px-[1rem] md:px-[3rem];
-  background: color($primary-color-4,1.0);
+section{
+  &.become-a-mode-section{
+    @apply pt-[calc(7.527rem)];
+  }
+
+  @apply  pt-[calc(7.527rem*3/2)]  md:pt-[calc(7.527rem*3)]  pb-[calc(7.527rem/2)] md:pb-[7.527rem];
 }
 

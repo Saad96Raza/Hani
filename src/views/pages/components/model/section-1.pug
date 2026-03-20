@@ -1,15 +1,29 @@
 include ../../mixins/card.pug
-section(class='section model-section-1 py-[2rem] md:py-[5rem]')
-    div(class="flex flex-col items-center justify-center py-[5rem] md:py-[10rem] gap-6 md:gap-12")
-        span(class="text-md") all models
-        h1(class="text-xl") Models
-    div(class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-12 relative")
-        +modelCard("Gabriella Rousseau", "./media/models/1.png")
-        +modelCard("Alessia Fontaine", "./media/models/2.png")                    
-        +modelCard("Victoria Sinclair", "./media/models/3.png")
-        +modelCard("Sarena Moreau", "./media/models/4.png")
-        +modelCard("Celeste Vaughn", "./media/models/5.png")
-        +modelCard("Sophia Lennox", "./media/models/6.png")
-        +modelCard("Ava Delacroix", "./media/models/7.png")
-        +modelCard("Isla Harrington", "./media/models/8.png")       
-            
+section(class='section model-section-1')
+    div(class="container")
+        div(class="flex flex-col items-center justify-center gap-8 md:gap-16 ")
+            div(class="flex flex-col gap-12")
+                h1(class="text-xl text-center") Models
+            div(role="tablist" class="tabs w-full")
+                input( type="radio" name="tabs" role="tab" class="tab text-body uppercase button-1-stroke" aria-label="all models" checked)
+
+                div(role="tabpanel" class="tab-content py-[calc(7.527rem/2)]")
+                    div(class="models-gallery grid grid-cols-1 md:grid-cols-3  relative")
+                        +modelCard("Gabriella Rousseau", "./media/models/1.png")
+                        +modelCard("Alessia Fontaine", "./media/models/2.png")                    
+                        +modelCard("Victoria Sinclair", "./media/models/3.png")
+                        +modelCard("Sarena Moreau", "./media/models/4.png")
+                        +modelCard("Celeste Vaughn", "./media/models/5.png")
+                        +modelCard("Sophia Lennox", "./media/models/6.png")
+                        +modelCard("Ava Delacroix", "./media/models/7.png")
+                        +modelCard("Isla Harrington", "./media/models/8.png")   
+
+                input( type="radio" name="tabs" role="tab" class="tab text-body uppercase  button-1-stroke" aria-label="new face")
+                div(role="tabpanel" class="tab-content")
+
+                div(class="flex relative filter")
+                    input(type="text" class="input text-body w-full" placeholder="search model")
+                    i(class="fa-solid fa-magnifying-glass fa-lg absolute")
+            p(class="no-models-found text-md font-bold") no model found
+
+                

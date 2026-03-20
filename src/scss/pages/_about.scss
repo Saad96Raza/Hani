@@ -1,0 +1,45 @@
+@use "variables" as *;
+@use "mixins" as *;
+@use "blocks/blocks" as *;
+// ABOUT US
+
+div{
+    &.about-section-1{
+        .text-xl{
+             color: color($primary-color-1,1);
+        }
+        .bg{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        p{
+            color:color($primary-color-6,1)
+        }
+    }
+    &.about-section-2{
+        .text-lg{
+             color: color($primary-color-1,1);
+        }
+        .collapse{
+            border-bottom: rem(1) solid color($primary-color-5,0.1);
+            border-radius: 0;
+            padding:rem(25) 0;
+            .collapse-title{
+                text-transform: uppercase;
+                word-spacing: rem(2);
+                color: color($primary-color-1,1);
+            }
+            .collapse-content{
+                color:color($primary-color-6,1);
+                @apply max-w-[80ch];
+            }
+            &.collapse-plus > .collapse-title::after {
+                @apply text-[2rem] md:text-[3rem];
+                font-family: 'Arial, sans-serif';
+                font-weight: 100;
+
+            }
+        }
+    }
+}

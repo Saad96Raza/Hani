@@ -1,12 +1,13 @@
 @use "variables" as *;
 @use "mixins" as *;
 // ICONS 
+@import "~@fortawesome/fontawesome-free/css/all.css";
 
 .hamburger{
     cursor: pointer;
     display: flex;
     svg{
-        @apply w-[10rem] h-auto md:w-[5rem];
+        @apply  h-auto w-[5rem];
         fill: none;
         path{
             stroke: color($primary-color-1,1.0);
@@ -17,15 +18,15 @@
     }
 }
 
-.my-slider-progress {
+.home-slider-progress {
   background:  color($primary-color-5,0.1);
-  height: rem(3);
+  height: rem(2);
   width: 100%;
+  .home-slider-progress-bar {
+    background: color($primary-color-1,1.0);
+    height: 100%;
+    transition: width 400ms ease;
+    width: 0;
+  }
 }
 
-.my-slider-progress-bar {
-  background: color($primary-color-1,1.0);
-  height: 100%;
-  transition: width 400ms ease;
-  width: 0;
-}

@@ -9,7 +9,7 @@
         overflow: hidden;
         z-index: 0;
         
-        @apply h-[30rem] md:h-[40rem];
+        @apply h-[30rem] md:h-[50rem];
         .body-measurment{
             position: relative;
             z-index: 2;
@@ -36,8 +36,6 @@
             width: 100%;
             object-fit: cover;
             height: 100%;
-            filter: grayscale(1);
-            transition: filter .4s ease;
             position: absolute;
             inset: 0;
         }
@@ -72,4 +70,8 @@
         }
     }
     
+}
+
+.no-models-found{
+    display: none;
 }

@@ -1,15 +1,39 @@
 div(class="relative footer")
-    footer(class="w-full") 
-        div(class=" grid grid-cols-1 md:grid-cols-3 w-full gap-6")
+    footer(class="w-full container")
+        div(class="footer-top grid grid-cols-1 md:grid-cols-4 w-full gap-[calc(7.527rem/2)]")
+            div(class="pages space-y-3 md:space-y-6")
+                h3(class="text-md")  pages
+                ul(class="flex flex-col gap-2 md:gap-4") 
+                    li 
+                        a(href="index.html" class="text-highlight") home 
+                    li 
+                        a(href="model.html" class="text-highlight") models
+                    li 
+                        a(href="about.html" class="text-highlight") about
+                    li 
+                        a(href="become-a-model.html" class="text-highlight") become a model 
+                    li 
+                        a(href="contact.html" class="text-highlight") contact               
+            div(class="pages space-y-3 md:space-y-6")
+                h3(class="text-md") useful
+                ul(class="flex flex-col gap-2 md:gap-4") 
+                    li 
+                        a(href="index.html" class="text-highlight") privacy policy 
+                    li 
+                        a(href="index.html" class="text-highlight") Information Collection
+    
+        div(class=" grid grid-cols-1 md:grid-cols-3 w-full gap-6 footer-bottom")
             div(class="flex")
-                span(class="text-highlight")
+                a(href="contact.html" )
                     i(class="fa-regular fa-envelope fa-lg")
-                    |info@hanimodels.com
+                    span(class="text-highlight normal-case") info@hanimodels.com
             div(class="flex w-full gap-1") 
-                span(class=" md:mx-auto text-highlight ") 
-                    i(class="fa-brands fa-instagram fa-lg ")
-                    |hanimodels
+                a(href="https://www.instagram.com/" target="_blank" class="md:mx-auto text-highlight normal-case") 
+                    i(class="fa-brands fa-instagram fa-lg")
+                    span(class="text-highlight normal-case") hanimodels
             div(class="flex w-full")
-                span(class="md:ml-auto text-highlight flex items-center")
-                    i(class="fa-regular fa-copyright fa-lg")
-                    | #{new Date().getFullYear()} HANI Models
+                a(href="index.html" class="md:ml-auto") 
+                    span(class="text-highlight flex items-center uppercase")
+                        i(class="fa-regular fa-copyright fa-sm")
+                        |#{new Date().getFullYear()} 
+                        strong HANI Models

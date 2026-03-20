@@ -10,9 +10,9 @@
 }
 
 .text-xl{
-   @apply leading-none capitalize;
+   @apply leading-tight uppercase;
    font-family: $secondary-font;
-   font-weight: 'normal';
+   font-weight: normal;
 }
 
 .text-lg {
@@ -30,7 +30,7 @@
 }
 
 .text-body {
-   @apply capitalize;
+   @apply capitalize leading-normal;
    font-family: $primary-font-thin;   
 }
 .text-input {
@@ -38,7 +38,7 @@
 }
 
 .text-highlight {
-   @apply leading-none capitalize font-normal; 
+   @apply  leading-normal capitalize font-normal ; 
    font-family: $primary-font-thin;
 }
 

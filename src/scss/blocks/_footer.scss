@@ -3,10 +3,15 @@
 /* FOOTER */
 
 .footer{
-    background : color($primary-color-4,1.0);
     border-top: rem(1) solid color($primary-color-5,0.1);
-    padding: rem(30) 0;
-    .text-highlight{
+    .footer-top{
+        @apply py-[calc(7.527rem/2)] md:pt-[calc(7.527rem)] md:pb-[calc(7.527rem/2)];
+    }
+    .footer-bottom{
+        @apply py-[calc(7.527rem/2)];
+    }
+    .text-highlight,
+    .text-md{
         color: color($primary-color-1,1.0);
         display: inline-block;
 

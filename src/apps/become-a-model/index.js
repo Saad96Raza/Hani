@@ -29,24 +29,13 @@ export default class BecomeAModel {
         this.heights =  document.querySelector('.heights')
         this.waist =  document.querySelector('.waist')
         this.hips =  document.querySelector('.hips')
-        this.shoeSize =  document.querySelector('.shoe-size')
-        this.hairColor =  document.querySelector('.hair-color')
-        this.eyeColor =  document.querySelector('.eye-color')
         this.bust =  document.querySelector('.bust')
 
-        if (this.heights || this.waist || this.hips || this.shoeSize || this.hairColor || this.eyeColor) {
+        if (this.heights || this.waist || this.hips ) {
             _.map(modelProfileAttributes,(element)=>{
                switch (element.type) {
                     case "Height":
                         return  this.heights.innerHTML += `<option value="${element.cm}">${element.cm} cm - ${element.label}</option>`
-                }
-                switch (element.type) {
-                    case "Eye Color":
-                        return  this.eyeColor.innerHTML += `<option value="${element.name}">"${element.name}"</option>`
-                }
-                switch (element.type) {
-                    case "Hair Color":
-                        return  this.hairColor.innerHTML += `<option value="${element.name}">"${element.name}"</option>`
                 }
                 switch (element.type) {
                     case "Waist":
@@ -60,10 +49,7 @@ export default class BecomeAModel {
                     case "Hips":
                         return  this.hips.innerHTML += `<option value="${element.cm}">${element.cm} cm - ${element.label}</option>`
                 }
-                switch (element.type) {
-                    case "Shoe Size":
-                        return  this.shoeSize.innerHTML += `<option value="${element.size}">"Size - ${element.size}"</option>`
-                }
+                
 
                 
             })
