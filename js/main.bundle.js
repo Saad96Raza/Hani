@@ -28421,16 +28421,28 @@ var Model = /*#__PURE__*/ function() {
                 var _this = this;
                 this.filter = document.querySelector('.filter input');
                 this.filterCard = _to_consumable_array(document.querySelectorAll('.model-section-1 .filter-card'));
+                this.notFoundMessage = document.querySelector('.no-models-found');
                 if (this.filter && this.filterCard) {
+                    // 1. Define the debounced logic
+                    var updateFilter = lodash__rspack_import_0_default().debounce(function(value) {
+                        var visibleCount = 0;
+                        lodash__rspack_import_0_default().each(_this.filterCard, function(element) {
+                            var titles = element.querySelectorAll('h3');
+                            var match = lodash__rspack_import_0_default().some(titles, function(title) {
+                                return title.innerText.trim().toLowerCase().startsWith(value);
+                            });
+                            var isVisible = match || value === '';
+                            element.style.display = isVisible ? 'block' : 'none';
+                            if (isVisible) visibleCount++;
+                        });
+                        if (_this.notFoundMessage) {
+                            _this.notFoundMessage.style.display = visibleCount === 0 ? 'block' : 'none';
+                        }
+                    }, 200); // 200ms delay
+                    // 2. Call the debounced function on input
                     this.filter.addEventListener('input', function(e) {
                         var value = e.target.value.trim().toLowerCase();
-                        lodash__rspack_import_0_default().filter(_this.filterCard, function(element) {
-                            var titles = element.querySelectorAll('h3');
-                            var match = lodash__rspack_import_0_default().some(titles, function(text) {
-                                return text.innerText.trim().toLowerCase().startsWith(value);
-                            });
-                            element.style.display = match || value === '' ? 'block' : 'none';
-                        });
+                        updateFilter(value);
                     });
                 }
             }
