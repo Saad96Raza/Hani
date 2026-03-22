@@ -1395,10 +1395,10 @@ var SingleModel = /*#__PURE__*/ function() {
             key: "createPlaybtn",
             value: function createPlaybtn() {
                 var that = this;
+                that.video = document.querySelector('.video-container video');
+                that.playContainer = document.querySelector('.video-container');
+                that.playBtn = document.querySelector('.video-container .play-btn');
                 if (that.video && that.playContainer && that.playBtn) {
-                    that.video = document.querySelector('.video-container video');
-                    that.playContainer = document.querySelector('.video-container');
-                    that.playBtn = document.querySelector('.video-container .play-btn');
                     that.playContainer.addEventListener('click', function() {
                         if (that.video.paused) {
                             that.video.play();
@@ -1409,10 +1409,10 @@ var SingleModel = /*#__PURE__*/ function() {
                             that.playBtn.classList.remove('fa-regular', 'fa-circle-pause');
                             that.playBtn.classList.add('fa-solid', 'fa-play');
                         }
-                        that.video.addEventListener('ended', function() {
-                            that.playBtn.classList.remove('fa-regular', 'fa-circle-pause');
-                            that.playBtn.classList.add('fa-solid', 'fa-play');
-                        });
+                    });
+                    that.video.addEventListener('ended', function() {
+                        that.playBtn.classList.remove('fa-regular', 'fa-circle-pause');
+                        that.playBtn.classList.add('fa-solid', 'fa-play');
                     });
                 }
             }
