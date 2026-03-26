@@ -1,26 +1,11 @@
 (() => {
 "use strict";
 var __webpack_modules__ = ({
-"./src/scss/main.scss"(__unused_rspack_module, __webpack_exports__, __webpack_require__) {
-__webpack_require__.r(__webpack_exports__);
-// extracted by css-extract-rspack-plugin
-
-
-},
-"./src/apps/become-a-model/index.js"(__unused_rspack_module, __webpack_exports__, __webpack_require__) {
-__webpack_require__.r(__webpack_exports__);
+4272(module, __webpack_exports__, __webpack_require__) {
+__webpack_require__.a(module, async function (__rspack_load_async_deps, __rspack_async_done) { try {
 __webpack_require__.d(__webpack_exports__, {
-  "default": () => (BecomeAModel)
+  A: () => (BecomeAModel)
 });
-/* import */ var country_list__rspack_import_0 = __webpack_require__("./node_modules/country-list/country-list.js");
-/* import */ var lodash_map__rspack_import_1 = __webpack_require__("./node_modules/lodash/map.js");
-/* import */ var lodash_map__rspack_import_1_default = /*#__PURE__*/__webpack_require__.n(lodash_map__rspack_import_1);
-/* import */ var lodash_forEach__rspack_import_2 = __webpack_require__("./node_modules/lodash/forEach.js");
-/* import */ var lodash_forEach__rspack_import_2_default = /*#__PURE__*/__webpack_require__.n(lodash_forEach__rspack_import_2);
-/* import */ var litepicker__rspack_import_3 = __webpack_require__("./node_modules/litepicker/dist/litepicker.umd.js");
-/* import */ var litepicker__rspack_import_3_default = /*#__PURE__*/__webpack_require__.n(litepicker__rspack_import_3);
-/* import */ var _extra_model_data__rspack_import_4 = __webpack_require__("./src/apps/extra/model-data.js");
-/* import */ var litepicker_dist_css_litepicker_css__rspack_import_5 = __webpack_require__("./node_modules/litepicker/dist/css/litepicker.css");
 function _class_call_check(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
         throw new TypeError("Cannot call a class as a function");
@@ -40,12 +25,11 @@ function _create_class(Constructor, protoProps, staticProps) {
     if (staticProps) _defineProperties(Constructor, staticProps);
     return Constructor;
 }
-
-
-
-
-
-
+var _ref = await Promise.all(/* import() | lodash-map */ [__webpack_require__.e("605"), __webpack_require__.e("182"), __webpack_require__.e("390")]).then(__webpack_require__.t.bind(__webpack_require__, 5378, 23)), map = _ref.default;
+var _ref1 = await Promise.all(/* import() | lodash-foreach */ [__webpack_require__.e("605"), __webpack_require__.e("774")]).then(__webpack_require__.t.bind(__webpack_require__, 9754, 23)), forEach = _ref1.default;
+var _ref2 = await __webpack_require__.e(/* import() | country-list */ "77").then(__webpack_require__.t.bind(__webpack_require__, 5455, 19)), getData = _ref2.default.getData;
+var _ref3 = await __webpack_require__.e(/* import() | mode-attributes */ "685").then(__webpack_require__.bind(__webpack_require__, 8431)), modelProfileAttributes = _ref3.default;
+var _ref4 = await __webpack_require__.e(/* import() | litepicker */ "466").then(__webpack_require__.t.bind(__webpack_require__, 424, 23)), Litepicker = _ref4.default;
 var BecomeAModel = /*#__PURE__*/ function() {
     "use strict";
     function BecomeAModel() {
@@ -68,7 +52,7 @@ var BecomeAModel = /*#__PURE__*/ function() {
                 var _this = this;
                 this.countries = document.querySelector('.countries');
                 if (this.countries) {
-                    lodash_map__rspack_import_1_default()((0,country_list__rspack_import_0.getData)(), function(element) {
+                    map(getData(), function(element) {
                         _this.countries.innerHTML += '<option value="'.concat(element.name, '">').concat(element.code, " - ").concat(element.name, "</option>");
                     });
                 }
@@ -83,7 +67,7 @@ var BecomeAModel = /*#__PURE__*/ function() {
                 this.hips = document.querySelector('.hips');
                 this.bust = document.querySelector('.bust');
                 if (this.heights || this.waist || this.hips) {
-                    lodash_map__rspack_import_1_default()(_extra_model_data__rspack_import_4.modelProfileAttributes, function(element) {
+                    map(modelProfileAttributes, function(element) {
                         switch(element.type){
                             case "Height":
                                 return _this.heights.innerHTML += '<option value="'.concat(element.cm, '">').concat(element.cm, " cm - ").concat(element.label, "</option>");
@@ -111,7 +95,7 @@ var BecomeAModel = /*#__PURE__*/ function() {
                 that.input = document.querySelectorAll('.file-button .file');
                 if (that.input) {
                     that.placeHolder = document.querySelectorAll('.file-button .place-holder');
-                    lodash_forEach__rspack_import_2_default()(that.input, function(element, index) {
+                    forEach(that.input, function(element, index) {
                         element.addEventListener('change', function() {
                             that.placeHolder[index].textContent = element.files[0].name;
                         });
@@ -125,7 +109,7 @@ var BecomeAModel = /*#__PURE__*/ function() {
                 var that = this;
                 that.dataPicker = document.getElementById("datePicker");
                 if (that.dataPicker) {
-                    new (litepicker__rspack_import_3_default())({
+                    new Litepicker({
                         element: that.dataPicker,
                         format: "YYYY-MM-DD",
                         allowInput: true,
@@ -144,12 +128,13 @@ var BecomeAModel = /*#__PURE__*/ function() {
 }();
 
 
+__rspack_async_done();
+} catch(e) { __rspack_async_done(e); } }, 1);
 
 },
-"./src/apps/contact/index.js"(__unused_rspack_module, __webpack_exports__, __webpack_require__) {
-__webpack_require__.r(__webpack_exports__);
+8237(__unused_rspack_module, __webpack_exports__, __webpack_require__) {
 __webpack_require__.d(__webpack_exports__, {
-  "default": () => (Contact)
+  A: () => (Contact)
 });
 function _class_call_check(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -188,754 +173,11 @@ var Contact = /*#__PURE__*/ function() {
 
 
 },
-"./src/apps/extra/model-data.js"(__unused_rspack_module, __webpack_exports__, __webpack_require__) {
-__webpack_require__.r(__webpack_exports__);
+3888(module, __webpack_exports__, __webpack_require__) {
+__webpack_require__.a(module, async function (__rspack_load_async_deps, __rspack_async_done) { try {
 __webpack_require__.d(__webpack_exports__, {
-  modelProfileAttributes: () => (modelProfileAttributes)
+  A: () => (Home)
 });
-var modelProfileAttributes = [
-    // Heights
-    {
-        type: "Height",
-        cm: 150,
-        label: "4'11''"
-    },
-    {
-        type: "Height",
-        cm: 151,
-        label: "4'11'' 1/2"
-    },
-    {
-        type: "Height",
-        cm: 152,
-        label: "5'0''"
-    },
-    {
-        type: "Height",
-        cm: 153,
-        label: "5'0'' 1/2"
-    },
-    {
-        type: "Height",
-        cm: 154,
-        label: "5'1''"
-    },
-    {
-        type: "Height",
-        cm: 155,
-        label: "5'1'' 1/2"
-    },
-    {
-        type: "Height",
-        cm: 156,
-        label: "5'2''"
-    },
-    {
-        type: "Height",
-        cm: 157,
-        label: "5'2'' 1/2"
-    },
-    {
-        type: "Height",
-        cm: 158,
-        label: "5'3''"
-    },
-    {
-        type: "Height",
-        cm: 159,
-        label: "5'3'' 1/2"
-    },
-    {
-        type: "Height",
-        cm: 160,
-        label: "5'4''"
-    },
-    {
-        type: "Height",
-        cm: 161,
-        label: "5'4'' 1/2"
-    },
-    {
-        type: "Height",
-        cm: 162,
-        label: "5'5''"
-    },
-    {
-        type: "Height",
-        cm: 163,
-        label: "5'5'' 1/2"
-    },
-    {
-        type: "Height",
-        cm: 164,
-        label: "5'6''"
-    },
-    {
-        type: "Height",
-        cm: 165,
-        label: "5'6'' 1/2"
-    },
-    {
-        type: "Height",
-        cm: 166,
-        label: "5'7''"
-    },
-    {
-        type: "Height",
-        cm: 167,
-        label: "5'7'' 1/2"
-    },
-    {
-        type: "Height",
-        cm: 168,
-        label: "5'8''"
-    },
-    {
-        type: "Height",
-        cm: 169,
-        label: "5'8'' 1/2"
-    },
-    {
-        type: "Height",
-        cm: 170,
-        label: "5'9''"
-    },
-    {
-        type: "Height",
-        cm: 171,
-        label: "5'9'' 1/2"
-    },
-    {
-        type: "Height",
-        cm: 172,
-        label: "5'10''"
-    },
-    {
-        type: "Height",
-        cm: 173,
-        label: "5'10'' 1/2"
-    },
-    {
-        type: "Height",
-        cm: 174,
-        label: "5'11''"
-    },
-    {
-        type: "Height",
-        cm: 175,
-        label: "5'11'' 1/2"
-    },
-    {
-        type: "Height",
-        cm: 176,
-        label: "6'0''"
-    },
-    {
-        type: "Height",
-        cm: 177,
-        label: "6'0'' 1/2"
-    },
-    {
-        type: "Height",
-        cm: 178,
-        label: "6'1''"
-    },
-    {
-        type: "Height",
-        cm: 179,
-        label: "6'1'' 1/2"
-    },
-    {
-        type: "Height",
-        cm: 180,
-        label: "6'2''"
-    },
-    {
-        type: "Height",
-        cm: 181,
-        label: "6'2'' 1/2"
-    },
-    {
-        type: "Height",
-        cm: 182,
-        label: "6'3''"
-    },
-    {
-        type: "Height",
-        cm: 183,
-        label: "6'3'' 1/2"
-    },
-    {
-        type: "Height",
-        cm: 184,
-        label: "6'4''"
-    },
-    {
-        type: "Height",
-        cm: 185,
-        label: "6'4'' 1/2"
-    },
-    {
-        type: "Height",
-        cm: 186,
-        label: "6'5''"
-    },
-    {
-        type: "Height",
-        cm: 187,
-        label: "6'5'' 1/2"
-    },
-    {
-        type: "Height",
-        cm: 188,
-        label: "6'6''"
-    },
-    {
-        type: "Height",
-        cm: 189,
-        label: "6'6'' 1/2"
-    },
-    {
-        type: "Height",
-        cm: 190,
-        label: "6'7''"
-    },
-    {
-        type: "Height",
-        cm: 191,
-        label: "6'7'' 1/2"
-    },
-    {
-        type: "Height",
-        cm: 192,
-        label: "6'8''"
-    },
-    {
-        type: "Height",
-        cm: 193,
-        label: "6'8'' 1/2"
-    },
-    {
-        type: "Height",
-        cm: 194,
-        label: "6'9''"
-    },
-    {
-        type: "Height",
-        cm: 195,
-        label: "6'9'' 1/2"
-    },
-    {
-        type: "Height",
-        cm: 196,
-        label: "6'10''"
-    },
-    {
-        type: "Height",
-        cm: 197,
-        label: "6'10'' 1/2"
-    },
-    {
-        type: "Height",
-        cm: 198,
-        label: "6'11''"
-    },
-    {
-        type: "Height",
-        cm: 199,
-        label: "6'11'' 1/2"
-    },
-    {
-        type: "Height",
-        cm: 200,
-        label: "7'0''"
-    },
-    {
-        type: "Eye Color",
-        name: "Brown"
-    },
-    {
-        type: "Eye Color",
-        name: "Dark Brown"
-    },
-    {
-        type: "Eye Color",
-        name: "Light Brown"
-    },
-    {
-        type: "Eye Color",
-        name: "Hazel"
-    },
-    {
-        type: "Eye Color",
-        name: "Amber"
-    },
-    {
-        type: "Eye Color",
-        name: "Green"
-    },
-    {
-        type: "Eye Color",
-        name: "Light Green"
-    },
-    {
-        type: "Eye Color",
-        name: "Blue"
-    },
-    {
-        type: "Eye Color",
-        name: "Light Blue"
-    },
-    {
-        type: "Eye Color",
-        name: "Ice Blue"
-    },
-    {
-        type: "Eye Color",
-        name: "Gray"
-    },
-    {
-        type: "Eye Color",
-        name: "Silver"
-    },
-    {
-        type: "Eye Color",
-        name: "Violet"
-    },
-    {
-        type: "Eye Color",
-        name: "Purple"
-    },
-    {
-        type: "Eye Color",
-        name: "Golden"
-    },
-    {
-        type: "Eye Color",
-        name: "Honey"
-    },
-    {
-        type: "Eye Color",
-        name: "Turquoise"
-    },
-    {
-        type: "Eye Color",
-        name: "Sea Green"
-    },
-    {
-        type: "Eye Color",
-        name: "Steel Blue"
-    },
-    {
-        type: "Eye Color",
-        name: "Copper"
-    },
-    {
-        type: "Eye Color",
-        name: "Chestnut"
-    },
-    // Hair Colors
-    {
-        type: "Hair Color",
-        name: "Black"
-    },
-    {
-        type: "Hair Color",
-        name: "Dark Brown"
-    },
-    {
-        type: "Hair Color",
-        name: "Brown"
-    },
-    {
-        type: "Hair Color",
-        name: "Light Brown"
-    },
-    {
-        type: "Hair Color",
-        name: "Blonde"
-    },
-    {
-        type: "Hair Color",
-        name: "Platinum Blonde"
-    },
-    {
-        type: "Hair Color",
-        name: "Ash Blonde"
-    },
-    {
-        type: "Hair Color",
-        name: "Golden Blonde"
-    },
-    {
-        type: "Hair Color",
-        name: "Strawberry Blonde"
-    },
-    {
-        type: "Hair Color",
-        name: "Red"
-    },
-    {
-        type: "Hair Color",
-        name: "Auburn"
-    },
-    {
-        type: "Hair Color",
-        name: "Ginger"
-    },
-    {
-        type: "Hair Color",
-        name: "Copper"
-    },
-    {
-        type: "Hair Color",
-        name: "Chestnut"
-    },
-    {
-        type: "Hair Color",
-        name: "Gray"
-    },
-    {
-        type: "Hair Color",
-        name: "Silver"
-    },
-    {
-        type: "Hair Color",
-        name: "White"
-    },
-    {
-        type: "Hair Color",
-        name: "Pastel Pink"
-    },
-    {
-        type: "Hair Color",
-        name: "Pastel Blue"
-    },
-    {
-        type: "Hair Color",
-        name: "Pastel Purple"
-    },
-    {
-        type: "Hair Color",
-        name: "Rainbow / Multicolor"
-    },
-    {
-        type: "Hair Color",
-        name: "Ombre"
-    },
-    {
-        type: "Hair Color",
-        name: "Highlights"
-    },
-    {
-        type: "Hair Color",
-        name: "Balayage"
-    },
-    {
-        type: "Hair Color",
-        name: "Jet Black"
-    },
-    {
-        type: "Hair Color",
-        name: "Chocolate Brown"
-    },
-    {
-        type: "Hair Color",
-        name: "Honey Brown"
-    },
-    // Numeric busts in cm
-    {
-        type: "Bust",
-        cm: 71,
-        label: "28\""
-    },
-    {
-        type: "Bust",
-        cm: 76,
-        label: "30\""
-    },
-    {
-        type: "Bust",
-        cm: 81,
-        label: "32\""
-    },
-    {
-        type: "Bust",
-        cm: 86,
-        label: "34\""
-    },
-    {
-        type: "Bust",
-        cm: 91,
-        label: "36\""
-    },
-    {
-        type: "Bust",
-        cm: 97,
-        label: "38\""
-    },
-    {
-        type: "Bust",
-        cm: 102,
-        label: "40\""
-    },
-    {
-        type: "Bust",
-        cm: 107,
-        label: "42\""
-    },
-    {
-        type: "Bust",
-        cm: 112,
-        label: "44\""
-    },
-    {
-        type: "Bust",
-        cm: 117,
-        label: "46\""
-    },
-    {
-        type: "Bust",
-        cm: 122,
-        label: "48\""
-    },
-    {
-        type: "Bust",
-        cm: 83.5,
-        label: "A"
-    },
-    {
-        type: "Bust",
-        cm: 86,
-        label: "B"
-    },
-    {
-        type: "Bust",
-        cm: 88.5,
-        label: "C"
-    },
-    {
-        type: "Bust",
-        cm: 91,
-        label: "D"
-    },
-    {
-        type: "Bust",
-        cm: 93.5,
-        label: "DD / E"
-    },
-    {
-        type: "Bust",
-        cm: 96,
-        label: "F"
-    },
-    {
-        type: "Bust",
-        cm: 98.5,
-        label: "G"
-    },
-    // Waist Sizes
-    {
-        type: "Waist",
-        cm: 56,
-        label: "22\""
-    },
-    {
-        type: "Waist",
-        cm: 58,
-        label: "23\""
-    },
-    {
-        type: "Waist",
-        cm: 61,
-        label: "24\""
-    },
-    {
-        type: "Waist",
-        cm: 64,
-        label: "25\""
-    },
-    {
-        type: "Waist",
-        cm: 66,
-        label: "26\""
-    },
-    {
-        type: "Waist",
-        cm: 69,
-        label: "27\""
-    },
-    {
-        type: "Waist",
-        cm: 71,
-        label: "28\""
-    },
-    {
-        type: "Waist",
-        cm: 74,
-        label: "29\""
-    },
-    {
-        type: "Waist",
-        cm: 76,
-        label: "30\""
-    },
-    {
-        type: "Waist",
-        cm: 79,
-        label: "31\""
-    },
-    {
-        type: "Waist",
-        cm: 81,
-        label: "32\""
-    },
-    {
-        type: "Waist",
-        cm: 84,
-        label: "33\""
-    },
-    {
-        type: "Waist",
-        cm: 86,
-        label: "34\""
-    },
-    {
-        type: "Hips",
-        cm: 81,
-        label: "32\""
-    },
-    {
-        type: "Hips",
-        cm: 86,
-        label: "34\""
-    },
-    {
-        type: "Hips",
-        cm: 91,
-        label: "36\""
-    },
-    {
-        type: "Hips",
-        cm: 97,
-        label: "38\""
-    },
-    {
-        type: "Hips",
-        cm: 102,
-        label: "40\""
-    },
-    {
-        type: "Hips",
-        cm: 107,
-        label: "42\""
-    },
-    {
-        type: "Hips",
-        cm: 112,
-        label: "44\""
-    },
-    {
-        type: "Hips",
-        cm: 117,
-        label: "46\""
-    },
-    {
-        type: "Hips",
-        cm: 122,
-        label: "48\""
-    },
-    {
-        type: "Hips",
-        cm: 127,
-        label: "50\""
-    },
-    {
-        type: "Shoe Size",
-        size: 4,
-        label: "4"
-    },
-    {
-        type: "Shoe Size",
-        size: 4.5,
-        label: "4.5"
-    },
-    {
-        type: "Shoe Size",
-        size: 5,
-        label: "5"
-    },
-    {
-        type: "Shoe Size",
-        size: 5.5,
-        label: "5.5"
-    },
-    {
-        type: "Shoe Size",
-        size: 6,
-        label: "6"
-    },
-    {
-        type: "Shoe Size",
-        size: 6.5,
-        label: "6.5"
-    },
-    {
-        type: "Shoe Size",
-        size: 7,
-        label: "7"
-    },
-    {
-        type: "Shoe Size",
-        size: 7.5,
-        label: "7.5"
-    },
-    {
-        type: "Shoe Size",
-        size: 8,
-        label: "8"
-    },
-    {
-        type: "Shoe Size",
-        size: 8.5,
-        label: "8.5"
-    },
-    {
-        type: "Shoe Size",
-        size: 9,
-        label: "9"
-    },
-    {
-        type: "Shoe Size",
-        size: 9.5,
-        label: "9.5"
-    },
-    {
-        type: "Shoe Size",
-        size: 10,
-        label: "10"
-    },
-    {
-        type: "Shoe Size",
-        size: 10.5,
-        label: "10.5"
-    },
-    {
-        type: "Shoe Size",
-        size: 11,
-        label: "11"
-    }
-];
-
-
-},
-"./src/apps/home/index.js"(__unused_rspack_module, __webpack_exports__, __webpack_require__) {
-__webpack_require__.r(__webpack_exports__);
-__webpack_require__.d(__webpack_exports__, {
-  "default": () => (Home)
-});
-/* import */ var _splidejs_splide__rspack_import_0 = __webpack_require__("./node_modules/@splidejs/splide/dist/js/splide.esm.js");
-/* import */ var _splidejs_splide_css_core__rspack_import_1 = __webpack_require__("./node_modules/@splidejs/splide/dist/css/splide-core.min.css");
 function _class_call_check(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
         throw new TypeError("Cannot call a class as a function");
@@ -955,8 +197,7 @@ function _create_class(Constructor, protoProps, staticProps) {
     if (staticProps) _defineProperties(Constructor, staticProps);
     return Constructor;
 }
-
-
+var _ref = await __webpack_require__.e(/* import() | splide */ "619").then(__webpack_require__.bind(__webpack_require__, 7846)), Splide = _ref.default;
 var Home = /*#__PURE__*/ function() {
     "use strict";
     function Home() {
@@ -976,7 +217,7 @@ var Home = /*#__PURE__*/ function() {
                 var _this = this;
                 this.splideWrapper = document.querySelector(".home-gallery-slider");
                 if (this.splideWrapper) {
-                    this.splide = new _splidejs_splide__rspack_import_0["default"](this.splideWrapper, {
+                    this.splide = new Splide(this.splideWrapper, {
                         type: 'loop',
                         drag: 'free',
                         interval: 3000,
@@ -1017,22 +258,19 @@ var Home = /*#__PURE__*/ function() {
 }();
 
 
+__rspack_async_done();
+} catch(e) { __rspack_async_done(e); } }, 1);
 
 },
-"./src/apps/index.js"(__unused_rspack_module, __webpack_exports__, __webpack_require__) {
-__webpack_require__.r(__webpack_exports__);
-/* import */ var _home__rspack_import_0 = __webpack_require__("./src/apps/home/index.js");
-/* import */ var _contact__rspack_import_1 = __webpack_require__("./src/apps/contact/index.js");
-/* import */ var _become_a_model__rspack_import_2 = __webpack_require__("./src/apps/become-a-model/index.js");
-/* import */ var _model__rspack_import_3 = __webpack_require__("./src/apps/model/index.js");
-/* import */ var _single_model__rspack_import_4 = __webpack_require__("./src/apps/single-model/index.js");
-/* import */ var _barba_core__rspack_import_5 = __webpack_require__("./node_modules/@barba/core/dist/barba.umd.js");
-/* import */ var _barba_core__rspack_import_5_default = /*#__PURE__*/__webpack_require__.n(_barba_core__rspack_import_5);
-/* import */ var gsap__rspack_import_8 = __webpack_require__("./node_modules/gsap/index.js");
-/* import */ var lodash_forEach__rspack_import_6 = __webpack_require__("./node_modules/lodash/forEach.js");
-/* import */ var lodash_forEach__rspack_import_6_default = /*#__PURE__*/__webpack_require__.n(lodash_forEach__rspack_import_6);
-/* import */ var _scss_main_scss__rspack_import_7 = __webpack_require__("./src/scss/main.scss");
-function _class_call_check(instance, Constructor) {
+2562(module, __unused_rspack___webpack_exports__, __webpack_require__) {
+__webpack_require__.a(module, async function (__rspack_load_async_deps, __rspack_async_done) { try {
+/* import */ var _home__rspack_import_0 = __webpack_require__(3888);
+/* import */ var _contact__rspack_import_4 = __webpack_require__(8237);
+/* import */ var _become_a_model__rspack_import_1 = __webpack_require__(4272);
+/* import */ var _model__rspack_import_2 = __webpack_require__(7496);
+/* import */ var _single_model__rspack_import_3 = __webpack_require__(2147);
+var __rspack_async_deps = __rspack_load_async_deps([_home__rspack_import_0, _model__rspack_import_2, _become_a_model__rspack_import_1, _single_model__rspack_import_3]);
+([_home__rspack_import_0, _model__rspack_import_2, _become_a_model__rspack_import_1, _single_model__rspack_import_3] = __rspack_async_deps.then ? (await __rspack_async_deps)() : __rspack_async_deps);function _class_call_check(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
         throw new TypeError("Cannot call a class as a function");
     }
@@ -1056,9 +294,9 @@ function _create_class(Constructor, protoProps, staticProps) {
 
 
 
-
-
-
+var _ref = await __webpack_require__.e(/* import() | barba-core */ "236").then(__webpack_require__.t.bind(__webpack_require__, 6714, 23)), barba = _ref.default;
+var _ref1 = await __webpack_require__.e(/* import() | gsap */ "871").then(__webpack_require__.bind(__webpack_require__, 4915)), GSAP = _ref1.default;
+var _ref2 = await Promise.all(/* import() | lodash-foreach */ [__webpack_require__.e("605"), __webpack_require__.e("774")]).then(__webpack_require__.t.bind(__webpack_require__, 9754, 23)), forEach = _ref2.default;
 
 var App = /*#__PURE__*/ function() {
     "use strict";
@@ -1070,11 +308,11 @@ var App = /*#__PURE__*/ function() {
             nav: document.querySelector('.header')
         };
         this.pages = {
-            home: new _home__rspack_import_0["default"](),
-            contact: new _contact__rspack_import_1["default"](),
-            model: new _model__rspack_import_3["default"](),
-            become_a_model: new _become_a_model__rspack_import_2["default"](),
-            single_model: new _single_model__rspack_import_4["default"]()
+            home: new _home__rspack_import_0/* ["default"] */.A(),
+            contact: new _contact__rspack_import_4/* ["default"] */.A(),
+            model: new _model__rspack_import_2/* ["default"] */.A(),
+            become_a_model: new _become_a_model__rspack_import_1/* ["default"] */.A(),
+            single_model: new _single_model__rspack_import_3/* ["default"] */.A()
         };
         this.offCanvas = document.querySelector('#offcanvas');
         this.links = document.querySelectorAll('.menu li a');
@@ -1101,13 +339,13 @@ var App = /*#__PURE__*/ function() {
             key: "createAjaxNavigation",
             value: function createAjaxNavigation() {
                 var _this = this;
-                lodash_forEach__rspack_import_6_default()(this.links, function(element) {
+                forEach(this.links, function(element) {
                     element.addEventListener('click', function() {
                         return _this.offCanvas.checked = false;
                     });
                 });
                 var easeIn = function easeIn(container, done) {
-                    return gsap__rspack_import_8["default"].to(container, {
+                    return GSAP.to(container, {
                         autoAlpha: 0,
                         duration: 1,
                         ease: 'none',
@@ -1117,13 +355,13 @@ var App = /*#__PURE__*/ function() {
                     });
                 };
                 var easeOut = function easeOut(container) {
-                    return gsap__rspack_import_8["default"].from(container, {
+                    return GSAP.from(container, {
                         autoAlpha: 0,
                         duration: 1,
                         ease: 'none'
                     });
                 };
-                _barba_core__rspack_import_5_default().init({
+                barba.init({
                     preventRunning: true,
                     transitions: [
                         {
@@ -1149,8 +387,8 @@ var App = /*#__PURE__*/ function() {
             key: "createReRender",
             value: function createReRender() {
                 var _this = this;
-                _barba_core__rspack_import_5_default().hooks.before(function() {});
-                _barba_core__rspack_import_5_default().hooks.after(function() {
+                barba.hooks.before(function() {});
+                barba.hooks.after(function() {
                     _this.pages.home.createReRender();
                     _this.pages.model.createReRender();
                     _this.pages.become_a_model.createReRender();
@@ -1163,7 +401,7 @@ var App = /*#__PURE__*/ function() {
             key: "createCreativeCta",
             value: function createCreativeCta() {
                 this.buttons = document.querySelectorAll('.button-1-stroke , .button-1-bg');
-                lodash_forEach__rspack_import_6_default()(this.buttons, function(element) {
+                forEach(this.buttons, function(element) {
                     element.addEventListener('mouseenter', function() {
                         if (!element.classList.contains('is-animating')) element.classList.add('is-animating');
                         element.addEventListener('animationend', function() {
@@ -1184,19 +422,15 @@ var App = /*#__PURE__*/ function() {
 }();
 new App();
 
+__rspack_async_done();
+} catch(e) { __rspack_async_done(e); } }, 1);
 
 },
-"./src/apps/model/index.js"(__unused_rspack_module, __webpack_exports__, __webpack_require__) {
-__webpack_require__.r(__webpack_exports__);
+7496(module, __webpack_exports__, __webpack_require__) {
+__webpack_require__.a(module, async function (__rspack_load_async_deps, __rspack_async_done) { try {
 __webpack_require__.d(__webpack_exports__, {
-  "default": () => (Model)
+  A: () => (Model)
 });
-/* import */ var lodash_each__rspack_import_0 = __webpack_require__("./node_modules/lodash/each.js");
-/* import */ var lodash_each__rspack_import_0_default = /*#__PURE__*/__webpack_require__.n(lodash_each__rspack_import_0);
-/* import */ var lodash_debounce__rspack_import_1 = __webpack_require__("./node_modules/lodash/debounce.js");
-/* import */ var lodash_debounce__rspack_import_1_default = /*#__PURE__*/__webpack_require__.n(lodash_debounce__rspack_import_1);
-/* import */ var lodash_some__rspack_import_2 = __webpack_require__("./node_modules/lodash/some.js");
-/* import */ var lodash_some__rspack_import_2_default = /*#__PURE__*/__webpack_require__.n(lodash_some__rspack_import_2);
 function _array_like_to_array(arr, len) {
     if (len == null || len > arr.length) len = arr.length;
     for(var i = 0, arr2 = new Array(len); i < len; i++)arr2[i] = arr[i];
@@ -1241,9 +475,9 @@ function _unsupported_iterable_to_array(o, minLen) {
     if (n === "Map" || n === "Set") return Array.from(n);
     if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _array_like_to_array(o, minLen);
 }
-
-
-
+var _ref = await Promise.all(/* import() | lodash-each */ [__webpack_require__.e("605"), __webpack_require__.e("831")]).then(__webpack_require__.t.bind(__webpack_require__, 6135, 23)), each = _ref.default;
+var _ref1 = await __webpack_require__.e(/* import() | lodash-debounce */ "637").then(__webpack_require__.t.bind(__webpack_require__, 8221, 23)), debounce = _ref1.default;
+var _ref2 = await Promise.all(/* import() | lodash-some */ [__webpack_require__.e("605"), __webpack_require__.e("182"), __webpack_require__.e("138")]).then(__webpack_require__.t.bind(__webpack_require__, 2426, 23)), some = _ref2.default;
 var Model = /*#__PURE__*/ function() {
     "use strict";
     function Model() {
@@ -1266,11 +500,11 @@ var Model = /*#__PURE__*/ function() {
                 this.notFoundMessage = document.querySelector('.no-models-found');
                 if (this.filter && this.filterCard) {
                     // 1. Define the debounced logic
-                    var updateFilter = lodash_debounce__rspack_import_1_default()(function(value) {
+                    var updateFilter = debounce(function(value) {
                         var visibleCount = 0;
-                        lodash_each__rspack_import_0_default()(_this.filterCard, function(element) {
+                        each(_this.filterCard, function(element) {
                             var titles = element.querySelectorAll('h3');
-                            var match = lodash_some__rspack_import_2_default()(titles, function(title) {
+                            var match = some(titles, function(title) {
                                 return title.innerText.trim().toLowerCase().startsWith(value);
                             });
                             var isVisible = match || value === '';
@@ -1294,18 +528,15 @@ var Model = /*#__PURE__*/ function() {
 }();
 
 
+__rspack_async_done();
+} catch(e) { __rspack_async_done(e); } }, 1);
 
 },
-"./src/apps/single-model/index.js"(__unused_rspack_module, __webpack_exports__, __webpack_require__) {
-__webpack_require__.r(__webpack_exports__);
+2147(module, __webpack_exports__, __webpack_require__) {
+__webpack_require__.a(module, async function (__rspack_load_async_deps, __rspack_async_done) { try {
 __webpack_require__.d(__webpack_exports__, {
-  "default": () => (SingleModel)
+  A: () => (SingleModel)
 });
-/* import */ var glightbox__rspack_import_0 = __webpack_require__("./node_modules/glightbox/dist/js/glightbox.min.js");
-/* import */ var glightbox__rspack_import_0_default = /*#__PURE__*/__webpack_require__.n(glightbox__rspack_import_0);
-/* import */ var _splidejs_splide__rspack_import_1 = __webpack_require__("./node_modules/@splidejs/splide/dist/js/splide.esm.js");
-/* import */ var _splidejs_splide_css_core__rspack_import_2 = __webpack_require__("./node_modules/@splidejs/splide/dist/css/splide-core.min.css");
-/* import */ var glightbox_dist_css_glightbox_css__rspack_import_3 = __webpack_require__("./node_modules/glightbox/dist/css/glightbox.css");
 function _class_call_check(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
         throw new TypeError("Cannot call a class as a function");
@@ -1338,10 +569,8 @@ function _define_property(obj, key, value) {
     }
     return obj;
 }
-
-
-
-
+var _ref = await __webpack_require__.e(/* import() | glightbox */ "782").then(__webpack_require__.t.bind(__webpack_require__, 6128, 23)), GLightbox = _ref.default;
+var _ref1 = await __webpack_require__.e(/* import() | splide */ "619").then(__webpack_require__.bind(__webpack_require__, 7846)), Splide = _ref1.default;
 var SingleModel = /*#__PURE__*/ function() {
     "use strict";
     function SingleModel() {
@@ -1363,7 +592,7 @@ var SingleModel = /*#__PURE__*/ function() {
                 this.splideWrapper = document.querySelector(".single-model-slider");
                 if (this.splideWrapper) {
                     var _obj;
-                    new _splidejs_splide__rspack_import_1["default"](this.splideWrapper, (_obj = {
+                    new Splide(this.splideWrapper, (_obj = {
                         type: 'loop',
                         drag: 'free',
                         perPage: 3,
@@ -1396,10 +625,18 @@ var SingleModel = /*#__PURE__*/ function() {
             value: function createPlaybtn() {
                 var that = this;
                 that.video = document.querySelector('.video-container video');
-                that.playContainer = document.querySelector('.video-container');
                 that.playBtn = document.querySelector('.video-container .play-btn');
-                if (that.video && that.playContainer && that.playBtn) {
-                    that.playContainer.addEventListener('click', function() {
+                if (that.video && that.playBtn) {
+                    // Ensure muted for autoplay to work
+                    that.video.muted = true;
+                    // Start autoplay
+                    that.video.play().then(function() {
+                        // Update play button to pause state
+                        that.playBtn.classList.remove('fa-solid', 'fa-play');
+                        that.playBtn.classList.add('fa-regular', 'fa-circle-pause');
+                    });
+                    // Toggle play/pause on click
+                    that.video.parentElement.addEventListener('click', function() {
                         if (that.video.paused) {
                             that.video.play();
                             that.playBtn.classList.remove('fa-solid', 'fa-play');
@@ -1410,17 +647,13 @@ var SingleModel = /*#__PURE__*/ function() {
                             that.playBtn.classList.add('fa-solid', 'fa-play');
                         }
                     });
-                    that.video.addEventListener('ended', function() {
-                        that.playBtn.classList.remove('fa-regular', 'fa-circle-pause');
-                        that.playBtn.classList.add('fa-solid', 'fa-play');
-                    });
                 }
             }
         },
         {
             key: "createLightBox",
             value: function createLightBox() {
-                this.lightbox = glightbox__rspack_import_0_default()({
+                this.lightbox = GLightbox({
                     selector: ".glightbox",
                     closeButton: true
                 });
@@ -1431,6 +664,8 @@ var SingleModel = /*#__PURE__*/ function() {
 }();
 
 
+__rspack_async_done();
+} catch(e) { __rspack_async_done(e); } }, 1);
 
 },
 
@@ -1465,17 +700,128 @@ return module.exports;
 // expose the modules object (__webpack_modules__)
 __webpack_require__.m = __webpack_modules__;
 
-// webpack/runtime/compat_get_default_export
+// webpack/runtime/async_module
 (() => {
-// getDefaultExport function for compatibility with non-ESM modules
-__webpack_require__.n = (module) => {
-	var getter = module && module.__esModule ?
-		() => (module['default']) :
-		() => (module);
-	__webpack_require__.d(getter, { a: getter });
-	return getter;
+var hasSymbol = typeof Symbol === "function";
+var rspackQueues = hasSymbol ? Symbol("rspack queues") : "__rspack_queues";
+var rspackExports = __webpack_require__.aE = hasSymbol ? Symbol("rspack exports") : "__webpack_exports__";
+var rspackError = hasSymbol ? Symbol("rspack error") : "__rspack_error";
+var rspackDone = hasSymbol ? Symbol("rspack done") : "__rspack_done";
+var rspackDefer = __webpack_require__.zS = hasSymbol ? Symbol("rspack defer") : "__rspack_defer";
+var resolveQueue = (queue) => {
+  if (queue && queue.d < 1) {
+    queue.d = 1;
+    queue.forEach((fn) => (fn.r--));
+		queue.forEach((fn) => (fn.r-- ? fn.r++ : fn()));
+	}
+}
+var wrapDeps = (deps) => {
+	return deps.map((dep) => {
+		if (dep !== null && typeof dep === "object") {
+			if(!dep[rspackQueues] && dep[rspackDefer]) {
+				var asyncDeps = dep[rspackDefer];
+				var hasUnresolvedAsyncSubgraph = asyncDeps.some((id) => {
+					var cache = __webpack_module_cache__[id];
+					return !cache || cache[rspackDone] === false;
+				});
+				if (hasUnresolvedAsyncSubgraph) {
+					var d = dep;
+					dep = {
+						then(callback) {
+							Promise.all(asyncDeps.map(__webpack_require__)).then(() => (callback(d)))
+						}
+					};
+				} else return dep;
+			}
+			if (dep[rspackQueues]) return dep;
+			if (dep.then) {
+				var queue = [];
+				queue.d = 0;
+				dep.then((r) => {
+					obj[rspackExports] = r;
+					resolveQueue(queue);
+				},(e) => {
+					obj[rspackError] = e;
+					resolveQueue(queue);
+				});
+				var obj = {};
+				obj[rspackDefer] = false;
+				obj[rspackQueues] = (fn) => (fn(queue));
+				return obj;
+			}
+		}
+		var ret = {};
+		ret[rspackQueues] = () => {};
+		ret[rspackExports] = dep;
+		return ret;
+	});
 };
-
+__webpack_require__.a = (module, body, hasAwait) => {
+	var queue;
+	hasAwait && ((queue = []).d = -1);
+	var depQueues = new Set();
+	var exports = module.exports;
+	var currentDeps;
+	var outerResolve;
+	var reject;
+	var promise = new Promise((resolve, rej) => {
+		reject = rej;
+		outerResolve = resolve;
+	});
+	promise[rspackExports] = exports;
+	promise[rspackQueues] = (fn) => { queue && fn(queue), depQueues.forEach(fn), promise["catch"](() => {}); };
+	module.exports = promise;
+	var handle = (deps) => {
+		currentDeps = wrapDeps(deps);
+		var fn;
+		var getResult = () => {
+			return currentDeps.map((d) => {
+				if(d[rspackDefer]) return d;
+				if (d[rspackError]) throw d[rspackError];
+				return d[rspackExports];
+			});
+		}
+		var promise = new Promise((resolve) => {
+			fn = () => (resolve(getResult));
+			fn.r = 0;
+			var fnQueue = (q) => (q !== queue && !depQueues.has(q) && (depQueues.add(q), q && !q.d && (fn.r++, q.push(fn))));
+			currentDeps.map((dep) => (dep[rspackDefer] || dep[rspackQueues](fnQueue)));
+		});
+		return fn.r ? promise : getResult();
+	};
+	var done = (err) => ((err ? reject(promise[rspackError] = err) : outerResolve(exports)), resolveQueue(queue), promise[rspackDone] = true);
+	body(handle, done);
+	queue && queue.d < 0 && (queue.d = 0);
+};
+})();
+// webpack/runtime/create_fake_namespace_object
+(() => {
+var getProto = Object.getPrototypeOf ? (obj) => (Object.getPrototypeOf(obj)) : (obj) => (obj.__proto__);
+var leafPrototypes;
+// create a fake namespace object
+// mode & 1: value is a module id, require it
+// mode & 2: merge all properties of value into the ns
+// mode & 4: return value when already ns object
+// mode & 16: return value when it's Promise-like
+// mode & 8|1: behave like require
+__webpack_require__.t = function(value, mode) {
+	if(mode & 1) value = this(value);
+	if(mode & 8) return value;
+	if(typeof value === 'object' && value) {
+		if((mode & 4) && value.__esModule) return value;
+		if((mode & 16) && typeof value.then === 'function') return value;
+	}
+	var ns = Object.create(null);
+  __webpack_require__.r(ns);
+	var def = {};
+	leafPrototypes = leafPrototypes || [null, getProto({}), getProto([]), getProto(getProto)];
+	for(var current = mode & 2 && value; (typeof current == 'object' || typeof current == 'function') && !~leafPrototypes.indexOf(current); current = getProto(current)) {
+		Object.getOwnPropertyNames(current).forEach((key) => { def[key] = () => (value[key]) });
+	}
+	def['default'] = () => (value);
+	__webpack_require__.d(ns, def);
+	return ns;
+};
 })();
 // webpack/runtime/define_property_getters
 (() => {
@@ -1486,6 +832,40 @@ __webpack_require__.d = (exports, definition) => {
         }
     }
 };
+})();
+// webpack/runtime/ensure_chunk
+(() => {
+__webpack_require__.f = {};
+// This file contains only the entry chunk.
+// The chunk loading function for additional chunks
+__webpack_require__.e = (chunkId) => {
+	return Promise.all(
+		Object.keys(__webpack_require__.f).reduce((promises, key) => {
+			__webpack_require__.f[key](chunkId, promises);
+			return promises;
+		}, [])
+	);
+};
+})();
+// webpack/runtime/get javascript chunk filename
+(() => {
+// This function allow to reference chunks
+__webpack_require__.u = (chunkId) => {
+  // return url for filenames not based on template
+  
+  // return url for filenames based on template
+  return "js/vendor/" + ({"138": "lodash-some","236": "barba-core","390": "lodash-map","466": "litepicker","619": "splide","637": "lodash-debounce","685": "mode-attributes","77": "country-list","774": "lodash-foreach","782": "glightbox","831": "lodash-each","871": "gsap",}[chunkId] || chunkId) + ".js"
+}
+})();
+// webpack/runtime/get mini-css chunk filename
+(() => {
+// This function allow to reference chunks
+__webpack_require__.miniCssF = (chunkId) => {
+  // return url for filenames not based on template
+  
+  // return url for filenames based on template
+  return "" + chunkId + ".css"
+}
 })();
 // webpack/runtime/global
 (() => {
@@ -1501,6 +881,72 @@ __webpack_require__.g = (() => {
 // webpack/runtime/has_own_property
 (() => {
 __webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+})();
+// webpack/runtime/load_script
+(() => {
+var inProgress = {};
+
+var uniqueName = "Rspack:";
+// loadScript function to load a script via script tag
+__webpack_require__.l = function (url, done, key, chunkId) {
+	if (inProgress[url]) {
+		inProgress[url].push(done);
+		return;
+	}
+	var script, needAttach;
+	if (key !== undefined) {
+		var scripts = document.getElementsByTagName("script");
+		for (var i = 0; i < scripts.length; i++) {
+			var s = scripts[i];
+			if (s.getAttribute("src") == url || s.getAttribute("data-rspack") == uniqueName + key) {
+				script = s;
+				break;
+			}
+		}
+	}
+	if (!script) {
+		needAttach = true;
+		script = document.createElement('script');
+
+
+script.timeout = 120;
+if (__webpack_require__.nc) {
+  script.setAttribute("nonce", __webpack_require__.nc);
+}
+
+script.setAttribute("data-rspack", uniqueName + key);
+
+
+
+script.src = url;
+
+
+	}
+	inProgress[url] = [done];
+	var onScriptComplete = function (prev, event) {
+		script.onerror = script.onload = null;
+		clearTimeout(timeout);
+		var doneFns = inProgress[url];
+		delete inProgress[url];
+		script.parentNode && script.parentNode.removeChild(script);
+		doneFns &&
+			doneFns.forEach(function (fn) {
+				return fn(event);
+			});
+		if (prev) return prev(event);
+	};
+	var timeout = setTimeout(
+		onScriptComplete.bind(null, undefined, {
+			type: 'timeout',
+			target: script
+		}),
+		120000
+	);
+	script.onerror = onScriptComplete.bind(null, script.onerror);
+	script.onload = onScriptComplete.bind(null, script.onload);
+	needAttach && document.head.appendChild(script);
+};
+
 })();
 // webpack/runtime/make_namespace_object
 (() => {
@@ -1520,45 +966,37 @@ __webpack_require__.nmd = (module) => {
   return module;
 };
 })();
-// webpack/runtime/on_chunk_loaded
-(() => {
-var deferred = [];
-__webpack_require__.O = (result, chunkIds, fn, priority) => {
-	if (chunkIds) {
-		priority = priority || 0;
-		for (var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--)
-			deferred[i] = deferred[i - 1];
-		deferred[i] = [chunkIds, fn, priority];
-		return;
-	}
-	var notFulfilled = Infinity;
-	for (var i = 0; i < deferred.length; i++) {
-		var [chunkIds, fn, priority] = deferred[i];
-		var fulfilled = true;
-		for (var j = 0; j < chunkIds.length; j++) {
-			if (
-				(priority & (1 === 0) || notFulfilled >= priority) &&
-				Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))
-			) {
-				chunkIds.splice(j--, 1);
-			} else {
-				fulfilled = false;
-				if (priority < notFulfilled) notFulfilled = priority;
-			}
-		}
-		if (fulfilled) {
-			deferred.splice(i--, 1);
-			var r = fn();
-			if (r !== undefined) result = r;
-		}
-	}
-	return result;
-};
-
-})();
 // webpack/runtime/rspack_version
 (() => {
 __webpack_require__.rv = () => ("1.7.8")
+})();
+// webpack/runtime/auto_public_path
+(() => {
+var scriptUrl;
+
+if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+var document = __webpack_require__.g.document;
+if (!scriptUrl && document) {
+  // Technically we could use `document.currentScript instanceof window.HTMLScriptElement`,
+  // but an attacker could try to inject `<script>HTMLScriptElement = HTMLImageElement</script>`
+  // and use `<img name="currentScript" src="https://attacker.controlled.server/"></img>`
+  if (document.currentScript && document.currentScript.tagName.toUpperCase() === 'SCRIPT') scriptUrl = document.currentScript.src;
+  if (!scriptUrl) {
+    var scripts = document.getElementsByTagName("script");
+    if (scripts.length) {
+      var i = scripts.length - 1;
+      while (i > -1 && (!scriptUrl || !/^http(s?):/.test(scriptUrl))) scriptUrl = scripts[i--].src;
+    }
+  }
+}
+
+// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration",
+// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.',
+if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+scriptUrl = scriptUrl.replace(/^blob:/, "").replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+
+__webpack_require__.p = scriptUrl + '../';
+
 })();
 // webpack/runtime/jsonp_chunk_loading
 (() => {
@@ -1566,9 +1004,59 @@ __webpack_require__.rv = () => ("1.7.8")
       // object to store loaded and loading chunks
       // undefined = chunk not loaded, null = chunk preloaded/prefetched
       // [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
-      var installedChunks = {"main": 0,};
-      __webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
-// install a JSONP callback for chunk loading
+      var installedChunks = {"889": 0,};
+      
+        __webpack_require__.f.j = function (chunkId, promises) {
+          // JSONP chunk loading for javascript
+var installedChunkData = __webpack_require__.o(installedChunks, chunkId)
+	? installedChunks[chunkId]
+	: undefined;
+if (installedChunkData !== 0) {
+	// 0 means "already installed".
+
+	// a Promise means "currently loading".
+	if (installedChunkData) {
+		promises.push(installedChunkData[2]);
+	} else {
+		if (true) {
+			// setup Promise in chunk cache
+			var promise = new Promise((resolve, reject) => (installedChunkData = installedChunks[chunkId] = [resolve, reject]));
+			promises.push((installedChunkData[2] = promise));
+
+			// start chunk loading
+			var url = __webpack_require__.p + __webpack_require__.u(chunkId);
+			// create error before stack unwound to get useful stacktrace later
+			var error = new Error();
+			var loadingEnded = function (event) {
+				if (__webpack_require__.o(installedChunks, chunkId)) {
+					installedChunkData = installedChunks[chunkId];
+					if (installedChunkData !== 0) installedChunks[chunkId] = undefined;
+					if (installedChunkData) {
+						var errorType =
+							event && (event.type === 'load' ? 'missing' : event.type);
+						var realSrc = event && event.target && event.target.src;
+						error.message =
+							'Loading chunk ' +
+							chunkId +
+							' failed.\n(' +
+							errorType +
+							': ' +
+							realSrc +
+							')';
+						error.name = 'ChunkLoadError';
+						error.type = errorType;
+						error.request = realSrc;
+						installedChunkData[1](error);
+					}
+				}
+			};
+			__webpack_require__.l(url, loadingEnded, "chunk-" + chunkId, chunkId);
+		} 
+	}
+}
+
+        }
+        // install a JSONP callback for chunk loading
 var __rspack_jsonp = (parentChunkLoadingFunction, data) => {
 	var [chunkIds, moreModules, runtime] = data;
 	// add "moreModules" to the modules object,
@@ -1594,8 +1082,6 @@ var __rspack_jsonp = (parentChunkLoadingFunction, data) => {
 		installedChunks[chunkId] = 0;
 	}
 	
-	return __webpack_require__.O(result);
-	
 };
 
 var chunkLoadingGlobal = self["webpackChunkRspack"] = self["webpackChunkRspack"] || [];
@@ -1609,8 +1095,7 @@ __webpack_require__.ruid = "bundler=rspack@1.7.8";
 })();
 // startup
 // Load entry module and return exports
-// This entry module depends on other loaded chunks and execution need to be delayed
-var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors-node_modules_barba_core_dist_barba_umd_js-node_modules_splidejs_splide_dist_css_splid-c321a2"], () => __webpack_require__("./src/apps/index.js"));
-__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+// This entry module used 'module' so it can't be inlined
+var __webpack_exports__ = __webpack_require__(2562);
 })()
 ;
