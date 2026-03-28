@@ -1,5 +1,6 @@
-import Splide from '@splidejs/splide';
-import '@splidejs/splide/css/core';
+const { default: Splide } = await import(
+    /* webpackChunkName: "splide" */ '@splidejs/splide'
+)
 
 export default class Home {
     constructor() {
@@ -13,8 +14,8 @@ export default class Home {
         this.splideWrapper =  document.querySelector(".home-gallery-slider")
         if(this.splideWrapper){
             this.splide = new Splide(this.splideWrapper,{
-            type   : 'loop',
-            drag   : 'free',
+            type : 'loop',
+            drag : 'free',
             interval:3000,
             autoplay:true,
             speed:2000,
@@ -34,7 +35,9 @@ export default class Home {
                     perPage: 2,
                 },
                 480: {
-                    perPage: 1.5,
+                    gap:'1rem',
+                    perPage: 1.2,
+                    focus  : 'start',
             }
   }
         })

@@ -1,8 +1,10 @@
-import _ from 'lodash'
+import each from 'lodash/each'
+import  debounce  from 'lodash/debounce'
+import some from 'lodash/some'
+
 
 export default class Model {
     constructor() {
-       
         this.createReRender()       
     }
     createReRender(){
@@ -15,12 +17,12 @@ export default class Model {
 
     if (this.filter && this.filterCard) {
         // 1. Define the debounced logic
-        const updateFilter = _.debounce((value) => {
+        const updateFilter = debounce((value) => {
             let visibleCount = 0;
 
-            _.each(this.filterCard, (element) => {
+            each(this.filterCard, (element) => {
                 const titles = element.querySelectorAll('h3');
-                const match = _.some(titles, (title) => 
+                const match = some(titles, (title) => 
                     title.innerText.trim().toLowerCase().startsWith(value)
                 );
 

@@ -12,14 +12,14 @@ div{
 
         .measurements{
             @apply p-[calc(7.527rem/2)] md:p-[calc(7.527rem)];
-            background: color($primary-color-1,1);
+            background: color($primary-color-4,1);
             .text-lg,
             span{
-                color: color($primary-color-4,1);
+                color: color($primary-color-1,1);
                 font-family: $secondary-font;  
             }
             i{
-                color: color($primary-color-4,1);  
+                color: color($primary-color-1,1);  
             }
             .quote-text{
                 i{
@@ -38,7 +38,7 @@ div{
                 .feature{
                     span{
                         &:nth-child(1){
-                            color: color($primary-color-4,1);
+                            color: color($primary-color-1,1);
                         }
                         &:nth-child(2){
                             color: color($primary-color-6,1);
@@ -56,6 +56,19 @@ div{
         }
     }
     &.become-a-model-section-2{
+        .video-container{
+            cursor: pointer;
+            video{
+                @apply w-full h-full md:w-1/2 md:h-1/2;
+            }
+
+            i{
+                color: color($primary-color-4,1);
+                z-index: 10;
+                @apply text-[1.5rem] md:text-[3rem];
+              
+            }
+        }
         .next-model{
             .next-mode-cta{
                 @apply py-[2rem] px-[2rem];
@@ -75,4 +88,5 @@ div{
             }
         }
     }
+    
 }

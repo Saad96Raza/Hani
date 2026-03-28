@@ -1,16 +1,14 @@
 const glob = require('glob');
-
 const path =  require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const rspack  = require('@rspack/core')
-const { ProvidePlugin } = require('@rspack/core');
-const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
-const imageminWebp = require("imagemin-webp");
+const { ImageMinimizerPlugin  } = require('@rsbuild/plugin-image-compress')
 const pugPages = glob.sync('src/views/pages/*.pug')
-
+const TerserPlugin = require("terser-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
-    mode:'development',
+    mode: process.env.NODE_ENV || 'development',
     entry : path.resolve(__dirname, "src/apps/index.js"),
     output :{
         path : path.resolve(__dirname,'dist'),
@@ -18,6 +16,7 @@ module.exports = {
         filename:'js/[name].bundle.js',
         clean: true,
     },
+
     devServer:{
         static: {
             directory: path.join(__dirname, 'dist'),            
@@ -32,31 +31,15 @@ module.exports = {
         compress: true,
         hot:false,
         port: 2000,
+         
     },
+
     devtool: false,
-    optimization: {
-        minimizer: [
-            new ImageMinimizerPlugin({
-                minimizer: {
-                implementation: ImageMinimizerPlugin.squooshMinify,
-                    options: {
-                        encodeOptions: {
-                        mozjpeg: { quality: 75 }, 
-                        oxipng: {},              
-                        },
-                        resize: {
-                            width: 800,  
-                        },
-                    },
-                },
-            }),
-        ],
-  },
     module:{
         rules:[
             {
                 test: /\.(glb|gltf)$/,
-                type: 'asset/resource', // copies file to output folder
+                type: 'asset/resource', 
             },
             {
                 test: /\.(?:js|mjs|cjs)$/,
@@ -97,6 +80,25 @@ module.exports = {
             }
         ]
     },
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new TerserPlugin({
+                terserOptions: {
+                format: {
+                    comments: false, // Removes all comments
+                },
+                },
+                extractComments: false,
+            }),
+            new CssMinimizerPlugin(),
+            new ImageMinimizerPlugin({
+                use: 'webp', 
+                test: /\.(jpe?g|png)$/i, // Which files to process
+                quality: 75, // Your desired quality setting
+            }),
+        ],
+    },
     plugins: [
         new rspack.CssExtractRspackPlugin({
             filename: "css/[name].css", 
@@ -106,11 +108,6 @@ module.exports = {
                 { from: 'src/media', to: 'media'},
             ],
         }),
-        new ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery',
-            'window.jQuery': 'jquery', 
-        }),
         ...pugPages.map((file) => {
             const pageName = path.basename(file, '.pug')
             return new HtmlWebpackPlugin({
@@ -118,7 +115,7 @@ module.exports = {
               template: file,
               filename: (pageName === 'home') ? 'index.html' : pageName + '.html',
               inject: 'body',
-              chunks: ['main'],
+               chunks: 'all'
             })
         }),
     ],

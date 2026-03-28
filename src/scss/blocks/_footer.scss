@@ -9,6 +9,12 @@
     }
     .footer-bottom{
         @apply py-[calc(7.527rem/2)];
+        a{
+            i{
+                @apply text-[0.8rem] md:text-[1.2rem];
+            }
+        }
+
     }
     .text-highlight,
     .text-md{

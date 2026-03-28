@@ -8,4 +8,4 @@
 
 @include font-face($primary-font-thin, "../fonts/GTAmerica-Light", 400, normal ,woff2);
 @include font-face($primary-font-regular, "../fonts/GTAmerica-Regular", 400, normal ,woff2);
-@include font-face($secondary-font, "../fonts/Cormorant_Garamond/CormorantGaramond-VariableFont_wght", 400, normal , ttf);
+@include font-face($secondary-font, "../fonts/Cormorant_Garamond/CormorantGaramond-VariableFont_wght", 400, normal , woff2);

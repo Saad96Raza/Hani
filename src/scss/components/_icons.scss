@@ -30,3 +30,10 @@
   }
 }
 
+.terms{
+  .pristine-error{
+      text-decoration: underline;
+      @apply text-[0.7] md:text-[1rem];
+      color : color($primary-color-9,1.0)!important;
+  }
+}

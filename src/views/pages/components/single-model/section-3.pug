@@ -1,6 +1,10 @@
 include ../../mixins/buttons.pug
 
-div(class="become-a-model-section-2")
+div(class="become-a-model-section-2 relative")
+    div(class="flex pt-[calc(7.527rem/2)] items-center justify-center video-container container")
+        i(class="fa-solid fa-play absolute play-btn")
+        video(class="mx-auto" autoplay loop)
+            source(src="./media/videos/sample-video.mp4" type="video/mp4")
     div(class="container pt-[calc(7.527rem/2)] md:pt-[calc(7.527rem)]")
         div(class="flex justify-center")
             +Buttons(

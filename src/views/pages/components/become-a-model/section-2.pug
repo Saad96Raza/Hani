@@ -3,7 +3,7 @@ div(class="become-a-model-section-2")
     div(class="container")
         div(class="grid grid-cols-1")      
             div(class="")
-                form(action="" class="flex flex-col gap-[calc(7.527rem/6)] md:gap-[calc(7.527rem/4)] py-[calc(7.527rem/2)]")
+                form(action="" class="become-a-model-form flex flex-col gap-[calc(7.527rem/6)] md:gap-[calc(7.527rem/4)] py-[calc(7.527rem/2)]")
                     div(class="flex gap-6 py-[calc(7.527rem/4)] md:py-[calc(7.527rem/2)]")
                         div(class="flex items-center gap-2") 
                             input(type="radio" name="radio-3" class="radio radio-neutral radio-sm checked:bg-transparent" checked="checked")
@@ -14,34 +14,122 @@ div(class="become-a-model-section-2")
                         div(class="flex items-center gap-2")      
                             input(type="radio" name="radio-3" class="radio radio-neutral radio-sm checked:bg-transparent")
                             span(class="text-highlight") non-binary 
-                    div(class="form grid  grid-cols-2 md:grid-cols-4   items-end")
-                        input(type="text" placeholder="first name" class="input w-full text-highlight")     
-                        input(type="text" placeholder="last name" class="input w-full text-highlight")     
-                        input(type="text" placeholder="phone" class="input w-full text-highlight")     
-                        input(type="text" placeholder="email" class="input w-full text-highlight")
-                        div(class="date w-full")
-                            input(id="datePicker" class="text-highlight w-full" type="text" placeholder="date of birth")
-                            i(class="fa-regular fa-calendar fa-xl")     
-                        input(type="text" placeholder="city" class="input w-full text-highlight")     
-                        select(class="text-highlight countries w-full")
-                            option(disabled selected) country
-                        input(type="text" placeholder="agency (if modeling already ?)" class="input w-full text-highlight")
-                        select(class="text-highlight heights w-full")
-                            option(disabled selected) height 
+                    div(class="form grid  grid-cols-2 md:grid-cols-4 items-start")
+                        div(class="form-group form-field")
+                            input(
+                                type="text"
+                                name="first-name"
+                                placeholder="first name"
+                                required
+                                minlength="3"
+                                data-pristine-pattern="/^[A-Z a-z\s\-]+$/"
+                                data-pristine-required-message="Please enter your last name"
+                                data-pristine-minlength-message="Minimum 3 letters required"
+                                data-pristine-pattern-message="Only letters allowed"
+                                class="input w-full text-highlight"
+                            )
+                        div(class="form-group form-field")         
+                            input(
+                                type="text" 
+                                name="last-name" 
+                                required
+                                minlength="3"
+                                data-pristine-pattern="/^[A-Z a-z\s\-]+$/"
+                                data-pristine-required-message="Please enter your last name"
+                                data-pristine-minlength-message="Minimum 3 letters required"
+                                data-pristine-pattern-message="Only letters allowed"
+                                placeholder="last name" class="input w-full text-highlight")
+                        div(class="form-group form-field")
+                            input(
+                                type="number" 
+                                placeholder="phone"  
+                                data-pristine-type="integer"  
+                                data-pristine-pattern="/^\\+?\\d{7,15}$/" 
+                                required
+                                data-pristine-required-message="please enter valid phone number" 
+                                data-pristine-pattern-message="valid international number required"
+                                class="input w-full text-highlight"
+                            )
+                        div(class="form-group form-field")                                               
+                            input(
+                                type="text" 
+                                placeholder="email" 
+                                data-pristine-pattern="/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/"
+                                data-pristine-required-message="please enter your email" 
+                                data-pristine-pattern-message="please enter valid email format"
+                                class="input w-full text-highlight"
+                                required
+                            )
+                        div(class="form-group form-field")    
+                            div(class="date w-full")
+                                input(
+                                    id="datePicker" 
+                                    type="text" 
+                                    placeholder="date of birth" 
+                                    class="text-highlight w-full"
+                                    required
+                                    pattern="/^\\d{4}-\\d{2}-\\d{2}$/"
+                                    data-pristine-required-message="Please enter Date of birth"
+                                    data-pristine-pattern-message="Date must be in YYYY-MM-DD format"
+                                )
+                                i(class="fa-regular fa-calendar fa-xl")
+                        div(class="form-group form-field")             
+                            input(
+                                type="text"
+                                placeholder="city" 
+                                class="input w-full text-highlight"
+                                required
+                                data-pristine-pattern="/^[A-Z a-z\s\-]+$/"
+                                data-pristine-pattern-message="Only letters allowed"
+                                data-pristine-required-message="please enter your city"
+                            )
+                        div(class="form-group form-field")     
+                            select(
+                                class="text-highlight countries w-full"
+                                required 
+                                data-pristine-required-message="Please select your country"
+                            )
+                                option(value="" disabled selected) country
+                        div(class="form-group form-field")         
+                            input(
+                                placeholder="agency (if modeling already ?)"
+                                class="input w-full text-highlight"
+                                type="text"
+                                name="agency"
+                                required
+                                data-pristine-pattern="/^[A-Z a-z\s\-]+$/"
+                                data-pristine-pattern-message="Only letters allowed"
+                                data-pristine-required-message="agency name or type pass" 
+                            )
+                        div(class="form-group form-field")     
+                            select(
+                                class="text-highlight heights w-full"
+                                required
+                                data-pristine-required-message="select your height" 
+                            )
+                                option(value="" disabled selected) height 
                         select(class="text-highlight w-full waist")
                             option(disabled selected) waist  (optional)
                         select(class="text-highlight w-full bust")
                             option(disabled selected) bust (optional)    
                         select(class="text-highlight w-full hips")
                             option(disabled selected) hips  (optional)
-                        select(class="text-highlight  w-full")
-                            option(disabled selected) Previous modelling experience ?
-                            option(value="") yes
-                            option(value="") no
-                        select(class="text-highlight  w-full")
-                            option(disabled selected) Available to travel internationally? 
-                            option(value="") yes
-                            option(value="") no                        
+                        div(class="form-group")     
+                            select(
+                                class="text-highlight  w-full"
+                                required data-pristine-required-message="Please select options"
+                            )
+                                option(value="" disabled selected) Previous modelling experience ?
+                                option(value="yes") yes
+                                option(value="no") no
+                        div(class="form-group form-field")           
+                            select(
+                                class="text-highlight w-full"
+                                required data-pristine-required-message="Please select options"
+                            )
+                                option(value="" disabled selected) Available to travel internationally? 
+                                option(value="yes") yes
+                                option(value="no") no                        
                         input(type="text" placeholder="instagram (optional)" class="input w-full text-highlight")
                     div(class="flex flex-col gap-6 py-[calc(7.527rem/4)] md:py-[calc(7.527rem/2)]")
                         div(class="flex items-start gap-3")
@@ -54,42 +142,80 @@ div(class="become-a-model-section-2")
                                     li(class="text-highlight upload-feature") Full body
                                     li(class="text-highlight upload-feature") Optional additional image 
                                     li(class="text-highlight upload-feature") No filters or heavy makeup.
-                        ul(class="grid grid-cols-2 md:grid-cols-5 gap-[calc(7.527rem/2)] py-[calc(7.527rem/4)]")
-                            - for (var i = 0; i < 5; ++i) {
-                                li     
-                                    div(class="file-button")
-                                        div(class='flex items-center justify-between place-holder w-full')
-                                            span(class="text-highlight") upload photo
-                                            i(class="fa-regular fa-camera fa-lg")
-                                        input(type="file" class="file")
-                            - }          
-                    div(class="terms flex flex-col gap-12")
+                                    li(class="text-highlight upload-feature") each image should be equal or less than #[strong 1MB] 
+                                    li(class="text-highlight upload-feature") only #[strong PNG, JPEG/JPG] and #[strong WEBP] images are allowed!
+                        ul(class="grid grid-cols-2 md:grid-cols-4 gap-[calc(7.527rem/2)] py-[calc(7.527rem/4)]")
+                            - for (var i = 1; i < 6; ++i) {
+                                li
+                                    div(class="form-group form-field")   
+                                        div(class="file-button")
+                                            div(class='flex items-center justify-between place-holder w-full')
+                                                span(class="text-highlight") upload photo #{i * 1}
+                                                i(class="fa-regular fa-camera fa-lg")
+                                            input(
+                                                type="file"
+                                                class="file"
+                                                accept="image/png, image/jpeg, image/webp"
+                                                required
+                                                data-pristine-required-message="Please upload image"+' '+i * 1+""
+                                            )
+                            - }
+  
+                                
+                                      
+                                   
+                    div(class="terms flex flex-col gap-12 terms")
+                        div(class="flex items-start")
+                            div(class="form-group")
+                                div(class="flex gap-2")
+                                    input(
+                                            type="checkbox"
+                                            name="terms_1"
+                                            class="checkbox checkbox-neutral checkbox-xs"
+                                            required
+                                            data-pristine-required-message="check if you have read and accept the Terms & Conditions and applicant information"
+                                            data-pristine-errors-container="#terms-error-1"
+                                        )
+                                    div(class="flex flex-col gap-2 terms-text")  
+                                        p(class="text-highlight") I have read and I accept the Terms & Conditions.  
+                                        p(class="text-highlight") Information to the applicant
+                                        p(id="#terms-error-1" class="pristine-error text-highlight")
+
+
+                        div(class="flex items-start gap-2")
+                            div(class="form-group flex gap-2")  
+                                input(
+                                        type="checkbox"
+                                        name="terms_2"
+                                        class="checkbox checkbox-neutral checkbox-xs"
+                                        required
+                                        data-pristine-required-message="check if you are agree to receive emails and/or SMS about services and offers, if I choose to accept."
+                                        data-pristine-errors-container="#terms-error-2"
+                                    )
+                                div(class="flex flex-col gap-2 terms-text")  
+                                    p(class="text-highlight  w-full max-w-[70ch]") I understand and agree that, upon my acceptance
+                                                                | (that is not compulsory) you will also send me information
+                                                                |by email and/or SMS about existing and new services and special offers.
+                                    p(id="#terms-error-2" class="pristine-error text-highlight ")                               
                         div(class="flex items-start gap-2") 
-                            input(type="checkbox"  defaultChecked class="checkbox checkbox-neutral checkbox-xs")
-                            div(class="flex flex-col gap-2 terms-text")  
-                                p(class="text-highlight")  I have read and I accept the Terms & Conditions.  
-                                p(class="text-highlight")  Information to the applicant  
-                        div(class="flex items-start gap-2") 
-                            input(type="checkbox"  defaultChecked class="checkbox checkbox-neutral checkbox-xs")
-                            div(class="flex flex-col gap-2 terms-text")  
-                                p(class="text-highlight  w-full max-w-[70ch]")  | I understand and agree that, upon my acceptance
-                                                            | (that is not compulsory) you will also send me information
-                                                            |by email and/or SMS about existing and new services and special offers.   
-                        div(class="flex items-start gap-2") 
-                            input(type="checkbox" defaultChecked class="checkbox checkbox-neutral checkbox-xs")
-                            div(class="flex flex-col gap-2 terms-text")  
-                                p(class="text-highlight  w-full max-w-[70ch]")  | I understand and agree that upon my acceptance (that is not compulsory) 
-                                                            | you will be entitled to transfer my data to third parties with whom you
-                                                            | have a contractual relationship (partners, sponsors, etc.) so that I may receive
-                                                            | special offers or other information from them.
+                            div(class="form-group flex gap-2") 
+                                input(
+                                    type="checkbox" 
+                                    name="terms_3"
+                                    class="checkbox checkbox-neutral checkbox-xs"
+                                    required
+                                    data-pristine-required-message="check if you are agree that my data may be shared with partners to receive offers and information" 
+                                    class="checkbox checkbox-neutral checkbox-xs"
+                                    )
+                                div(class="flex flex-col gap-2 terms-text")  
+                                    p(class="text-highlight  w-full max-w-[70ch]") I understand and agree that upon my acceptance (that is not compulsory) 
+                                                                | you will be entitled to transfer my data to third parties with whom you
+                                                                | have a contractual relationship (partners, sponsors, etc.) so that I may receive
+                                                                | special offers or other information from them.
+                                    p(id="#terms-error-3" class="pristine-error text-highlight ")                             
                         
+
                         div(class="grid  grid-cols-1 md:grid-cols-[30%] py-[3rem]")
-                            +Buttons(
-                                '',
-                                'submit application',
-                                null,
-                                'link',
-                                'flex'
-                            )                                
-                                                    
+                            +Buttons({ text: 'submit application', types: 'submit',className:'flex' })
+                    
                                                 

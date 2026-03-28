@@ -7,12 +7,7 @@ header(class="header")
                 a(href="index.html") 
                     img(src="./media/logo-transparent.png", alt="" loading="lazy")
         div(class="flex justify-end items-center gap-16")
-            +Buttons(
-                'become-a-model.html',
-                'become a model',
-                null,
-                'link'
-            )
+            +Buttons({ link: 'become-a-model.html', text: 'become a model', types: 'link' })
             div(class="flex gap-6")            
                 a(href="https://www.instagram.com/" target="_blank" class="instagram-icon hidden md:flex items-center")
                     i(class="fa-brands fa-instagram text-[2.6rem]")

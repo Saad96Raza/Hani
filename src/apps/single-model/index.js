@@ -1,7 +1,12 @@
-import GLightbox from 'glightbox';
-import Splide from '@splidejs/splide';
-import '@splidejs/splide/css/core';
-import "glightbox/dist/css/glightbox.css";
+const { default: GLightbox } = await import(
+    /* webpackChunkName: "glightbox" */ 'glightbox'
+)
+
+const { default: Splide } = await import(
+    /* webpackChunkName: "splide" */ '@splidejs/splide'
+)
+
+
 
 export default class SingleModel {
     constructor() {
@@ -9,6 +14,7 @@ export default class SingleModel {
     }
     createReRender(){
         this.createSlider()
+        this.createPlaybtn()
         this.createLightBox()
     }
     createSlider(){
@@ -45,6 +51,37 @@ export default class SingleModel {
         
         }
     }
+    createPlaybtn() {
+    let that = this;
+    that.video = document.querySelector('.video-container video');
+    that.playBtn = document.querySelector('.video-container .play-btn');
+
+    if (that.video && that.playBtn) {
+        // Ensure muted for autoplay to work
+        that.video.muted = true;
+
+        // Start autoplay
+        that.video.play().then(() => {
+            // Update play button to pause state
+            that.playBtn.classList.remove('fa-solid','fa-play');
+            that.playBtn.classList.add('fa-regular', 'fa-circle-pause');
+        })
+
+        // Toggle play/pause on click
+        that.video.parentElement.addEventListener('click', () => {
+            if (that.video.paused) {
+                that.video.play();
+                that.playBtn.classList.remove('fa-solid','fa-play');
+                that.playBtn.classList.add('fa-regular', 'fa-circle-pause');
+            } else {
+                that.video.pause();
+                that.playBtn.classList.remove('fa-regular', 'fa-circle-pause');
+                that.playBtn.classList.add('fa-solid','fa-play');
+            }
+        });
+        
+    }
+}
     createLightBox(){
         this.lightbox = GLightbox({
             selector: ".glightbox",

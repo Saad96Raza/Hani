@@ -9,6 +9,10 @@
 @use "components/components";
 @use "pages/pages";
 
+
+@import "~@splidejs/splide/css/core";
+@import "~glightbox/dist/css/glightbox.css";
+@import "~litepicker/dist/css/litepicker.css";
 // Tailwind 
 
 @tailwind base;

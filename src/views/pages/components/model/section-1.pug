@@ -18,12 +18,13 @@ section(class='section model-section-1')
                         +modelCard("Ava Delacroix", "./media/models/7.png")
                         +modelCard("Isla Harrington", "./media/models/8.png")   
 
-                input( type="radio" name="tabs" role="tab" class="tab text-body uppercase  button-1-stroke" aria-label="new face")
+                input( type="radio" name="tabs" role="tab" class="tab text-body uppercase  button-1-stroke" aria-label="new faces")
                 div(role="tabpanel" class="tab-content")
 
                 div(class="flex relative filter")
                     input(type="text" class="input text-body w-full" placeholder="search model")
                     i(class="fa-solid fa-magnifying-glass fa-lg absolute")
-            p(class="no-models-found text-md font-bold") no model found
+            div(class="no-models-found")
+                img(src="./media/banners/no-model-found.png" class="w-1/2 h-1/2 mx-auto", alt="", srcset="") 
 
                 

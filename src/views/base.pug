@@ -26,7 +26,11 @@ html(lang="en")
     meta(name="twitter:image" content="https://yourwebsite.com/media/twitter-image.jpg")
 
     // Favicon
-    link(rel="icon" href="/media/favicon.ico" type="image/x-icon")
+    link(rel="icon" type="image/png" href="hanimodels.com/favicon-96x96.png" sizes="96x96")
+    link(rel="icon" type="image/svg+xml" href="/hanimodels.com/favicon.svg")
+    link(rel="shortcut icon" href="hanimodels.com/favicon.ico" )
+    link(rel="apple-touch-icon" sizes="180x180" href="hanimodels.com/apple-touch-icon.png")
+    link(rel="manifest" href="hanimodels.com/site.webmanifest")
 body(data-barba="wrapper")
     include  ../../src/views/partials/header.pug
     main(data-barba="container" data-barba-namespace=htmlWebpackPlugin.options.title)
